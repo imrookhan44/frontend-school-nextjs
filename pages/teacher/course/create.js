@@ -101,7 +101,7 @@ const Create = () => {
     // console.log(post.file_url)
     const data = new FormData();
     data.append("file", course.profilePhoto);
-    data.append("upload_preset", "vikings");
+    data.append("upload_preset", "dq1lv3uk");
     data.append("cloud_name", "dxe8e6gy3");
     let response;
     if (course.profilePhoto) {
@@ -117,7 +117,7 @@ const Create = () => {
     // console.log(post.file_url)
     const data = new FormData();
     data.append("file", course.coverPhoto);
-    data.append("upload_preset", "vikings");
+    data.append("upload_preset", "dq1lv3uk");
     data.append("cloud_name", "dxe8e6gy3");
     let response;
     if (course.coverPhoto) {
@@ -134,7 +134,7 @@ const Create = () => {
     // console.log(post.file_url)
     const data = new FormData();
     data.append("file", course.course_preview_img);
-    data.append("upload_preset", "vikings");
+    data.append("upload_preset", "dq1lv3uk");
     data.append("cloud_name", "dxe8e6gy3");
     let response;
 
@@ -248,6 +248,14 @@ const Create = () => {
                       activeClassName="active"
                     >
                       <a>Edit My Course</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/teacher/course/add-section"
+                      activeClassName="active"
+                    >
+                      <a>Add Section</a>
                     </Link>
                   </li>
                   <li>

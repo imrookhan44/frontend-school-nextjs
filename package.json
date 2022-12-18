@@ -2,7 +2,7 @@
   "name": "edemy",
   "version": "1.5.0",
   "description": "eDemy - React Next LMS Education & Online Courses Template",
-  "main": "vendor-certification.js",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

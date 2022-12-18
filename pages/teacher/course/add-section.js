@@ -9,85 +9,47 @@ import catchErrors from "@/utils/catchErrors";
 import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
 
-const INIT_VIDEO = {
-  video_url: "",
+const INITSECTION = {
   order: 0,
   name: "",
   description: "",
   courseId: "",
 };
 
-const UploadCourseVideo = ({ courses }) => {
+const addSection = ({ courses }) => {
   // console.log(courses)
   const { token } = parseCookies();
 
-  const [video, setVideo] = React.useState(INIT_VIDEO);
+  const [section, setSection] = React.useState(INITSECTION);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
   React.useEffect(() => {
-    const { order, video_url, name } = video;
-    const isVideo = Object.values({
-      video_url,
+    const { order, name, description } = section;
+    const isSection = Object.values({
       name,
       order,
+      description,
     }).every((el) => Boolean(el));
-    isVideo ? setDisabled(false) : setDisabled(true);
-  }, [video]);
-
-  const handleVideoUpload = async () => {
-    // console.log(post.file_url)
-    const data = new FormData();
-    data.append("file", video.video_url);
-    data.append("upload_preset", "vikingsvideo");
-    data.append("cloud_name", "dev-empty");
-    const response = await axios.post(process.env.CLOUDINARY_VIDEO_URL, data);
-    const mediaUrl = response.data.url;
-    return mediaUrl;
-  };
+    isSection ? setDisabled(false) : setDisabled(true);
+  }, [section]);
 
   const handleChange = (e) => {
-    // console.log(d.value)
-    const { name, value, files } = e.target;
-    if (name === "video_url") {
-      const videoSize = files[0].size / 1024 / 1024;
-      if (videoSize > 20) {
-        addToast(
-          "The video size greater than 20 MB. Make sure less than 20 MB.",
-          {
-            appearance: "error",
-          }
-        );
-        e.target.value = null;
-        return;
-      }
-      setVideo((prevState) => ({ ...prevState, video_url: files[0] }));
-    } else {
-      setVideo((prevState) => ({ ...prevState, [name]: value }));
-    }
-    // console.log(video);
+    const { name, value } = e.target;
+    setSection((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      let videoUrl = "";
-      if (video.video_url) {
-        const videoUpload = await handleVideoUpload();
-        videoUrl = videoUpload.replace(/^http:\/\//i, "https://");
-      }
-
-      // console.log(videoUrl)
-
-      const url = `${baseUrl}/api/v1/courses/course/video-upload`;
-      const { order, name, description, courseId } = video;
+      const url = `${baseUrl}/api/v1/courses/course/new-section`;
+      const { order, name, description, courseId } = section;
       const payload = {
         order,
         name,
         description,
         courseId,
-        videoUrl,
       };
 
       const response = await axios.post(url, payload, {
@@ -98,10 +60,10 @@ const UploadCourseVideo = ({ courses }) => {
 
       setLoading(false);
       toast.success(response.data);
-      setVideo(INIT_VIDEO);
+      setSection(INITSECTION);
     } catch (err) {
       catchErrors(err, setError);
-      toast.error(error);
+      toast.error(err);
       console.log(err);
     } finally {
       setLoading(false);
@@ -111,10 +73,10 @@ const UploadCourseVideo = ({ courses }) => {
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle="Upload Course Video"
+        pageTitle="Add Course Section"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="Upload Course Video"
+        activePageText="Add Course Section"
       />
 
       <div className="ptb-100">
@@ -180,7 +142,7 @@ const UploadCourseVideo = ({ courses }) => {
                     <h3 className="loading-spinner">
                       <div className="d-table">
                         <div className="d-table-cell">
-                          <Spinner color="danger" /> Vide uploading...
+                          <Spinner color="danger" /> Adding Section...
                         </div>
                       </div>
                     </h3>
@@ -203,13 +165,13 @@ const UploadCourseVideo = ({ courses }) => {
                   </div>
 
                   <div className="form-group">
-                    <label>Video Order (1 or 2...)</label>
+                    <label>Section Order (1 or 2...)</label>
                     <input
                       type="number"
                       placeholder="Order Number"
                       className="form-control"
                       name="order"
-                      value={video.order}
+                      value={section.order}
                       onChange={handleChange}
                     />
                   </div>
@@ -221,7 +183,7 @@ const UploadCourseVideo = ({ courses }) => {
                       placeholder="Enter course title"
                       className="form-control"
                       name="name"
-                      value={video.name}
+                      value={section.name}
                       onChange={handleChange}
                     />
                   </div>
@@ -233,32 +195,17 @@ const UploadCourseVideo = ({ courses }) => {
                       placeholder="Enter course title"
                       className="form-control"
                       name="description"
-                      value={video.description}
+                      value={section.description}
                       onChange={handleChange}
                     />
                   </div>
-
-                  <div className="form-group">
-                    <label>Video</label>
-
-                    <br />
-
-                    <input
-                      type="file"
-                      name="video_url"
-                      accept="video/*"
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <br />
 
                   <button
                     className="default-btn"
                     disabled={disabled || loading}
                   >
                     <i className="flaticon-right-chevron"></i>
-                    Upload
+                    Add
                   </button>
                 </form>
               </div>
@@ -270,7 +217,7 @@ const UploadCourseVideo = ({ courses }) => {
   );
 };
 
-UploadCourseVideo.getInitialProps = async (ctx) => {
+addSection.getInitialProps = async (ctx) => {
   const { token } = parseCookies(ctx);
   if (!token) {
     return { courses: [] };
@@ -286,4 +233,4 @@ UploadCourseVideo.getInitialProps = async (ctx) => {
   return response.data;
 };
 
-export default UploadCourseVideo;
+export default addSection;
