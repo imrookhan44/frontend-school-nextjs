@@ -15,6 +15,7 @@ const INIT_VIDEO = {
   name: "",
   description: "",
   courseId: "",
+  sectionId: "",
 };
 
 const UploadCourseVideo = ({ courses }) => {
@@ -24,6 +25,8 @@ const UploadCourseVideo = ({ courses }) => {
   const [video, setVideo] = React.useState(INIT_VIDEO);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
+  const [sectionOptions, setSectionOptions] = React.useState([]);
+  const [error, setError] = React.useState();
 
   React.useEffect(() => {
     const { order, video_url, name } = video;
@@ -39,16 +42,29 @@ const UploadCourseVideo = ({ courses }) => {
     // console.log(post.file_url)
     const data = new FormData();
     data.append("file", video.video_url);
-    data.append("upload_preset", "vikingsvideo");
-    data.append("cloud_name", "dev-empty");
+    data.append("upload_preset", "dq1lv3uk");
+    data.append("cloud_name", "dxe8e6gy3");
     const response = await axios.post(process.env.CLOUDINARY_VIDEO_URL, data);
     const mediaUrl = response.data.url;
     return mediaUrl;
   };
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     // console.log(d.value)
     const { name, value, files } = e.target;
+    if (name == "courseId") {
+      if (!token) {
+        return redirectUser(ctx, "/login");
+      }
+
+      const payload = {
+        headers: { Authorization: token },
+      };
+
+      const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`;
+      const response = await axios.get(url, payload);
+      setSectionOptions(response.data.sections);
+    }
     if (name === "video_url") {
       const videoSize = files[0].size / 1024 / 1024;
       if (videoSize > 20) {
@@ -78,18 +94,21 @@ const UploadCourseVideo = ({ courses }) => {
         videoUrl = videoUpload.replace(/^http:\/\//i, "https://");
       }
 
-      // console.log(videoUrl)
+      console.log(videoUrl);
 
       const url = `${baseUrl}/api/v1/courses/course/video-upload`;
-      const { order, name, description, courseId } = video;
+
+      const { order, name, description, courseId, sectionId } = video;
       const payload = {
         order,
         name,
         description,
         courseId,
         videoUrl,
+        sectionId,
       };
 
+      console.log(payload);
       const response = await axios.post(url, payload, {
         headers: { Authorization: token },
       });
@@ -205,6 +224,22 @@ const UploadCourseVideo = ({ courses }) => {
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
                           {course.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Select Section</label>
+                    <select
+                      onChange={handleChange}
+                      name="sectionId"
+                      className="form-control"
+                    >
+                      <option>Select section</option>
+                      {sectionOptions.map((section) => (
+                        <option value={section.id} key={section.id}>
+                          {section.name}
                         </option>
                       ))}
                     </select>

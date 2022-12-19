@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, Sequelize) => {
   class Video extends Model {
     /**
@@ -12,46 +10,58 @@ module.exports = (sequelize, Sequelize) => {
     // static associate(models) {
     //   // define association here
     // }
-  };
-  Video.init({
-    id: {
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4,
-      primaryKey: true
+  }
+  Video.init(
+    {
+      id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+      },
+      video_url: {
+        type: Sequelize.TEXT,
+      },
+      order: {
+        type: Sequelize.INTEGER,
+      },
+      name: {
+        type: Sequelize.STRING,
+      },
+      description: {
+        type: Sequelize.STRING,
+      },
+      courseId: {
+        type: Sequelize.UUID,
+        onDelete: "CASCADE",
+        references: {
+          model: "Courses",
+          key: "id",
+          as: "courseId",
+        },
+      },
+      sectionId: {
+        type: Sequelize.UUID,
+        onDelete: "CASCADE",
+        references: {
+          model: "Sections",
+          key: "id",
+          as: "sectionId",
+        },
+      },
+      userId: {
+        type: Sequelize.UUID,
+        onDelete: "CASCADE",
+        references: {
+          model: "Users",
+          key: "id",
+          as: "userId",
+        },
+      },
     },
-    video_url: {
-      type: Sequelize.TEXT
-    },
-    order: {
-      type: Sequelize.INTEGER
-    },
-    name: {
-      type: Sequelize.STRING
-    },
-    description: {
-      type: Sequelize.STRING
-    },
-    courseId: {
-      type: Sequelize.UUID,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Courses',
-        key: 'id',
-        as: 'courseId',
-      }
-    },
-    userId: {
-      type: Sequelize.UUID,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Users',
-        key: 'id',
-        as: 'userId',
-      }
+    {
+      sequelize,
+      modelName: "Video",
     }
-  }, {
-    sequelize,
-    modelName: 'Video',
-  });
+  );
   return Video;
 };

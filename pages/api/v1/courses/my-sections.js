@@ -1,7 +1,11 @@
 import Cors from "cors";
 import initMiddleware from "@/lib/init-middleware";
 import jwt from "jsonwebtoken";
-import { sections as Section } from "@/models/index";
+import {
+  sections as Section,
+  videos as Video,
+  courses as Course,
+} from "@/models/index";
 
 // Initialize the cors middleware
 const cors = initMiddleware(
@@ -25,6 +29,18 @@ export default async (req, res) => {
       where: {
         courseId: req.query.courseid,
       },
+      include: [
+        {
+          model: Video,
+          as: "videos",
+          attributes: ["id", "name", "order", "description", "video_url"],
+        },
+        {
+          model: Course,
+          as: "course",
+          attributes: ["id", "title", "profilePhoto"],
+        },
+      ],
     });
 
     res.send({ sections });

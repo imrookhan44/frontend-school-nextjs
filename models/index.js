@@ -96,6 +96,16 @@ db.quizzes.belongsTo(db.sections, {
   as: "section",
 });
 
+// hasMany relationshipt with section and video
+db.sections.hasMany(db.videos, {
+  as: "videos",
+  foreignKey: "sectionId",
+});
+db.videos.belongsTo(db.sections, {
+  foreignKey: "sectionId",
+  as: "section",
+});
+
 // hasMany relationshipt with user and quiz
 db.users.hasMany(db.quizzes, {
   as: "quizzes",
