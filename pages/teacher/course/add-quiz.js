@@ -9,58 +9,72 @@ import catchErrors from "@/utils/catchErrors";
 import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
 
-const INITSECTION = {
+const INITQUIZ = {
   order: 0,
   name: "",
-  description: "",
+  json: "",
   courseId: "",
+  sectionId: "",
 };
 
-const addSection = ({ courses }) => {
-  // console.log(courses)
+const addQuiz = ({ courses, sections }) => {
   const { token } = parseCookies();
 
-  const [section, setSection] = React.useState(INITSECTION);
+  const [quiz, setQuiz] = React.useState(INITQUIZ);
+  const [sectionOptions, setSectionOptions] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
   React.useEffect(() => {
-    const { order, name, description } = section;
-    const isSection = Object.values({
+    const { order, name, json, sectionId } = quiz;
+    const isQuiz = Object.values({
       name,
       order,
-      description,
+      json,
+      sectionId,
     }).every((el) => Boolean(el));
-    isSection ? setDisabled(false) : setDisabled(true);
-  }, [section]);
+    isQuiz ? setDisabled(false) : setDisabled(true);
+  }, [quiz]);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
-    setSection((prevState) => ({ ...prevState, [name]: value }));
+    if (name == "courseId") {
+      if (!token) {
+        return redirectUser(ctx, "/login");
+      }
+
+      const payload = {
+        headers: { Authorization: token },
+      };
+
+      const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`;
+      const response = await axios.get(url, payload);
+      setSectionOptions(response.data.sections);
+    }
+    setQuiz((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = `${baseUrl}/api/v1/courses/course/new-section`;
-      const { order, name, description, courseId } = section;
+      const url = `${baseUrl}/api/v1/courses/course/new-quiz`;
+      const { order, name, json, courseId, sectionId } = quiz;
       const payload = {
         order,
         name,
-        description,
+        json,
         courseId,
+        sectionId,
       };
 
       const response = await axios.post(url, payload, {
         headers: { Authorization: token },
       });
 
-      console.log(response.data);
-
       setLoading(false);
       toast.success(response.data);
-      setSection(INITSECTION);
+      setQuiz(INITQUIZ);
     } catch (err) {
       catchErrors(err, setError);
       toast.error(err);
@@ -73,10 +87,10 @@ const addSection = ({ courses }) => {
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle="Add Course Section"
+        pageTitle="Add Course Quiz"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="Add Course Section"
+        activePageText="Add Course Quiz"
       />
 
       <div className="ptb-100">
@@ -150,7 +164,7 @@ const addSection = ({ courses }) => {
                     <h3 className="loading-spinner">
                       <div className="d-table">
                         <div className="d-table-cell">
-                          <Spinner color="danger" /> Adding Section...
+                          <Spinner color="danger" /> Adding Quiz...
                         </div>
                       </div>
                     </h3>
@@ -173,13 +187,29 @@ const addSection = ({ courses }) => {
                   </div>
 
                   <div className="form-group">
-                    <label>Section Order (1 or 2...)</label>
+                    <label>Select Section</label>
+                    <select
+                      onChange={handleChange}
+                      name="sectionId"
+                      className="form-control"
+                    >
+                      <option>Select section</option>
+                      {sectionOptions.map((section) => (
+                        <option value={section.id} key={section.id}>
+                          {section.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Quiz Order (1 or 2...)</label>
                     <input
                       type="number"
                       placeholder="Order Number"
                       className="form-control"
                       name="order"
-                      value={section.order}
+                      value={quiz.order}
                       onChange={handleChange}
                     />
                   </div>
@@ -191,21 +221,24 @@ const addSection = ({ courses }) => {
                       placeholder="Enter course title"
                       className="form-control"
                       name="name"
-                      value={section.name}
+                      value={quiz.name}
                       onChange={handleChange}
                     />
                   </div>
 
                   <div className="form-group">
-                    <label>Deescription</label>
+                    <label>Json Config</label>
                     <input
                       type="text"
                       placeholder="Enter course title"
                       className="form-control"
-                      name="description"
-                      value={section.description}
+                      name="json"
+                      value={quiz.json}
                       onChange={handleChange}
                     />
+                    <a href="https://wingkwong.github.io/react-quiz-form/">
+                      Generate the json here
+                    </a>
                   </div>
 
                   <button
@@ -225,7 +258,7 @@ const addSection = ({ courses }) => {
   );
 };
 
-addSection.getInitialProps = async (ctx) => {
+addQuiz.getInitialProps = async (ctx) => {
   const { token } = parseCookies(ctx);
   if (!token) {
     return { courses: [] };
@@ -241,4 +274,4 @@ addSection.getInitialProps = async (ctx) => {
   return response.data;
 };
 
-export default addSection;
+export default addQuiz;

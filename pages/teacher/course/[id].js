@@ -250,6 +250,22 @@ const Edit = ({ existingData }) => {
                   </li>
                   <li>
                     <Link
+                      href="/teacher/course/add-quiz"
+                      activeClassName="active"
+                    >
+                      <a>Add Quiz</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/teacher/course/add-section"
+                      activeClassName="active"
+                    >
+                      <a>Add Section</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/teacher/course/upload-course-video"
                       activeClassName="active"
                     >

@@ -155,6 +155,14 @@ const UploadCourseVideo = ({ courses }) => {
                   </li>
                   <li>
                     <Link
+                      href="/teacher/course/add-quiz"
+                      activeClassName="active"
+                    >
+                      <a>Add Quiz</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/teacher/course/add-section"
                       activeClassName="active"
                     >

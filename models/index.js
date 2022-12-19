@@ -12,6 +12,7 @@ import Course from "./course";
 import Video from "./video";
 import Section from "./section";
 import Enroled_courses from "./enroled_courses";
+import Quiz from "./quiz";
 
 let sequelize;
 if (config.use_env_variable) {
@@ -29,6 +30,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.users = User(sequelize, Sequelize);
+db.quizzes = Quiz(sequelize, Sequelize);
 db.courses = Course(sequelize, Sequelize);
 db.videos = Video(sequelize, Sequelize);
 db.sections = Section(sequelize, Sequelize);
@@ -70,6 +72,36 @@ db.users.hasMany(db.sections, {
   foreignKey: "userId",
 });
 db.sections.belongsTo(db.courses, {
+  foreignKey: "userId",
+  as: "user",
+});
+
+// hasMany relationshipt with course and quiz
+db.courses.hasMany(db.quizzes, {
+  as: "quizzes",
+  foreignKey: "courseId",
+});
+db.quizzes.belongsTo(db.courses, {
+  foreignKey: "courseId",
+  as: "course",
+});
+
+// hasMany relationshipt with section and quiz
+db.sections.hasMany(db.quizzes, {
+  as: "quizzes",
+  foreignKey: "sectionId",
+});
+db.quizzes.belongsTo(db.sections, {
+  foreignKey: "sectionId",
+  as: "section",
+});
+
+// hasMany relationshipt with user and quiz
+db.users.hasMany(db.quizzes, {
+  as: "quizzes",
+  foreignKey: "userId",
+});
+db.quizzes.belongsTo(db.courses, {
   foreignKey: "userId",
   as: "user",
 });
