@@ -84,7 +84,7 @@ const addSection = ({ courses }) => {
           {courses.length == 0 && (
             <Alert color="danger" className="text-center">
               You have to create course first here{" "}
-              <Link href="/teacher/course/create">
+              <Link legacyBehavior href="/teacher/course/create">
                 <a>Create Course</a>
               </Link>
             </Alert>
@@ -95,12 +95,17 @@ const addSection = ({ courses }) => {
               <div className="td-sidebar">
                 <ul>
                   <li>
-                    <Link href="/teacher/courses" activeClassName="active">
+                    <Link
+                      legacyBehavior
+                      href="/teacher/courses"
+                      activeClassName="active"
+                    >
                       <a>My Courses</a>
                     </Link>
                   </li>
                   <li>
                     <Link
+                      legacyBehavior
                       href="/teacher/course/create"
                       activeClassName="active"
                     >
@@ -109,6 +114,7 @@ const addSection = ({ courses }) => {
                   </li>
                   <li>
                     <Link
+                      legacyBehavior
                       href="/teacher/courses/course-edit"
                       activeClassName="active"
                     >
@@ -117,6 +123,7 @@ const addSection = ({ courses }) => {
                   </li>
                   <li>
                     <Link
+                      legacyBehavior
                       href="/teacher/course/add-quiz"
                       activeClassName="active"
                     >
@@ -125,6 +132,7 @@ const addSection = ({ courses }) => {
                   </li>
                   <li>
                     <Link
+                      legacyBehavior
                       href="/teacher/course/add-section"
                       activeClassName="active"
                     >
@@ -133,6 +141,7 @@ const addSection = ({ courses }) => {
                   </li>
                   <li>
                     <Link
+                      legacyBehavior
                       href="/teacher/course/upload-course-video"
                       activeClassName="active"
                     >

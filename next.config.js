@@ -13,6 +13,7 @@ module.exports = nextTranslate(
     sassOptions: {
       includePaths: [path.join(__dirname, "styles")],
     },
+    experimental: { appDir: true },
     env: {
       JWT_SECRET: "djhfghbdsgrasklkajsdgf",
       SENDGRID_KEY:

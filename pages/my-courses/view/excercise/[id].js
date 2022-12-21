@@ -21,7 +21,7 @@ const SingleCourses = ({ sections }) => {
     <React.Fragment>
       <PageBanner
         pageTitle={sections.length ? sections[0].course.title : "No Videos"}
-        homePageUrl="/my-courses"
+        homePageUrl=" /my-courses"
         homePageText="My Courses"
         activePageText={
           sections.length ? sections[0].course.title : "No Videos"
