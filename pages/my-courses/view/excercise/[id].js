@@ -6,10 +6,6 @@ import axios from "axios";
 import baseUrl from "@/utils/baseUrl";
 
 const SingleCourses = ({ sections }) => {
-  const [videoId, setVideoId] = React.useState(
-    sections[0].videos.length ? sections[0].videos[0].video_url : ""
-  );
-  console.log(sections);
   return (
     <React.Fragment>
       <PageBanner

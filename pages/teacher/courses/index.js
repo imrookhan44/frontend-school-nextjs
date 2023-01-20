@@ -5,6 +5,7 @@ import baseUrl from "@/utils/baseUrl";
 import CourseCard from "@/components/Courses/CourseCard";
 import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
+import { SideBar } from "../SideBar";
 
 const index = ({ courses }) => {
   // console.log(courses)
@@ -21,46 +22,7 @@ const index = ({ courses }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-4 col-lg-4">
-              <div className="td-sidebar">
-                <ul>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/courses"
-                      activeClassName="active"
-                    >
-                      <a>My Courses</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/create"
-                      activeClassName="active"
-                    >
-                      <a>Create A Course</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/courses/course-edit"
-                      activeClassName="active"
-                    >
-                      <a>Edit My Course</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/upload-course-video"
-                      activeClassName="active"
-                    >
-                      <a>Upload Course Video</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <SideBar />
             </div>
 
             <div className="col-md-8 col-lg-8">

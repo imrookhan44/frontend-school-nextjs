@@ -4,6 +4,7 @@ import axios from "axios";
 import baseUrl from "@/utils/baseUrl";
 import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
+import { SideBar } from "../SideBar";
 
 const courseEdit = ({ courses }) => {
   return (
@@ -19,46 +20,7 @@ const courseEdit = ({ courses }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-4 col-lg-4">
-              <div className="td-sidebar">
-                <ul>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/courses"
-                      activeClassName="active"
-                    >
-                      <a>My Courses</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/create"
-                      activeClassName="active"
-                    >
-                      <a>Create A Course</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/courses/course-edit"
-                      activeClassName="active"
-                    >
-                      <a>Edit My Course</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/upload-course-video"
-                      activeClassName="active"
-                    >
-                      <a>Upload Course Video</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <SideBar />
             </div>
 
             <div className="col-md-8 col-lg-8">

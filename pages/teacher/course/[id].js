@@ -7,7 +7,7 @@ import { Spinner } from "reactstrap";
 import toast from "react-hot-toast";
 import catchErrors from "@/utils/catchErrors";
 import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
+import { SideBar } from "../SideBar";
 
 const Edit = ({ existingData }) => {
   const { token } = parseCookies();
@@ -225,64 +225,7 @@ const Edit = ({ existingData }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-4 col-lg-4">
-              <div className="td-sidebar">
-                <ul>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/courses"
-                      activeClassName="active"
-                    >
-                      <a>My Courses</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/create"
-                      activeClassName="active"
-                    >
-                      <a>Create A Course</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/courses/course-edit"
-                      activeClassName="active"
-                    >
-                      <a>Edit My Course</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/add-quiz"
-                      activeClassName="active"
-                    >
-                      <a>Add Quiz</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/add-section"
-                      activeClassName="active"
-                    >
-                      <a>Add Section</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      legacyBehavior
-                      href="/teacher/course/upload-course-video"
-                      activeClassName="active"
-                    >
-                      <a>Upload Course Video</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <SideBar></SideBar>
             </div>
 
             <div className="col-md-8 col-lg-8">

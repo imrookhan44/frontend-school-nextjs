@@ -21,13 +21,13 @@ const INITQUIZ = {
 const addQuiz = ({ courses, sections }) => {
   const { token } = parseCookies();
 
-  const [quiz, setQuiz] = React.useState(INITQUIZ);
+  const [excercise, setQuiz] = React.useState(INITQUIZ);
   const [sectionOptions, setSectionOptions] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
   React.useEffect(() => {
-    const { order, name, json, sectionId } = quiz;
+    const { order, name, json, sectionId } = excercise;
     const isQuiz = Object.values({
       name,
       order,
@@ -35,7 +35,7 @@ const addQuiz = ({ courses, sections }) => {
       sectionId,
     }).every((el) => Boolean(el));
     isQuiz ? setDisabled(false) : setDisabled(true);
-  }, [quiz]);
+  }, [excercise]);
 
   const handleChange = async (e) => {
     const { name, value } = e.target;
@@ -59,8 +59,8 @@ const addQuiz = ({ courses, sections }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = `${baseUrl}/api/v1/courses/course/new-quiz`;
-      const { order, name, json, courseId, sectionId } = quiz;
+      const url = `${baseUrl}/api/v1/courses/course/new-excercise`;
+      const { order, name, json, courseId, sectionId } = excercise;
       const payload = {
         order,
         name,
@@ -88,10 +88,10 @@ const addQuiz = ({ courses, sections }) => {
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle="Add Course Quiz"
+        pageTitle="Create Course Excercise"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="Add Course Quiz"
+        activePageText="Create Course Excercise"
       />
 
       <div className="ptb-100">
@@ -117,7 +117,7 @@ const addQuiz = ({ courses, sections }) => {
                     <h3 className="loading-spinner">
                       <div className="d-table">
                         <div className="d-table-cell">
-                          <Spinner color="danger" /> Adding Quiz...
+                          <Spinner color="danger" /> Adding Course...
                         </div>
                       </div>
                     </h3>
@@ -156,13 +156,13 @@ const addQuiz = ({ courses, sections }) => {
                   </div>
 
                   <div className="form-group">
-                    <label>Quiz Order (1 or 2...)</label>
+                    <label>Excercise Order (1 or 2...)</label>
                     <input
                       type="number"
                       placeholder="Order Number"
                       className="form-control"
                       name="order"
-                      value={quiz.order}
+                      value={excercise.order}
                       onChange={handleChange}
                     />
                   </div>
@@ -171,27 +171,86 @@ const addQuiz = ({ courses, sections }) => {
                     <label>Name</label>
                     <input
                       type="text"
-                      placeholder="Enter course title"
+                      placeholder="Enter problem description"
                       className="form-control"
                       name="name"
-                      value={quiz.name}
+                      value={excercise.name}
                       onChange={handleChange}
                     />
                   </div>
 
                   <div className="form-group">
-                    <label>Json Config</label>
+                    <label>Problem Description</label>
                     <input
                       type="text"
-                      placeholder="Enter course title"
+                      placeholder="Enter problem description"
                       className="form-control"
-                      name="json"
-                      value={quiz.json}
+                      name="problemDescription"
+                      value={excercise.problemDescription}
                       onChange={handleChange}
                     />
-                    <a href="https://wingkwong.github.io/react-quiz-form/">
-                      Generate the json here
-                    </a>
+                    <a href="https://dillinger.io/">Create Markdown Here</a>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Solution Description</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Solution description"
+                      className="form-control"
+                      name="solutionDescription"
+                      value={excercise.solutionDescription}
+                      onChange={handleChange}
+                    />
+                    <a href="https://dillinger.io/">Create Markdown Here</a>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Video Link</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Video Link"
+                      className="form-control"
+                      name="videoLink"
+                      value={excercise.videoLink}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Starting Code</label>
+                    <input
+                      type="text"
+                      placeholder="Starting Code"
+                      className="form-control"
+                      name="startingCode"
+                      value={excercise.startingCode}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Test Cases</label>
+                    <input
+                      type="text"
+                      placeholder="comma separated tests"
+                      className="form-control"
+                      name="tests"
+                      value={excercise.tests}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Test Case Results</label>
+                    <input
+                      type="text"
+                      placeholder="comma separated expected results"
+                      className="form-control"
+                      name="tests"
+                      value={excercise.tests}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <button
