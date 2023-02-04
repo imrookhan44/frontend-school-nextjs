@@ -10,10 +10,15 @@ import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
 import { SideBar } from "../SideBar";
 
-const INITQUIZ = {
-  order: 0,
+const INITEXERCISE = {
+  order: "",
   name: "",
-  json: "",
+  problemDescription: "",
+  solutionDescription: "",
+  videoLink: "",
+  startingCode: "",
+  testCases: "",
+  testCaseResults: "",
   courseId: "",
   sectionId: "",
 };
@@ -21,20 +26,37 @@ const INITQUIZ = {
 const addQuiz = ({ courses, sections }) => {
   const { token } = parseCookies();
 
-  const [excercise, setQuiz] = React.useState(INITQUIZ);
+  const [excercise, setExercise] = React.useState(INITEXERCISE);
   const [sectionOptions, setSectionOptions] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
   React.useEffect(() => {
-    const { order, name, json, sectionId } = excercise;
-    const isQuiz = Object.values({
-      name,
+    const {
       order,
-      json,
+      name,
+      problemDescription,
+      solutionDescription,
+      videoLink,
+      startingCode,
+      testCases,
+      testCaseResults,
+      courseId,
+      sectionId,
+    } = excercise;
+    const isExercise = Object.values({
+      order,
+      name,
+      problemDescription,
+      solutionDescription,
+      videoLink,
+      startingCode,
+      testCases,
+      testCaseResults,
+      courseId,
       sectionId,
     }).every((el) => Boolean(el));
-    isQuiz ? setDisabled(false) : setDisabled(true);
+    isExercise ? setDisabled(false) : setDisabled(true);
   }, [excercise]);
 
   const handleChange = async (e) => {
@@ -52,19 +74,35 @@ const addQuiz = ({ courses, sections }) => {
       const response = await axios.get(url, payload);
       setSectionOptions(response.data.sections);
     }
-    setQuiz((prevState) => ({ ...prevState, [name]: value }));
+    setExercise((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = `${baseUrl}/api/v1/courses/course/new-excercise`;
-      const { order, name, json, courseId, sectionId } = excercise;
+      const url = `${baseUrl}/api/v1/courses/course/new-exercise`;
+      const {
+        order,
+        name,
+        problemDescription,
+        solutionDescription,
+        videoLink,
+        startingCode,
+        testCases,
+        testCaseResults,
+        courseId,
+        sectionId,
+      } = excercise;
       const payload = {
         order,
         name,
-        json,
+        problemDescription,
+        solutionDescription,
+        videoLink,
+        startingCode,
+        testCases,
+        testCaseResults,
         courseId,
         sectionId,
       };
@@ -75,8 +113,9 @@ const addQuiz = ({ courses, sections }) => {
 
       setLoading(false);
       toast.success(response.data);
-      setQuiz(INITQUIZ);
+      setExercise(INITEXERCISE);
     } catch (err) {
+      console.log(err);
       catchErrors(err, setError);
       toast.error(err);
       console.log(err);
@@ -235,7 +274,7 @@ const addQuiz = ({ courses, sections }) => {
                       type="text"
                       placeholder="comma separated tests"
                       className="form-control"
-                      name="tests"
+                      name="testCases"
                       value={excercise.tests}
                       onChange={handleChange}
                     />
@@ -247,7 +286,7 @@ const addQuiz = ({ courses, sections }) => {
                       type="text"
                       placeholder="comma separated expected results"
                       className="form-control"
-                      name="tests"
+                      name="testCaseResults"
                       value={excercise.tests}
                       onChange={handleChange}
                     />
