@@ -16,6 +16,7 @@ const SingleCourses = ({ sections }) => {
   const [videoId, setVideoId] = React.useState(
     sections[0].videos.length ? sections[0].videos[0].video_url : ""
   );
+
   console.log(sections);
   return (
     <React.Fragment>
@@ -62,7 +63,7 @@ const SingleCourses = ({ sections }) => {
                                       src={section.course.profilePhoto}
                                       alt={section.course.title}
                                     />
-                                    <h4>{video.name}</h4>
+                                    <h4>VIDEP: {video.name}</h4>
                                   </a>
                                 </Link>
                               </div>
@@ -77,11 +78,29 @@ const SingleCourses = ({ sections }) => {
                                 <Link
                                   legacyBehavior
                                   key={quiz.id}
-                                  href="/my-courses/[quizzes]/[id]"
-                                  as={`/my-courses/quiz/${quiz.id}`}
+                                  href="/my-courses/view/[quizzes]/[id]"
+                                  as={`/my-courses/view/quiz/${quiz.id}`}
                                 >
-                                  <a href={`/my-courses/quiz/${quiz.id}`}>
-                                    <h4>{quiz.name}</h4>
+                                  <a href={`/my-courses/view/quiz/${quiz.id}`}>
+                                    <h4>QUIZ:{quiz.name}</h4>
+                                  </a>
+                                </Link>
+                              </div>
+                            ))}
+                          <div style={{ marginTop: "100px" }}></div>
+                          {section.excercises.length &&
+                            section.excercises.map((exercise) => (
+                              <div key={exercise.id}>
+                                <Link
+                                  legacyBehavior
+                                  key={exercise.id}
+                                  href="/my-courses/view/[excercises]/[id]"
+                                  as={`/my-courses/view/exercise/${exercise.id}`}
+                                >
+                                  <a
+                                    href={`/my-courses/view/exercise/${exercise.id}`}
+                                  >
+                                    <h4>{exercise.name} EXERCISE</h4>
                                   </a>
                                 </Link>
                               </div>

@@ -3,34 +3,30 @@ import PageBanner from "@/components/Common/PageBanner";
 
 import { parseCookies } from "nookies";
 
-const SingleQuiz = ({ quiz, token }) => {
-  if (typeof window !== "undefined") {
-    window.parent.postMessage({ message: "quizData", value: quiz }, "*");
-  }
-
+const SingleExercise = ({ excercise, token }) => {
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle={"Quiz"}
+        pageTitle={"Coding Excercise"}
         homePageUrl=" /my-courses"
         homePageText="My Courses"
-        activePageText={"Quiz"}
+        activePageText={"Coding Excercise"}
       />
       <iframe
         width="100%"
         height="700"
-        src={`http://localhost:3001/quiz?quizId=${quiz}&token=${token}`}
+        src={`http://localhost:3001?excerciseId=${excercise}&token=${token}`}
       />
     </React.Fragment>
   );
 };
 
-SingleQuiz.getInitialProps = async (ctx) => {
+SingleExercise.getInitialProps = async (ctx) => {
   const { token } = parseCookies(ctx);
 
   const { id } = ctx.query;
 
-  return { quiz: id, token: token };
+  return { excercise: id, token: token };
 };
 
-export default SingleQuiz;
+export default SingleExercise;

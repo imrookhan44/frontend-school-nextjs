@@ -6,6 +6,7 @@ import {
   videos as Video,
   courses as Course,
   quizzes as Quiz,
+  excercises as Excercise,
 } from "@/models/index";
 
 // Initialize the cors middleware
@@ -45,6 +46,11 @@ export default async (req, res) => {
           model: Quiz,
           as: "quizzes",
           attributes: ["id", "name", "order", "json"],
+        },
+        {
+          model: Excercise,
+          as: "excercises",
+          attributes: ["id", "name", "order"],
         },
       ],
     });
