@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import baseUrl from "@/utils/baseUrl";
 import catchErrors from "@/utils/catchErrors";
 import PageBanner from "@/components/Common/PageBanner";
-import { SideBar } from "../SideBar";
+import SideBar from "../SideBar";
 
 const INIT_COURSE = {
   title: "",

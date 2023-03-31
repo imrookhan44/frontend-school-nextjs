@@ -1,6 +1,6 @@
 import React from "react";
 import PageBanner from "@/components/Common/PageBanner";
-import { SideBar } from "../SideBar";
+import SideBar from "../SideBar";
 
 const index = () => {
   return (

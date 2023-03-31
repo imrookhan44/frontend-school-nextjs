@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "@/utils/ActiveLink";
 
-export const SideBar = () => {
+const SideBar = () => {
   return (
     <div className="td-sidebar">
       <ul>
@@ -64,7 +64,18 @@ export const SideBar = () => {
             <a>Create Excercise</a>
           </Link>
         </li>
+        <li>
+          <Link
+            legacyBehavior
+            href="/teacher/course/add-test-cases"
+            activeClassName="active"
+          >
+            <a>Add Test Cases</a>
+          </Link>
+        </li>
       </ul>
     </div>
   );
 };
+
+export default SideBar;

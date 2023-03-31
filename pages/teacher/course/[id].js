@@ -7,7 +7,7 @@ import { Spinner } from "reactstrap";
 import toast from "react-hot-toast";
 import catchErrors from "@/utils/catchErrors";
 import PageBanner from "@/components/Common/PageBanner";
-import { SideBar } from "../SideBar";
+import SideBar from "../SideBar";
 
 const Edit = ({ existingData }) => {
   const { token } = parseCookies();

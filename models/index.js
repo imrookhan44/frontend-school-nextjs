@@ -14,6 +14,7 @@ import Section from "./section";
 import Enroled_courses from "./enroled_courses";
 import Quiz from "./quiz";
 import Excercise from "./excercise";
+import TestCase from "./test_case";
 
 let sequelize;
 if (config.use_env_variable) {
@@ -37,6 +38,7 @@ db.courses = Course(sequelize, Sequelize);
 db.videos = Video(sequelize, Sequelize);
 db.sections = Section(sequelize, Sequelize);
 db.enroled_courses = Enroled_courses(sequelize, Sequelize);
+db.test_cases = TestCase(sequelize, Sequelize);
 
 // hasMany relationshipt with user and course
 db.users.hasMany(db.courses, {
@@ -106,6 +108,16 @@ db.courses.hasMany(db.excercises, {
 db.excercises.belongsTo(db.courses, {
   foreignKey: "courseId",
   as: "course",
+});
+
+// hasMany relationshipt with excercise and test_case
+db.excercises.hasMany(db.test_cases, {
+  as: "test_cases",
+  foreignKey: "excerciseId",
+});
+db.test_cases.belongsTo(db.excercises, {
+  foreignKey: "excerciseId",
+  as: "excercise",
 });
 
 // hasMany relationshipt with section and quiz

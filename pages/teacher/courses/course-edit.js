@@ -4,7 +4,7 @@ import axios from "axios";
 import baseUrl from "@/utils/baseUrl";
 import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
-import { SideBar } from "../SideBar";
+import SideBar from "../SideBar";
 
 const courseEdit = ({ courses }) => {
   return (

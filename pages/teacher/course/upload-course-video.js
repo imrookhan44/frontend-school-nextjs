@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import catchErrors from "@/utils/catchErrors";
 import PageBanner from "@/components/Common/PageBanner";
 import Link from "@/utils/ActiveLink";
-import { SideBar } from "../SideBar";
+import SideBar from "../SideBar";
 
 const INIT_VIDEO = {
   video_url: "",
