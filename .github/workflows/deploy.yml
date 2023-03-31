@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: "18.x"
       - name: Install NPM dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
