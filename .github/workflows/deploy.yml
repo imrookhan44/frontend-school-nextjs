@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: "18.x"
       - name: Install NPM dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
+        run: npm install -g serverless@2.72.2
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
