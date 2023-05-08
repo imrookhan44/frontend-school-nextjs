@@ -1,16 +1,16 @@
-import React from "react";
-import PageBanner from "@/components/Common/PageBanner";
+import React from 'react';
+import PageBanner from '@/components/Common/PageBanner';
 
-import { parseCookies } from "nookies";
+import { parseCookies } from 'nookies';
 
 const SingleExercise = ({ excercise, token }) => {
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle={"Coding Excercise"}
+        pageTitle={'Coding Excercise'}
         homePageUrl=" /my-courses"
         homePageText="My Courses"
-        activePageText={"Coding Excercise"}
+        activePageText={'Coding Excercise'}
       />
       <iframe
         width="100%"

@@ -1,26 +1,26 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import { Spinner } from "reactstrap";
-import toast from "react-hot-toast";
-import { useRouter } from "next/router";
-import baseUrl from "@/utils/baseUrl";
-import catchErrors from "@/utils/catchErrors";
-import PageBanner from "@/components/Common/PageBanner";
-import SideBar from "../SideBar";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import { Spinner } from 'reactstrap';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/router';
+import baseUrl from '@/utils/baseUrl';
+import catchErrors from '@/utils/catchErrors';
+import PageBanner from '@/components/Common/PageBanner';
+import SideBar from '../SideBar';
 
 const INIT_COURSE = {
-  title: "",
-  overview: "",
+  title: '',
+  overview: '',
   price: 0.0,
-  profilePhoto: "",
+  profilePhoto: '',
   published: true,
-  coverPhoto: "",
-  course_preview_img: "",
-  course_preview_video: "",
-  duration: "",
-  lessons: "",
-  category: "",
+  coverPhoto: '',
+  course_preview_img: '',
+  course_preview_video: '',
+  duration: '',
+  lessons: '',
+  category: ''
 };
 
 const Create = () => {
@@ -28,9 +28,9 @@ const Create = () => {
   const router = useRouter();
 
   const [course, setCourse] = React.useState(INIT_COURSE);
-  const [profilePreview, setProfilePreview] = React.useState("");
-  const [coverPhotoPreview, setCoverPhotoPreview] = React.useState("");
-  const [coursePreviewImg, setCoursePreviewImg] = React.useState("");
+  const [profilePreview, setProfilePreview] = React.useState('');
+  const [coverPhotoPreview, setCoverPhotoPreview] = React.useState('');
+  const [coursePreviewImg, setCoursePreviewImg] = React.useState('');
   const [imageUploading, setImageUploading] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
@@ -45,49 +45,40 @@ const Create = () => {
     // console.log(d.value)
     const { name, value, files } = e.target;
 
-    if (name === "profilePhoto") {
+    if (name === 'profilePhoto') {
       const profilePhotoSize = files[0].size / 1024 / 1024;
       if (profilePhotoSize > 2) {
-        addToast(
-          "The profile photo size greater than 2 MB. Make sure less than 2 MB.",
-          {
-            appearance: "error",
-          }
-        );
+        addToast('The profile photo size greater than 2 MB. Make sure less than 2 MB.', {
+          appearance: 'error'
+        });
         e.target.value = null;
         return;
       }
       setCourse((prevState) => ({ ...prevState, profilePhoto: files[0] }));
       setProfilePreview(window.URL.createObjectURL(files[0]));
-    } else if (name === "coverPhoto") {
+    } else if (name === 'coverPhoto') {
       const coverPhotoSize = files[0].size / 1024 / 1024;
       if (coverPhotoSize > 2) {
-        addToast(
-          "The cover photo size greater than 2 MB. Make sure less than 2 MB.",
-          {
-            appearance: "error",
-          }
-        );
+        addToast('The cover photo size greater than 2 MB. Make sure less than 2 MB.', {
+          appearance: 'error'
+        });
         e.target.value = null;
         return;
       }
       setCourse((prevState) => ({ ...prevState, coverPhoto: files[0] }));
       setCoverPhotoPreview(window.URL.createObjectURL(files[0]));
-    } else if (name === "course_preview_img") {
+    } else if (name === 'course_preview_img') {
       const course_preview_img = files[0].size / 1024 / 1024;
       if (course_preview_img > 2) {
-        addToast(
-          "The course preview omage size greater than 2 MB. Make sure less than 2 MB.",
-          {
-            appearance: "error",
-          }
-        );
+        addToast('The course preview omage size greater than 2 MB. Make sure less than 2 MB.', {
+          appearance: 'error'
+        });
         e.target.value = null;
         return;
       }
       setCourse((prevState) => ({
         ...prevState,
-        course_preview_img: files[0],
+        course_preview_img: files[0]
       }));
       setCoursePreviewImg(window.URL.createObjectURL(files[0]));
     } else {
@@ -100,9 +91,9 @@ const Create = () => {
     setImageUploading(true);
     // console.log(post.file_url)
     const data = new FormData();
-    data.append("file", course.profilePhoto);
-    data.append("upload_preset", "dq1lv3uk");
-    data.append("cloud_name", "dxe8e6gy3");
+    data.append('file', course.profilePhoto);
+    data.append('upload_preset', 'dq1lv3uk');
+    data.append('cloud_name', 'dxe8e6gy3');
     let response;
     if (course.profilePhoto) {
       response = await axios.post(process.env.CLOUDINARY_URL, data);
@@ -116,9 +107,9 @@ const Create = () => {
     setImageUploading(true);
     // console.log(post.file_url)
     const data = new FormData();
-    data.append("file", course.coverPhoto);
-    data.append("upload_preset", "dq1lv3uk");
-    data.append("cloud_name", "dxe8e6gy3");
+    data.append('file', course.coverPhoto);
+    data.append('upload_preset', 'dq1lv3uk');
+    data.append('cloud_name', 'dxe8e6gy3');
     let response;
     if (course.coverPhoto) {
       response = await axios.post(process.env.CLOUDINARY_URL, data);
@@ -133,9 +124,9 @@ const Create = () => {
     setImageUploading(true);
     // console.log(post.file_url)
     const data = new FormData();
-    data.append("file", course.course_preview_img);
-    data.append("upload_preset", "dq1lv3uk");
-    data.append("cloud_name", "dxe8e6gy3");
+    data.append('file', course.course_preview_img);
+    data.append('upload_preset', 'dq1lv3uk');
+    data.append('cloud_name', 'dxe8e6gy3');
     let response;
 
     if (course.course_preview_img) {
@@ -151,21 +142,17 @@ const Create = () => {
   const handleCourseSubmit = async (e) => {
     e.preventDefault();
     try {
-      let profile = "";
-      let cover = "";
-      let preview = "";
-      if (
-        course.profilePhoto &&
-        course.coverPhoto &&
-        course.course_preview_img
-      ) {
+      let profile = '';
+      let cover = '';
+      let preview = '';
+      if (course.profilePhoto && course.coverPhoto && course.course_preview_img) {
         profile = await handleProfilePhotoUpload();
         cover = await handlecoverPhotoUpload();
         preview = await handlePreviewPhotoUpload();
 
-        profile = profile.replace(/^http:\/\//i, "https://");
-        cover = cover.replace(/^http:\/\//i, "https://");
-        preview = preview.replace(/^http:\/\//i, "https://");
+        profile = profile.replace(/^http:\/\//i, 'https://');
+        cover = cover.replace(/^http:\/\//i, 'https://');
+        preview = preview.replace(/^http:\/\//i, 'https://');
       }
 
       const url = `${baseUrl}/api/v1/courses/course/new`;
@@ -177,7 +164,7 @@ const Create = () => {
         duration,
         lessons,
         category,
-        course_preview_video,
+        course_preview_video
       } = course;
 
       const payload = {
@@ -191,21 +178,21 @@ const Create = () => {
         profile,
         cover,
         preview,
-        course_preview_video,
+        course_preview_video
       };
 
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token },
+        headers: { Authorization: token }
       });
 
       // console.log(response.data)
       setLoading(false);
       setCourse(INIT_COURSE);
-      setProfilePreview("");
-      setCoverPhotoPreview("");
-      setCoursePreviewImg("");
+      setProfilePreview('');
+      setCoverPhotoPreview('');
+      setCoursePreviewImg('');
       toast.success(response.data);
-      router.replace("/teacher/course/upload-course-video");
+      router.replace('/teacher/course/upload-course-video');
     } catch (err) {
       catchErrors(err, setError);
       toast.error(error);
@@ -302,9 +289,7 @@ const Create = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>
-                      Course Duration (Whole numbers of hours & minutes)
-                    </label>
+                    <label>Course Duration (Whole numbers of hours & minutes)</label>
                     <input
                       type="text"
                       placeholder="10 hours 30 minutes"
@@ -329,8 +314,7 @@ const Create = () => {
 
                   <div className="form-group">
                     <label>
-                      Course Profile (<i>Image less than 2 MB & size 750x500</i>
-                      )
+                      Course Profile (<i>Image less than 2 MB & size 750x500</i>)
                     </label>
 
                     <br />
@@ -349,18 +333,12 @@ const Create = () => {
 
                   <div className="form-group">
                     <label>
-                      Course Cover Photo (
-                      <i>Image less than 2 MB & size 1920x500</i>)
+                      Course Cover Photo (<i>Image less than 2 MB & size 1920x500</i>)
                     </label>
 
                     <br />
 
-                    <input
-                      type="file"
-                      name="coverPhoto"
-                      accept="image/*"
-                      onChange={handleChange}
-                    />
+                    <input type="file" name="coverPhoto" accept="image/*" onChange={handleChange} />
 
                     <br />
 
@@ -381,8 +359,7 @@ const Create = () => {
 
                   <div className="form-group">
                     <label>
-                      Course Preview Image (
-                      <i>Image less than 2 MB & size 750x500</i>)
+                      Course Preview Image (<i>Image less than 2 MB & size 750x500</i>)
                     </label>
 
                     <br />
@@ -406,11 +383,7 @@ const Create = () => {
                   >
                     <i className="flaticon-right-chevron"></i>
                     Create
-                    {imageUploading || loading ? (
-                      <Spinner color="success" />
-                    ) : (
-                      ""
-                    )}
+                    {imageUploading || loading ? <Spinner color="success" /> : ''}
                     <span></span>
                   </button>
                 </form>

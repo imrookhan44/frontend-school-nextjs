@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Link from "@/utils/ActiveLink";
-import { useSelector } from "react-redux";
-import { handleLogout } from "@/utils/auth";
-import SearchForm from "./SearchForm";
+import React, { useState, useEffect } from 'react';
+import Link from '@/utils/ActiveLink';
+import { useSelector } from 'react-redux';
+import { handleLogout } from '@/utils/auth';
+import SearchForm from './SearchForm';
 
 const Navbar = ({ user }) => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -13,25 +13,23 @@ const Navbar = ({ user }) => {
   };
 
   useEffect(() => {
-    let elementId = document.getElementById("navbar");
-    document.addEventListener("scroll", () => {
+    let elementId = document.getElementById('navbar');
+    document.addEventListener('scroll', () => {
       if (window.scrollY > 170) {
-        elementId.classList.add("is-sticky");
+        elementId.classList.add('is-sticky');
       } else {
-        elementId.classList.remove("is-sticky");
+        elementId.classList.remove('is-sticky');
       }
     });
   });
 
-  const isAdmin = user && user.role === "admin";
-  const isTeacher = user && user.role === "teacher";
+  const isAdmin = user && user.role === 'admin';
+  const isTeacher = user && user.role === 'teacher';
 
-  const classOne = menu
-    ? "collapse navbar-collapse"
-    : "collapse navbar-collapse show";
+  const classOne = menu ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
   const classTwo = menu
-    ? "navbar-toggler navbar-toggler-right collapsed"
-    : "navbar-toggler navbar-toggler-right";
+    ? 'navbar-toggler navbar-toggler-right collapsed'
+    : 'navbar-toggler navbar-toggler-right';
 
   return (
     <>
@@ -69,11 +67,7 @@ const Navbar = ({ user }) => {
                   </li>
 
                   <li className="nav-item">
-                    <Link
-                      legacyBehavior
-                      href="/courses"
-                      activeClassName="active"
-                    >
+                    <Link legacyBehavior href="/courses" activeClassName="active">
                       <a onClick={toggleNavbar} className="nav-link">
                         Courses
                       </a>
@@ -117,22 +111,14 @@ const Navbar = ({ user }) => {
                     {user ? (
                       <div className="user-dropdown">
                         <Link legacyBehavior href="/">
-                          <a
-                            onClick={(e) => e.preventDefault()}
-                            className="default-btn"
-                          >
-                            <i className="flaticon-user"></i> {user.name}{" "}
-                            <span></span>
+                          <a onClick={(e) => e.preventDefault()} className="default-btn">
+                            <i className="flaticon-user"></i> {user.name} <span></span>
                           </a>
                         </Link>
 
                         <ul className="dropdown-menu">
                           <li className="nav-item">
-                            <Link
-                              legacyBehavior
-                              href="/my-courses"
-                              activeClassName="active"
-                            >
+                            <Link legacyBehavior href="/my-courses" activeClassName="active">
                               <a onClick={toggleNavbar} className="nav-link">
                                 My Courses
                               </a>
@@ -140,11 +126,7 @@ const Navbar = ({ user }) => {
                           </li>
 
                           <li className="nav-item">
-                            <Link
-                              legacyBehavior
-                              href="/user/my-profile"
-                              activeClassName="active"
-                            >
+                            <Link legacyBehavior href="/user/my-profile" activeClassName="active">
                               <a onClick={toggleNavbar} className="nav-link">
                                 My Profile
                               </a>
@@ -152,11 +134,7 @@ const Navbar = ({ user }) => {
                           </li>
 
                           <li className="nav-item">
-                            <Link
-                              legacyBehavior
-                              href="/user/edit-profile"
-                              activeClassName="active"
-                            >
+                            <Link legacyBehavior href="/user/edit-profile" activeClassName="active">
                               <a onClick={toggleNavbar} className="nav-link">
                                 Edit Profile
                               </a>
@@ -193,8 +171,7 @@ const Navbar = ({ user }) => {
                     ) : (
                       <Link legacyBehavior href="/authentication">
                         <a className="default-btn">
-                          <i className="flaticon-user"></i> Login/Register{" "}
-                          <span></span>
+                          <i className="flaticon-user"></i> Login/Register <span></span>
                         </a>
                       </Link>
                     )}

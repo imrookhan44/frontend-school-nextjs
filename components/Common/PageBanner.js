@@ -1,12 +1,7 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
-const PageBanner = ({
-  pageTitle,
-  homePageUrl,
-  homePageText,
-  activePageText,
-}) => {
+const PageBanner = ({ pageTitle, homePageUrl, homePageText, activePageText }) => {
   return (
     <div className="page-title-area">
       <div className="container">

@@ -1,22 +1,22 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import { Alert } from "reactstrap";
-import baseUrl from "@/utils/baseUrl";
-import { Spinner } from "reactstrap";
-import toast from "react-hot-toast";
-import catchErrors from "@/utils/catchErrors";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
-import SideBar from "../SideBar";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import { Alert } from 'reactstrap';
+import baseUrl from '@/utils/baseUrl';
+import { Spinner } from 'reactstrap';
+import toast from 'react-hot-toast';
+import catchErrors from '@/utils/catchErrors';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from '@/utils/ActiveLink';
+import SideBar from '../SideBar';
 
 const INIT_VIDEO = {
-  video_url: "",
+  video_url: '',
   order: 0,
-  name: "",
-  description: "",
-  courseId: "",
-  sectionId: "",
+  name: '',
+  description: '',
+  courseId: '',
+  sectionId: ''
 };
 
 const UploadCourseVideo = ({ courses }) => {
@@ -34,7 +34,7 @@ const UploadCourseVideo = ({ courses }) => {
     const isVideo = Object.values({
       video_url,
       name,
-      order,
+      order
     }).every((el) => Boolean(el));
     isVideo ? setDisabled(false) : setDisabled(true);
   }, [video]);
@@ -42,9 +42,9 @@ const UploadCourseVideo = ({ courses }) => {
   const handleVideoUpload = async () => {
     // console.log(post.file_url)
     const data = new FormData();
-    data.append("file", video.video_url);
-    data.append("upload_preset", "dq1lv3uk");
-    data.append("cloud_name", "dxe8e6gy3");
+    data.append('file', video.video_url);
+    data.append('upload_preset', 'dq1lv3uk');
+    data.append('cloud_name', 'dxe8e6gy3');
     const response = await axios.post(process.env.CLOUDINARY_VIDEO_URL, data);
     const mediaUrl = response.data.url;
     return mediaUrl;
@@ -53,28 +53,25 @@ const UploadCourseVideo = ({ courses }) => {
   const handleChange = async (e) => {
     // console.log(d.value)
     const { name, value, files } = e.target;
-    if (name == "courseId") {
+    if (name == 'courseId') {
       if (!token) {
-        return redirectUser(ctx, "/login");
+        return redirectUser(ctx, '/login');
       }
 
       const payload = {
-        headers: { Authorization: token },
+        headers: { Authorization: token }
       };
 
       const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`;
       const response = await axios.get(url, payload);
       setSectionOptions(response.data.sections);
     }
-    if (name === "video_url") {
+    if (name === 'video_url') {
       const videoSize = files[0].size / 1024 / 1024;
       if (videoSize > 20) {
-        addToast(
-          "The video size greater than 20 MB. Make sure less than 20 MB.",
-          {
-            appearance: "error",
-          }
-        );
+        addToast('The video size greater than 20 MB. Make sure less than 20 MB.', {
+          appearance: 'error'
+        });
         e.target.value = null;
         return;
       }
@@ -89,10 +86,10 @@ const UploadCourseVideo = ({ courses }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      let videoUrl = "";
+      let videoUrl = '';
       if (video.video_url) {
         const videoUpload = await handleVideoUpload();
-        videoUrl = videoUpload.replace(/^http:\/\//i, "https://");
+        videoUrl = videoUpload.replace(/^http:\/\//i, 'https://');
       }
 
       console.log(videoUrl);
@@ -106,12 +103,12 @@ const UploadCourseVideo = ({ courses }) => {
         description,
         courseId,
         videoUrl,
-        sectionId,
+        sectionId
       };
 
       console.log(payload);
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token },
+        headers: { Authorization: token }
       });
 
       console.log(response.data);
@@ -141,7 +138,7 @@ const UploadCourseVideo = ({ courses }) => {
         <div className="container">
           {courses.length == 0 && (
             <Alert color="danger" className="text-center">
-              You have to create course first here{" "}
+              You have to create course first here{' '}
               <Link legacyBehavior href="/teacher/course/create">
                 <a>Create Course</a>
               </Link>
@@ -168,11 +165,7 @@ const UploadCourseVideo = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Course</label>
-                    <select
-                      onChange={handleChange}
-                      name="courseId"
-                      className="form-control"
-                    >
+                    <select onChange={handleChange} name="courseId" className="form-control">
                       <option>Select Course</option>
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
@@ -184,11 +177,7 @@ const UploadCourseVideo = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Section</label>
-                    <select
-                      onChange={handleChange}
-                      name="sectionId"
-                      className="form-control"
-                    >
+                    <select onChange={handleChange} name="sectionId" className="form-control">
                       <option>Select section</option>
                       {sectionOptions.map((section) => (
                         <option value={section.id} key={section.id}>
@@ -239,20 +228,12 @@ const UploadCourseVideo = ({ courses }) => {
 
                     <br />
 
-                    <input
-                      type="file"
-                      name="video_url"
-                      accept="video/*"
-                      onChange={handleChange}
-                    />
+                    <input type="file" name="video_url" accept="video/*" onChange={handleChange} />
                   </div>
 
                   <br />
 
-                  <button
-                    className="default-btn"
-                    disabled={disabled || loading}
-                  >
+                  <button className="default-btn" disabled={disabled || loading}>
                     <i className="flaticon-right-chevron"></i>
                     Upload
                   </button>
@@ -273,7 +254,7 @@ UploadCourseVideo.getInitialProps = async (ctx) => {
   }
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/my-courses`;

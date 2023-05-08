@@ -1,4 +1,4 @@
-import * as types from "./types";
+import * as types from './types';
 
 // INCREMENT COUNTER BY 1
 export const incrementCount = () => ({ type: types.INCREMENT });

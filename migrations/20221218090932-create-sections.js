@@ -1,52 +1,52 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Sections", {
+    await queryInterface.createTable('Sections', {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true,
+        primaryKey: true
       },
       order: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       courseId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Courses",
-          key: "id",
-          as: "courseId",
-        },
+          model: 'Courses',
+          key: 'id',
+          as: 'courseId'
+        }
       },
       userId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Users",
-          key: "id",
-          as: "userId",
-        },
+          model: 'Users',
+          key: 'id',
+          as: 'userId'
+        }
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Sections");
-  },
+    await queryInterface.dropTable('Sections');
+  }
 };

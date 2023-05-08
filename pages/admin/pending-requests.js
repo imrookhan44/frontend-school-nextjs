@@ -1,12 +1,12 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import { useToasts } from "react-toast-notifications";
-import { useRouter } from "next/router";
-import baseUrl from "@/utils/baseUrl";
-import catchErrors from "@/utils/catchErrors";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import { useToasts } from 'react-toast-notifications';
+import { useRouter } from 'next/router';
+import baseUrl from '@/utils/baseUrl';
+import catchErrors from '@/utils/catchErrors';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from '@/utils/ActiveLink';
 
 const pendingRequests = ({ pendingRequests }) => {
   // console.log(pendingRequests)
@@ -20,9 +20,9 @@ const pendingRequests = ({ pendingRequests }) => {
       const response = await axios.post(url, payload);
       // console.log(response.data)
       addToast(response.data, {
-        appearance: "success",
+        appearance: 'success'
       });
-      router.push("/admin/pending-requests");
+      router.push('/admin/pending-requests');
     } catch (error) {
       catchErrors(error, setError);
     }
@@ -35,9 +35,9 @@ const pendingRequests = ({ pendingRequests }) => {
       const response = await axios.post(url, payload);
       // console.log(response.data)
       addToast(response.data, {
-        appearance: "success",
+        appearance: 'success'
       });
-      router.push("/admin/pending-requests");
+      router.push('/admin/pending-requests');
     } catch (error) {
       catchErrors(error, setError);
     }
@@ -59,11 +59,7 @@ const pendingRequests = ({ pendingRequests }) => {
               <div className="td-sidebar">
                 <ul>
                   <li>
-                    <Link
-                      legacyBehavior
-                      href="/admin/pending-requests"
-                      activeClassName="active"
-                    >
+                    <Link legacyBehavior href="/admin/pending-requests" activeClassName="active">
                       <a>Pending Requests</a>
                     </Link>
                   </li>
@@ -105,8 +101,7 @@ const pendingRequests = ({ pendingRequests }) => {
                               <td className="text-right">
                                 <button
                                   onClick={(e) => {
-                                    window.confirm("Are you sure?") &&
-                                      approveReq(request.id);
+                                    window.confirm('Are you sure?') && approveReq(request.id);
                                   }}
                                   className="btn btn-success mr-05"
                                 >
@@ -115,8 +110,7 @@ const pendingRequests = ({ pendingRequests }) => {
 
                                 <button
                                   onClick={(e) => {
-                                    window.confirm("Are you sure?") &&
-                                      declineReq(request.id);
+                                    window.confirm('Are you sure?') && declineReq(request.id);
                                   }}
                                   className="btn btn-danger"
                                 >
@@ -179,7 +173,7 @@ pendingRequests.getInitialProps = async (ctx) => {
   // console.log(id)
   const { token } = parseCookies(ctx);
   if (!token) {
-    redirectUser(ctx, "/authentication");
+    redirectUser(ctx, '/authentication');
   }
   const url = `${baseUrl}/api/v1/apply/pending-requests`;
   const payload = { headers: { Authorization: token } };

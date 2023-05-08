@@ -1,20 +1,20 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import { Alert } from "reactstrap";
-import baseUrl from "@/utils/baseUrl";
-import { Spinner } from "reactstrap";
-import toast from "react-hot-toast";
-import catchErrors from "@/utils/catchErrors";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
-import SideBar from "../SideBar";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import { Alert } from 'reactstrap';
+import baseUrl from '@/utils/baseUrl';
+import { Spinner } from 'reactstrap';
+import toast from 'react-hot-toast';
+import catchErrors from '@/utils/catchErrors';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from '@/utils/ActiveLink';
+import SideBar from '../SideBar';
 
 const INITSECTION = {
   order: 0,
-  name: "",
-  description: "",
-  courseId: "",
+  name: '',
+  description: '',
+  courseId: ''
 };
 
 const addSection = ({ courses }) => {
@@ -30,7 +30,7 @@ const addSection = ({ courses }) => {
     const isSection = Object.values({
       name,
       order,
-      description,
+      description
     }).every((el) => Boolean(el));
     isSection ? setDisabled(false) : setDisabled(true);
   }, [section]);
@@ -50,11 +50,11 @@ const addSection = ({ courses }) => {
         order,
         name,
         description,
-        courseId,
+        courseId
       };
 
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token },
+        headers: { Authorization: token }
       });
 
       console.log(response.data);
@@ -84,7 +84,7 @@ const addSection = ({ courses }) => {
         <div className="container">
           {courses.length == 0 && (
             <Alert color="danger" className="text-center">
-              You have to create course first here{" "}
+              You have to create course first here{' '}
               <Link legacyBehavior href="/teacher/course/create">
                 <a>Create Course</a>
               </Link>
@@ -111,11 +111,7 @@ const addSection = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Course</label>
-                    <select
-                      onChange={handleChange}
-                      name="courseId"
-                      className="form-control"
-                    >
+                    <select onChange={handleChange} name="courseId" className="form-control">
                       <option>Select Course</option>
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
@@ -161,10 +157,7 @@ const addSection = ({ courses }) => {
                     />
                   </div>
 
-                  <button
-                    className="default-btn"
-                    disabled={disabled || loading}
-                  >
+                  <button className="default-btn" disabled={disabled || loading}>
                     <i className="flaticon-right-chevron"></i>
                     Add
                   </button>
@@ -185,7 +178,7 @@ addSection.getInitialProps = async (ctx) => {
   }
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/my-courses`;

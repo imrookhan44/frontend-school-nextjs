@@ -1,10 +1,10 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import baseUrl from "@/utils/baseUrl";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
-import SideBar from "../SideBar";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import baseUrl from '@/utils/baseUrl';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from '@/utils/ActiveLink';
+import SideBar from '../SideBar';
 
 const courseEdit = ({ courses }) => {
   return (
@@ -78,7 +78,7 @@ courseEdit.getInitialProps = async (ctx) => {
   }
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/my-courses`;

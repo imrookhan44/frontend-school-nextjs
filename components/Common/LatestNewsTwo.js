@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 const LatestNewsTwo = () => {
   return (
@@ -9,8 +9,8 @@ const LatestNewsTwo = () => {
           <span className="sub-title">News</span>
           <h2>Check Out Our Latest Blog</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
 
@@ -36,11 +36,7 @@ const LatestNewsTwo = () => {
                 <ul className="post-content-footer d-flex align-items-center">
                   <li>
                     <div className="post-author d-flex align-items-center">
-                      <img
-                        src="/images/user1.jpg"
-                        className="rounded-circle"
-                        alt="image"
-                      />
+                      <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
                       <span>Alex Morgan</span>
                     </div>
                   </li>
@@ -67,10 +63,7 @@ const LatestNewsTwo = () => {
                     <div className="post-content">
                       <h3>
                         <Link legacyBehavior href="/single-blog-3">
-                          <a>
-                            Online Learning Can Prepare Students For A
-                            Fast-Changing
-                          </a>
+                          <a>Online Learning Can Prepare Students For A Fast-Changing</a>
                         </Link>
                       </h3>
                     </div>
@@ -89,9 +82,7 @@ const LatestNewsTwo = () => {
                     <div className="post-content">
                       <h3>
                         <Link legacyBehavior href="/single-blog-3">
-                          <a>
-                            As Learning Moves Online, Trigger Warnings Must Too
-                          </a>
+                          <a>As Learning Moves Online, Trigger Warnings Must Too</a>
                         </Link>
                       </h3>
                     </div>
@@ -104,7 +95,7 @@ const LatestNewsTwo = () => {
           <div className="col-lg-12 col-md-12">
             <div className="blog-post-info">
               <p>
-                Get into details now?​{" "}
+                Get into details now?​{' '}
                 <Link legacyBehavior href="/blog-3">
                   <a>View all posts</a>
                 </Link>

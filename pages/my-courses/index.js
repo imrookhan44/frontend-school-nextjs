@@ -1,9 +1,9 @@
-import React from "react";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "next/link";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import baseUrl from "@/utils/baseUrl";
+import React from 'react';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from 'next/link';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import baseUrl from '@/utils/baseUrl';
 
 const MyCourses = ({ enrolled }) => {
   console.log(enrolled);
@@ -39,9 +39,7 @@ const MyCourses = ({ enrolled }) => {
                         </a>
                       </Link>
 
-                      <div className="price shadow">
-                        ${enrolledCourse.course.price}
-                      </div>
+                      <div className="price shadow">${enrolledCourse.course.price}</div>
                     </div>
 
                     <div className="courses-content">
@@ -50,7 +48,7 @@ const MyCourses = ({ enrolled }) => {
                           src={`${
                             enrolledCourse.user.profilePhoto
                               ? enrolledCourse.user.profilePhoto
-                              : "/images/user1.jpg"
+                              : '/images/user1.jpg'
                           }`}
                           className="rounded-circle"
                           alt={enrolledCourse.user.name}
@@ -72,12 +70,11 @@ const MyCourses = ({ enrolled }) => {
 
                       <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                         <li>
-                          <i className="flaticon-agenda"></i>{" "}
+                          <i className="flaticon-agenda"></i>{' '}
                           {parseInt(enrolledCourse.course.lessons)} Lessons
                         </li>
                         <li>
-                          <i className="flaticon-people"></i>{" "}
-                          {enrolledCourse.course.duration}
+                          <i className="flaticon-people"></i> {enrolledCourse.course.duration}
                         </li>
                       </ul>
                     </div>
@@ -103,7 +100,7 @@ MyCourses.getInitialProps = async (ctx) => {
   }
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/enrolled`;

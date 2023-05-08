@@ -1,20 +1,20 @@
-import React from "react";
-import PageBanner from "@/components/Common/PageBanner";
+import React from 'react';
+import PageBanner from '@/components/Common/PageBanner';
 
-import { parseCookies } from "nookies";
+import { parseCookies } from 'nookies';
 
 const SingleQuiz = ({ quiz, token }) => {
-  if (typeof window !== "undefined") {
-    window.parent.postMessage({ message: "quizData", value: quiz }, "*");
+  if (typeof window !== 'undefined') {
+    window.parent.postMessage({ message: 'quizData', value: quiz }, '*');
   }
 
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle={"Quiz"}
+        pageTitle={'Quiz'}
         homePageUrl=" /my-courses"
         homePageText="My Courses"
-        activePageText={"Quiz"}
+        activePageText={'Quiz'}
       />
       <iframe
         width="100%"

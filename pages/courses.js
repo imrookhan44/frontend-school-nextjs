@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 // import Navbar from '../components/_App/Navbar';
-import PageBanner from "../components/Common/PageBanner";
-import Link from "next/link";
+import PageBanner from '../components/Common/PageBanner';
+import Link from 'next/link';
 // import Footer from '../components/_App/Footer';
 
 const CoursesGrid03 = () => {
@@ -20,8 +20,7 @@ const CoursesGrid03 = () => {
           <div className="edemy-grid-sorting row align-items-center">
             <div className="col-lg-8 col-md-6 result-count">
               <p>
-                We found <span className="count">12</span> courses available for
-                you
+                We found <span className="count">12</span> courses available for you
               </p>
             </div>
 
@@ -54,26 +53,19 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user1.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
                     <span>Alex Morgan</span>
                   </div>
 
                   <h3>
                     <Link legacyBehavior href="/single-courses-1">
-                      <a>
-                        The Data Science Course 2020: Complete Data Science
-                        Bootcamp
-                      </a>
+                      <a>The Data Science Course 2020: Complete Data Science Bootcamp</a>
                     </Link>
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -102,25 +94,19 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user2.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user2.jpg" className="rounded-circle" alt="image" />
                     <span>Sarah Taylor</span>
                   </div>
 
                   <h3>
                     <Link legacyBehavior href="/single-courses-1">
-                      <a>
-                        Java Programming MasterclassName for Software Developers
-                      </a>
+                      <a>Java Programming MasterclassName for Software Developers</a>
                     </Link>
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -149,25 +135,19 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user3.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user3.jpg" className="rounded-circle" alt="image" />
                     <span>David Warner</span>
                   </div>
 
                   <h3>
                     <Link legacyBehavior href="/single-courses-1">
-                      <a>
-                        Deep Learning A-Z™: Hands-On Artificial Neural Networks
-                      </a>
+                      <a>Deep Learning A-Z™: Hands-On Artificial Neural Networks</a>
                     </Link>
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -196,26 +176,19 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user6.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user6.jpg" className="rounded-circle" alt="image" />
                     <span>Alex Morgan</span>
                   </div>
 
                   <h3>
                     <Link legacyBehavior href="/single-courses-1">
-                      <a>
-                        Python for Finance: Investment Fundamentals & Data
-                        Analytics
-                      </a>
+                      <a>Python for Finance: Investment Fundamentals & Data Analytics</a>
                     </Link>
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -244,26 +217,19 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user5.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user5.jpg" className="rounded-circle" alt="image" />
                     <span>Sarah Taylor</span>
                   </div>
 
                   <h3>
                     <Link legacyBehavior href="/single-courses-1">
-                      <a>
-                        Machine Learning A-Z™: Hands-On Python & R In Data
-                        Science
-                      </a>
+                      <a>Machine Learning A-Z™: Hands-On Python & R In Data Science</a>
                     </Link>
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -292,26 +258,19 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user4.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user4.jpg" className="rounded-circle" alt="image" />
                     <span>James Anderson</span>
                   </div>
 
                   <h3>
                     <Link legacyBehavior href="/single-courses-1">
-                      <a>
-                        R Programming A-Z™: R For Data Science With Real
-                        Exercises!
-                      </a>
+                      <a>R Programming A-Z™: R For Data Science With Real Exercises!</a>
                     </Link>
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -340,11 +299,7 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user1.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
                     <span>Alex Morgan</span>
                   </div>
 
@@ -355,8 +310,8 @@ const CoursesGrid03 = () => {
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -385,11 +340,7 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user2.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user2.jpg" className="rounded-circle" alt="image" />
                     <span>Sarah Taylor</span>
                   </div>
 
@@ -400,8 +351,8 @@ const CoursesGrid03 = () => {
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -430,11 +381,7 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user3.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user3.jpg" className="rounded-circle" alt="image" />
                     <span>David Warner</span>
                   </div>
 
@@ -445,8 +392,8 @@ const CoursesGrid03 = () => {
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -475,11 +422,7 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user6.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user6.jpg" className="rounded-circle" alt="image" />
                     <span>Alex Morgan</span>
                   </div>
 
@@ -490,8 +433,8 @@ const CoursesGrid03 = () => {
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -520,11 +463,7 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user5.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user5.jpg" className="rounded-circle" alt="image" />
                     <span>Sarah Taylor</span>
                   </div>
 
@@ -535,8 +474,8 @@ const CoursesGrid03 = () => {
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>
@@ -565,11 +504,7 @@ const CoursesGrid03 = () => {
                 </div>
                 <div className="courses-content">
                   <div className="course-author d-flex align-items-center">
-                    <img
-                      src="/images/user4.jpg"
-                      className="rounded-circle"
-                      alt="image"
-                    />
+                    <img src="/images/user4.jpg" className="rounded-circle" alt="image" />
                     <span>James Anderson</span>
                   </div>
 
@@ -580,8 +515,8 @@ const CoursesGrid03 = () => {
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
+                    Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
                   </p>
                   <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                     <li>

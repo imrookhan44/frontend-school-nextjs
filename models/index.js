@@ -1,31 +1,26 @@
-"use strict";
+'use strict';
 // main model file
-const fs = require("fs");
-const path = require("path");
-const Sequelize = require("sequelize");
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/config.json")[env];
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
-import User from "./user";
-import Course from "./course";
-import Video from "./video";
-import Section from "./section";
-import Enroled_courses from "./enroled_courses";
-import Quiz from "./quiz";
-import Excercise from "./excercise";
-import TestCase from "./test_case";
+import User from './user';
+import Course from './course';
+import Video from './video';
+import Section from './section';
+import Enroled_courses from './enroled_courses';
+import Quiz from './quiz';
+import Excercise from './excercise';
+import TestCase from './test_case';
 
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-  );
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 db.sequelize = sequelize;
@@ -42,142 +37,142 @@ db.test_cases = TestCase(sequelize, Sequelize);
 
 // hasMany relationshipt with user and course
 db.users.hasMany(db.courses, {
-  as: "courses",
-  foreignKey: "userId",
+  as: 'courses',
+  foreignKey: 'userId'
 });
 db.courses.belongsTo(db.users, {
-  foreignKey: "userId",
-  as: "user",
+  foreignKey: 'userId',
+  as: 'user'
 });
 
 // hasMany relationshipt with course and videos
 db.courses.hasMany(db.videos, {
-  as: "videos",
-  foreignKey: "courseId",
+  as: 'videos',
+  foreignKey: 'courseId'
 });
 db.videos.belongsTo(db.courses, {
-  foreignKey: "courseId",
-  as: "course",
+  foreignKey: 'courseId',
+  as: 'course'
 });
 
 // hasMany relationshipt with course and section
 db.courses.hasMany(db.sections, {
-  as: "sections",
-  foreignKey: "courseId",
+  as: 'sections',
+  foreignKey: 'courseId'
 });
 db.sections.belongsTo(db.courses, {
-  foreignKey: "courseId",
-  as: "course",
+  foreignKey: 'courseId',
+  as: 'course'
 });
 
 // hasMany relationshipt with user and section
 db.users.hasMany(db.sections, {
-  as: "sections",
-  foreignKey: "userId",
+  as: 'sections',
+  foreignKey: 'userId'
 });
 db.sections.belongsTo(db.courses, {
-  foreignKey: "userId",
-  as: "user",
+  foreignKey: 'userId',
+  as: 'user'
 });
 
 // hasMany relationshipt with course and quiz
 db.courses.hasMany(db.quizzes, {
-  as: "quizzes",
-  foreignKey: "courseId",
+  as: 'quizzes',
+  foreignKey: 'courseId'
 });
 db.quizzes.belongsTo(db.courses, {
-  foreignKey: "courseId",
-  as: "course",
+  foreignKey: 'courseId',
+  as: 'course'
 });
 
 // hasMany relationshipt with section and quiz
 db.sections.hasMany(db.quizzes, {
-  as: "quizzes",
-  foreignKey: "sectionId",
+  as: 'quizzes',
+  foreignKey: 'sectionId'
 });
 db.quizzes.belongsTo(db.sections, {
-  foreignKey: "sectionId",
-  as: "section",
+  foreignKey: 'sectionId',
+  as: 'section'
 });
 
 // hasMany relationshipt with course and quiz
 db.courses.hasMany(db.excercises, {
-  as: "excercises",
-  foreignKey: "courseId",
+  as: 'excercises',
+  foreignKey: 'courseId'
 });
 db.excercises.belongsTo(db.courses, {
-  foreignKey: "courseId",
-  as: "course",
+  foreignKey: 'courseId',
+  as: 'course'
 });
 
 // hasMany relationshipt with excercise and test_case
 db.excercises.hasMany(db.test_cases, {
-  as: "test_cases",
-  foreignKey: "excerciseId",
+  as: 'test_cases',
+  foreignKey: 'excerciseId'
 });
 db.test_cases.belongsTo(db.excercises, {
-  foreignKey: "excerciseId",
-  as: "excercise",
+  foreignKey: 'excerciseId',
+  as: 'excercise'
 });
 
 // hasMany relationshipt with section and quiz
 db.sections.hasMany(db.excercises, {
-  as: "excercises",
-  foreignKey: "sectionId",
+  as: 'excercises',
+  foreignKey: 'sectionId'
 });
 db.excercises.belongsTo(db.sections, {
-  foreignKey: "sectionId",
-  as: "section",
+  foreignKey: 'sectionId',
+  as: 'section'
 });
 
 // hasMany relationshipt with section and video
 db.sections.hasMany(db.videos, {
-  as: "videos",
-  foreignKey: "sectionId",
+  as: 'videos',
+  foreignKey: 'sectionId'
 });
 db.videos.belongsTo(db.sections, {
-  foreignKey: "sectionId",
-  as: "section",
+  foreignKey: 'sectionId',
+  as: 'section'
 });
 
 // hasMany relationshipt with user and quiz
 db.users.hasMany(db.quizzes, {
-  as: "quizzes",
-  foreignKey: "userId",
+  as: 'quizzes',
+  foreignKey: 'userId'
 });
 db.quizzes.belongsTo(db.courses, {
-  foreignKey: "userId",
-  as: "user",
+  foreignKey: 'userId',
+  as: 'user'
 });
 
 // hasMany relationshipt with user and videos
 db.users.hasMany(db.videos, {
-  as: "videos",
-  foreignKey: "userId",
+  as: 'videos',
+  foreignKey: 'userId'
 });
 db.videos.belongsTo(db.courses, {
-  foreignKey: "userId",
-  as: "user",
+  foreignKey: 'userId',
+  as: 'user'
 });
 
 // hasMany relationshipt with course and enroled
 db.courses.hasMany(db.enroled_courses, {
-  as: "enroled_courses",
-  foreignKey: "courseId",
+  as: 'enroled_courses',
+  foreignKey: 'courseId'
 });
 db.enroled_courses.belongsTo(db.courses, {
-  foreignKey: "courseId",
-  as: "course",
+  foreignKey: 'courseId',
+  as: 'course'
 });
 
 // hasMany relationshipt with user and enroled
 db.users.hasMany(db.enroled_courses, {
-  as: "enroled_courses",
-  foreignKey: "userId",
+  as: 'enroled_courses',
+  foreignKey: 'userId'
 });
 db.enroled_courses.belongsTo(db.users, {
-  foreignKey: "userId",
-  as: "user",
+  foreignKey: 'userId',
+  as: 'user'
 });
 
 // console.log('######', db)

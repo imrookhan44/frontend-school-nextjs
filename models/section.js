@@ -1,5 +1,5 @@
-"use strict";
-const { Model } = require("sequelize");
+'use strict';
+const { Model } = require('sequelize');
 module.exports = (sequelize, Sequelize) => {
   class Section extends Model {
     /**
@@ -16,39 +16,39 @@ module.exports = (sequelize, Sequelize) => {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true,
+        primaryKey: true
       },
       order: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       courseId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Courses",
-          key: "id",
-          as: "courseId",
-        },
+          model: 'Courses',
+          key: 'id',
+          as: 'courseId'
+        }
       },
       userId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Users",
-          key: "id",
-          as: "userId",
-        },
-      },
+          model: 'Users',
+          key: 'id',
+          as: 'userId'
+        }
+      }
     },
     {
       sequelize,
-      modelName: "Section",
+      modelName: 'Section'
     }
   );
   return Section;

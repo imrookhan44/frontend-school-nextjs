@@ -1,22 +1,22 @@
-import React from "react";
-import { Alert } from "reactstrap";
-import Link from "next/link";
-import axios from "axios";
-import catchErrors from "../../utils/catchErrors";
-import baseUrl from "../../utils/baseUrl";
-import { handleLogin } from "../../utils/auth";
-import LoadingSpinner from "@/utils/LoadingSpinner";
+import React from 'react';
+import { Alert } from 'reactstrap';
+import Link from 'next/link';
+import axios from 'axios';
+import catchErrors from '../../utils/catchErrors';
+import baseUrl from '../../utils/baseUrl';
+import { handleLogin } from '../../utils/auth';
+import LoadingSpinner from '@/utils/LoadingSpinner';
 
 const INITIAL_USER = {
-  email: "",
-  password: "",
+  email: '',
+  password: ''
 };
 
 const LoginForm = () => {
   const [user, setUser] = React.useState(INITIAL_USER);
   const [disabled, setDisabled] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
+  const [error, setError] = React.useState('');
 
   React.useEffect(() => {
     const isUser = Object.values(user).every((el) => Boolean(el));
@@ -32,7 +32,7 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      setError("");
+      setError('');
       const url = `${baseUrl}/api/v1/auth/signin`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
@@ -93,7 +93,7 @@ const LoginForm = () => {
 
         <button type="submit" disabled={disabled}>
           Log In
-          {loading ? <LoadingSpinner /> : ""}
+          {loading ? <LoadingSpinner /> : ''}
         </button>
       </form>
     </div>

@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-const ModalVideo = dynamic(import("react-modal-video"));
+import React from 'react';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+const ModalVideo = dynamic(import('react-modal-video'));
 
 const AboutUsContentThree = () => {
   const [display, setDisplay] = React.useState(false);
@@ -25,15 +25,14 @@ const AboutUsContentThree = () => {
                 <span className="sub-title">Distance Learning</span>
                 <h2>Build Your Project Management Skills Online, Anytime</h2>
                 <p>
-                  Want to learn and earn PDUs or CEUs on your schedule —
-                  anytime, anywhere? Or, pick up a new skill quickly like,
-                  project team leadership or agile? Browse our most popular
-                  online courses.
+                  Want to learn and earn PDUs or CEUs on your schedule — anytime, anywhere? Or, pick
+                  up a new skill quickly like, project team leadership or agile? Browse our most
+                  popular online courses.
                 </p>
                 <p>
                   <strong>
-                    Grow your knowledge and your opportunities with thought
-                    leadership, training and tools.
+                    Grow your knowledge and your opportunities with thought leadership, training and
+                    tools.
                   </strong>
                 </p>
               </div>
@@ -85,7 +84,7 @@ const AboutUsContentThree = () => {
           onClose={() => setIsOpen(!isOpen)}
         />
       ) : (
-        ""
+        ''
       )}
     </React.Fragment>
   );

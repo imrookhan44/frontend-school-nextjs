@@ -10,24 +10,24 @@ import PremiumAccess from '../components/Common/PremiumAccess';
 // import Footer from '../components/_App/Footer';
 
 const About1 = () => {
-    return (
-        <React.Fragment>
-            {/* <Navbar /> */}
-            <PageBanner 
-                pageTitle="About Us" 
-                homePageUrl="/" 
-                homePageText="Home" 
-                activePageText="About Us" 
-            />  
-            <AboutUs />
-            <FeedbackSliderWithFunFacts />
-            <Features />
-            <CourseAdvisor />
-            <PremiumAccess />
-            <Partner />
-            {/* <Footer /> */}
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      {/* <Navbar /> */}
+      <PageBanner
+        pageTitle="About Us"
+        homePageUrl="/"
+        homePageText="Home"
+        activePageText="About Us"
+      />
+      <AboutUs />
+      <FeedbackSliderWithFunFacts />
+      <Features />
+      <CourseAdvisor />
+      <PremiumAccess />
+      <Partner />
+      {/* <Footer /> */}
+    </React.Fragment>
+  );
+};
 
 export default About1;

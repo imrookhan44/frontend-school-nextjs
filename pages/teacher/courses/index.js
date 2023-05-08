@@ -1,11 +1,11 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import baseUrl from "@/utils/baseUrl";
-import CourseCard from "@/components/Courses/CourseCard";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
-import SideBar from "../SideBar";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import baseUrl from '@/utils/baseUrl';
+import CourseCard from '@/components/Courses/CourseCard';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from '@/utils/ActiveLink';
+import SideBar from '../SideBar';
 
 const index = ({ courses }) => {
   // console.log(courses)
@@ -28,9 +28,7 @@ const index = ({ courses }) => {
             <div className="col-md-8 col-lg-8">
               <div className="row">
                 {courses.length ? (
-                  courses.map((course) => (
-                    <CourseCard {...course} key={course.id} />
-                  ))
+                  courses.map((course) => <CourseCard {...course} key={course.id} />)
                 ) : (
                   <div className="col-lg-12">
                     <h3 className="empty-content">Empty</h3>
@@ -52,7 +50,7 @@ index.getInitialProps = async (ctx) => {
   }
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/my-courses`;

@@ -1,8 +1,8 @@
-import React from "react";
-import PageBanner from "@/components/SingleCoursesTwo/PageBanner";
-import YouMightLikeTheCourses from "@/components/Courses/YouMightLikeTheCourses";
-import CoursesDetailsSidebar from "@/components/SingleCoursesTwo/CoursesDetailsSidebar";
-import Link from "next/link";
+import React from 'react';
+import PageBanner from '@/components/SingleCoursesTwo/PageBanner';
+import YouMightLikeTheCourses from '@/components/Courses/YouMightLikeTheCourses';
+import CoursesDetailsSidebar from '@/components/SingleCoursesTwo/CoursesDetailsSidebar';
+import Link from 'next/link';
 
 const SingleCourses = () => {
   return (
@@ -23,9 +23,8 @@ const SingleCourses = () => {
               <div className="col-lg-8 col-md-12">
                 <div className="courses-title">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy.
                   </p>
                 </div>
                 <div className="courses-meta">
@@ -65,9 +64,7 @@ const SingleCourses = () => {
                       <i className="bx bxs-star"></i>
                       <i className="bx bxs-star"></i>
                     </div>
-                    <span className="reviews-total d-inline-block">
-                      (3 reviews)
-                    </span>
+                    <span className="reviews-total d-inline-block">(3 reviews)</span>
                   </div>
 
                   <div className="price">$150</div>
@@ -92,36 +89,32 @@ const SingleCourses = () => {
                 <h3>Description</h3>
                 <p>
                   <strong>
-                    Hi! Welcome to Photography Crash Course for Photographer,
-                    the only course you need to become a BI Analyst.
+                    Hi! Welcome to Photography Crash Course for Photographer, the only course you
+                    need to become a BI Analyst.
                   </strong>
                 </p>
                 <p>
-                  Here are some more details of what you get with The Business
-                  Intelligence Analyst Course:
+                  Here are some more details of what you get with The Business Intelligence Analyst
+                  Course:
                 </p>
                 <ul className="description-features-list">
                   <li>
-                    <strong>Introduction to Data and Data Science</strong> –
-                    Make sense of terms like business intelligence, traditional
-                    and big data, traditional statistical methods, machine
-                    learning, predictive analytics, supervised learning,
-                    unsupervised learning, reinforcement learning, and many
-                    more;
+                    <strong>Introduction to Data and Data Science</strong> – Make sense of terms
+                    like business intelligence, traditional and big data, traditional statistical
+                    methods, machine learning, predictive analytics, supervised learning,
+                    unsupervised learning, reinforcement learning, and many more;
                   </li>
                   <li>
-                    <strong>Database theory</strong> – Before you start using
-                    SQL, it is highly beneficial to learn about the underlying
-                    database theory and acquire an understanding of why
-                    databases are created and how they can help us manage data;
+                    <strong>Database theory</strong> – Before you start using SQL, it is highly
+                    beneficial to learn about the underlying database theory and acquire an
+                    understanding of why databases are created and how they can help us manage data;
                   </li>
                   <li>
-                    <strong>SQL</strong> – when you can work with SQL, it means
-                    you don’t have to rely on others sending you data and
-                    executing queries for you. You can do that on your own. This
-                    allows you to be independent and dig deeper into the data to
-                    obtain the answers to questions that might improve the way
-                    your company does its business;
+                    <strong>SQL</strong> – when you can work with SQL, it means you don’t have to
+                    rely on others sending you data and executing queries for you. You can do that
+                    on your own. This allows you to be independent and dig deeper into the data to
+                    obtain the answers to questions that might improve the way your company does its
+                    business;
                   </li>
                 </ul>
 
@@ -130,13 +123,8 @@ const SingleCourses = () => {
                   <h3>Python Introduction</h3>
                   <ul>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          Python Introduction
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">Python Introduction</span>
                         <div className="courses-meta">
                           <span className="questions">5 questions</span>
                           <span className="duration">01 Hour</span>
@@ -148,10 +136,7 @@ const SingleCourses = () => {
                   <h3>Stepping into the World of Python</h3>
                   <ul>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
+                      <a href="#" className="d-flex justify-content-between align-items-center">
                         <span className="courses-name">NumPy Introduction</span>
                         <div className="courses-meta">
                           <span className="duration">15 Min</span>
@@ -162,13 +147,8 @@ const SingleCourses = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          NumPy Getting Started
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">NumPy Getting Started</span>
                         <div className="courses-meta">
                           <span className="duration">30 Min</span>
                           <span className="status locked">
@@ -178,13 +158,8 @@ const SingleCourses = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          NumPy Creating Arrays
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">NumPy Creating Arrays</span>
                         <div className="courses-meta">
                           <span className="duration">45 Min</span>
                           <span className="status locked">
@@ -194,13 +169,8 @@ const SingleCourses = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          NumPy Array Indexing
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">NumPy Array Indexing</span>
                         <div className="courses-meta">
                           <span className="questions">4 questions</span>
                           <span className="duration">1 Hour</span>
@@ -211,13 +181,8 @@ const SingleCourses = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          NumPy Array Slicing
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">NumPy Array Slicing</span>
                         <div className="courses-meta">
                           <span className="duration">1.5 Hour</span>
                           <span className="status locked">
@@ -231,10 +196,7 @@ const SingleCourses = () => {
                   <h3>Python MySQL</h3>
                   <ul>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
+                      <a href="#" className="d-flex justify-content-between align-items-center">
                         <span className="courses-name">Python MySQL</span>
                         <div className="courses-meta">
                           <span className="duration">01 Hour</span>
@@ -245,13 +207,8 @@ const SingleCourses = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          Python MySQL Create Database
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">Python MySQL Create Database</span>
                         <div className="courses-meta">
                           <span className="questions">3 questions</span>
                           <span className="duration">1.1 Hour</span>
@@ -262,13 +219,8 @@ const SingleCourses = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <span className="courses-name">
-                          Python MySQL Create Table
-                        </span>
+                      <a href="#" className="d-flex justify-content-between align-items-center">
+                        <span className="courses-name">Python MySQL Create Table</span>
                         <div className="courses-meta">
                           <span className="duration">1.5 Hour</span>
                           <span className="status locked">
@@ -348,34 +300,25 @@ const SingleCourses = () => {
 
                 <h3>Requirements</h3>
                 <ul className="requirements-list">
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
                   <li>
-                    Contrary to popular belief, Lorem Ipsum is not simply random
-                    text.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry.
                   </li>
-                  <li>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
-                  </li>
-                  <li>
-                    The standard Lorem Ipsum passage, used since the 1500s.
-                  </li>
+                  <li>The standard Lorem Ipsum passage, used since the 1500s.</li>
                 </ul>
 
                 <h3>Who this course is for:</h3>
                 <ul className="audience-list">
                   <li>Beginners to programming and data science</li>
                   <li>
-                    Students eager to learn about job opportunities in the field
-                    of data science
+                    Students eager to learn about job opportunities in the field of data science
                   </li>
                   <li>
-                    Candidates willing to boost their resume by learning how to
-                    combine the knowledge of Statistics, SQL, and Tableau in a
-                    real-world working environment
+                    Candidates willing to boost their resume by learning how to combine the
+                    knowledge of Statistics, SQL, and Tableau in a real-world working environment
                   </li>
-                  <li>
-                    People interested in a Business Intelligence Analyst career
-                  </li>
+                  <li>People interested in a Business Intelligence Analyst career</li>
                 </ul>
 
                 <h3>Meet Your Instructors</h3>
@@ -391,20 +334,17 @@ const SingleCourses = () => {
                       <div className="author-profile-title-details">
                         <div className="author-profile-details">
                           <h4>James Anderson</h4>
-                          <span className="d-block">
-                            Photographer, Author, Teacher
-                          </span>
+                          <span className="d-block">Photographer, Author, Teacher</span>
                         </div>
                       </div>
                     </div>
                     <p>
-                      James Anderson is a celebrated photographer, author, and
-                      teacher who brings passion to everything he does.
+                      James Anderson is a celebrated photographer, author, and teacher who brings
+                      passion to everything he does.
                     </p>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
                   </div>
                 </div>
@@ -502,8 +442,8 @@ const SingleCourses = () => {
 
                     <span className="d-block sub-comment">Excellent</span>
                     <p>
-                      Very well built theme, couldn't be happier with it. Can't
-                      wait for future updates to see what else they add in.
+                      Very well built theme, couldn't be happier with it. Can't wait for future
+                      updates to see what else they add in.
                     </p>
                   </div>
 
@@ -522,8 +462,7 @@ const SingleCourses = () => {
                     </div>
                     <span className="d-block sub-comment">Video Quality!</span>
                     <p>
-                      Was really easy to implement and they quickly answer my
-                      additional questions!
+                      Was really easy to implement and they quickly answer my additional questions!
                     </p>
                   </div>
 
@@ -541,8 +480,8 @@ const SingleCourses = () => {
                     </div>
                     <span className="d-block sub-comment">Perfect Coding!</span>
                     <p>
-                      Stunning design, very dedicated crew who welcome new ideas
-                      suggested by customers, nice support.
+                      Stunning design, very dedicated crew who welcome new ideas suggested by
+                      customers, nice support.
                     </p>
                   </div>
 
@@ -560,8 +499,8 @@ const SingleCourses = () => {
                     </div>
                     <span className="d-block sub-comment">Perfect Video!</span>
                     <p>
-                      Stunning design, very dedicated crew who welcome new ideas
-                      suggested by customers, nice support.
+                      Stunning design, very dedicated crew who welcome new ideas suggested by
+                      customers, nice support.
                     </p>
                   </div>
                 </div>

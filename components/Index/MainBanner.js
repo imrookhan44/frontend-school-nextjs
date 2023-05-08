@@ -1,21 +1,21 @@
-import React from "react";
-import Link from "next/link";
-import useTranslation from "next-translate/useTranslation";
+import React from 'react';
+import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const MainBanner = () => {
-  const { t } = useTranslation("distance-learning");
+  const { t } = useTranslation('distance-learning');
   return (
     <div className="main-banner-area">
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-12">
             <div className="main-banner-content-style-two">
-              <h1>{t("bannertitle")}</h1>
-              <p>{t("bannersubtitle")}</p>
+              <h1>{t('bannertitle')}</h1>
+              <p>{t('bannersubtitle')}</p>
               <Link legacyBehavior href="/authentication">
                 <a className="default-btn">
                   <i className="flaticon-user"></i>
-                  {t("button")}
+                  {t('button')}
                   <span></span>
                 </a>
               </Link>

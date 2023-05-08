@@ -1,26 +1,26 @@
-import React from "react";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import { Alert } from "reactstrap";
-import baseUrl from "@/utils/baseUrl";
-import { Spinner } from "reactstrap";
-import toast from "react-hot-toast";
-import catchErrors from "@/utils/catchErrors";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "@/utils/ActiveLink";
-import SideBar from "../SideBar";
+import React from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import { Alert } from 'reactstrap';
+import baseUrl from '@/utils/baseUrl';
+import { Spinner } from 'reactstrap';
+import toast from 'react-hot-toast';
+import catchErrors from '@/utils/catchErrors';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from '@/utils/ActiveLink';
+import SideBar from '../SideBar';
 
 const INITEXERCISE = {
-  order: "",
-  name: "",
-  problemDescription: "",
-  solutionDescription: "",
-  videoLink: "",
-  startingCode: "",
-  testCases: "",
-  testCaseResults: "",
-  courseId: "",
-  sectionId: "",
+  order: '',
+  name: '',
+  problemDescription: '',
+  solutionDescription: '',
+  videoLink: '',
+  startingCode: '',
+  testCases: '',
+  testCaseResults: '',
+  courseId: '',
+  sectionId: ''
 };
 
 const addQuiz = ({ courses, sections }) => {
@@ -42,7 +42,7 @@ const addQuiz = ({ courses, sections }) => {
       testCases,
       testCaseResults,
       courseId,
-      sectionId,
+      sectionId
     } = excercise;
     const isExercise = Object.values({
       order,
@@ -54,20 +54,20 @@ const addQuiz = ({ courses, sections }) => {
       testCases,
       testCaseResults,
       courseId,
-      sectionId,
+      sectionId
     }).every((el) => Boolean(el));
     isExercise ? setDisabled(false) : setDisabled(true);
   }, [excercise]);
 
   const handleChange = async (e) => {
     const { name, value } = e.target;
-    if (name == "courseId") {
+    if (name == 'courseId') {
       if (!token) {
-        return redirectUser(ctx, "/login");
+        return redirectUser(ctx, '/login');
       }
 
       const payload = {
-        headers: { Authorization: token },
+        headers: { Authorization: token }
       };
 
       const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`;
@@ -92,7 +92,7 @@ const addQuiz = ({ courses, sections }) => {
         testCases,
         testCaseResults,
         courseId,
-        sectionId,
+        sectionId
       } = excercise;
       const payload = {
         order,
@@ -104,11 +104,11 @@ const addQuiz = ({ courses, sections }) => {
         testCases,
         testCaseResults,
         courseId,
-        sectionId,
+        sectionId
       };
 
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token },
+        headers: { Authorization: token }
       });
 
       setLoading(false);
@@ -137,7 +137,7 @@ const addQuiz = ({ courses, sections }) => {
         <div className="container">
           {courses.length == 0 && (
             <Alert color="danger" className="text-center">
-              You have to create course first here{" "}
+              You have to create course first here{' '}
               <Link legacyBehavior href="/teacher/course/create">
                 <a>Create Course</a>
               </Link>
@@ -164,11 +164,7 @@ const addQuiz = ({ courses, sections }) => {
 
                   <div className="form-group">
                     <label>Select Course</label>
-                    <select
-                      onChange={handleChange}
-                      name="courseId"
-                      className="form-control"
-                    >
+                    <select onChange={handleChange} name="courseId" className="form-control">
                       <option>Select Course</option>
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
@@ -180,11 +176,7 @@ const addQuiz = ({ courses, sections }) => {
 
                   <div className="form-group">
                     <label>Select Section</label>
-                    <select
-                      onChange={handleChange}
-                      name="sectionId"
-                      className="form-control"
-                    >
+                    <select onChange={handleChange} name="sectionId" className="form-control">
                       <option>Select section</option>
                       {sectionOptions.map((section) => (
                         <option value={section.id} key={section.id}>
@@ -292,10 +284,7 @@ const addQuiz = ({ courses, sections }) => {
                     />
                   </div>
 
-                  <button
-                    className="default-btn"
-                    disabled={disabled || loading}
-                  >
+                  <button className="default-btn" disabled={disabled || loading}>
                     <i className="flaticon-right-chevron"></i>
                     Add
                   </button>
@@ -316,7 +305,7 @@ addQuiz.getInitialProps = async (ctx) => {
   }
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/my-courses`;

@@ -1,22 +1,22 @@
-import React from "react";
-import Link from "next/link";
-import useTranslation from "next-translate/useTranslation";
+import React from 'react';
+import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const Instance = () => {
-  const { t } = useTranslation("distance-learning");
+  const { t } = useTranslation('distance-learning');
   return (
     <div className="get-instant-courses-area-two bg-f9fbff">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-7 col-md-12">
             <div className="get-instant-courses-content-style-two">
-              <span className="sub-title">{t("instant-access")}</span>
-              <h2>{t("self-development-course")}</h2>
-              <p>{t("self-development-desc")}</p>
+              <span className="sub-title">{t('instant-access')}</span>
+              <h2>{t('self-development-course')}</h2>
+              <p>{t('self-development-desc')}</p>
               <Link legacyBehavior href="/authentication">
                 <a className="default-btn">
                   <i className="flaticon-user"></i>
-                  {t("start-for-free")}
+                  {t('start-for-free')}
                   <span></span>
                 </a>
               </Link>

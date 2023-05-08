@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, Sequelize) => {
   class Enroled_courses extends Model {
     /**
@@ -12,40 +10,43 @@ module.exports = (sequelize, Sequelize) => {
     static associate(models) {
       // define association here
     }
-  };
-  Enroled_courses.init({
-    id: {
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4,
-      primaryKey: true
-    },
-    payment_email: {
-      type: Sequelize.STRING
-    },
-    cost: {
-      type: Sequelize.INTEGER
-    },
-    courseId: {
-      type: Sequelize.UUID,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Courses',
-        key: 'id',
-        as: 'courseId',
+  }
+  Enroled_courses.init(
+    {
+      id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true
+      },
+      payment_email: {
+        type: Sequelize.STRING
+      },
+      cost: {
+        type: Sequelize.INTEGER
+      },
+      courseId: {
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Courses',
+          key: 'id',
+          as: 'courseId'
+        }
+      },
+      userId: {
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Users',
+          key: 'id',
+          as: 'userId'
+        }
       }
     },
-    userId: {
-      type: Sequelize.UUID,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Users',
-        key: 'id',
-        as: 'userId',
-      }
-    },
-  }, {
-    sequelize,
-    modelName: 'Enroled_courses',
-  });
+    {
+      sequelize,
+      modelName: 'Enroled_courses'
+    }
+  );
   return Enroled_courses;
 };

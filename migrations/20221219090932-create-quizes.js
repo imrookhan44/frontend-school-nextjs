@@ -1,61 +1,61 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Quizzes", {
+    await queryInterface.createTable('Quizzes', {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true,
+        primaryKey: true
       },
       order: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       json: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       courseId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Courses",
-          key: "id",
-          as: "courseId",
-        },
+          model: 'Courses',
+          key: 'id',
+          as: 'courseId'
+        }
       },
       sectionId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Sections",
-          key: "id",
-          as: "sectionId",
-        },
+          model: 'Sections',
+          key: 'id',
+          as: 'sectionId'
+        }
       },
       userId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Users",
-          key: "id",
-          as: "userId",
-        },
+          model: 'Users',
+          key: 'id',
+          as: 'userId'
+        }
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Quizzes");
-  },
+    await queryInterface.dropTable('Quizzes');
+  }
 };

@@ -1,58 +1,58 @@
-import Cors from "cors";
-import initMiddleware from "@/lib/init-middleware";
-import jwt from "jsonwebtoken";
+import Cors from 'cors';
+import initMiddleware from '@/lib/init-middleware';
+import jwt from 'jsonwebtoken';
 import {
   sections as Section,
   videos as Video,
   courses as Course,
   quizzes as Quiz,
-  excercises as Excercise,
-} from "@/models/index";
+  excercises as Excercise
+} from '@/models/index';
 
 // Initialize the cors middleware
 const cors = initMiddleware(
   // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
   Cors({
     // Only allow requests with GET, POST and OPTIONS
-    methods: ["GET", "POST", "OPTIONS", "DELETE", "PUT"],
+    methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT']
   })
 );
 
 export default async (req, res) => {
   await cors(req, res);
-  if (!("authorization" in req.headers)) {
-    return res.status(401).json({ message: "No autorization token" });
+  if (!('authorization' in req.headers)) {
+    return res.status(401).json({ message: 'No autorization token' });
   }
 
   try {
     // console.log(req.query.courseid);
     const sections = await Section.findAll({
-      order: [["order", "DESC"]],
+      order: [['order', 'DESC']],
       where: {
-        courseId: req.query.courseid,
+        courseId: req.query.courseid
       },
       include: [
         {
           model: Video,
-          as: "videos",
-          attributes: ["id", "name", "order", "description", "video_url"],
+          as: 'videos',
+          attributes: ['id', 'name', 'order', 'description', 'video_url']
         },
         {
           model: Course,
-          as: "course",
-          attributes: ["id", "title", "profilePhoto"],
+          as: 'course',
+          attributes: ['id', 'title', 'profilePhoto']
         },
         {
           model: Quiz,
-          as: "quizzes",
-          attributes: ["id", "name", "order", "json"],
+          as: 'quizzes',
+          attributes: ['id', 'name', 'order', 'json']
         },
         {
           model: Excercise,
-          as: "excercises",
-          attributes: ["id", "name", "order"],
-        },
-      ],
+          as: 'excercises',
+          attributes: ['id', 'name', 'order']
+        }
+      ]
     });
 
     res.send({ sections });

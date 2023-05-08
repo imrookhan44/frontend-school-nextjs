@@ -25,7 +25,7 @@ module.exports = {
         references: {
           model: 'Courses',
           key: 'id',
-          as: 'courseId',
+          as: 'courseId'
         }
       },
       userId: {
@@ -34,7 +34,7 @@ module.exports = {
         references: {
           model: 'Users',
           key: 'id',
-          as: 'userId',
+          as: 'userId'
         }
       },
       createdAt: {

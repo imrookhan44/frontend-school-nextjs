@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import useTranslation from "next-translate/useTranslation";
+import React from 'react';
+import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const About = () => {
-  const { t } = useTranslation("distance-learning");
+  const { t } = useTranslation('distance-learning');
   return (
     <div className="about-area ptb-100 bg-f9fbff">
       <div className="container">
@@ -15,39 +15,35 @@ const About = () => {
           </div>
           <div className="col-lg-6 col-md-12">
             <div className="about-content">
-              <span className="sub-title">{t("distance-learning")}</span>
-              <h2>{t("distance-learning-heading")}</h2>
-              <p>{t("distance-learning-desc")}</p>
+              <span className="sub-title">{t('distance-learning')}</span>
+              <h2>{t('distance-learning-heading')}</h2>
+              <p>{t('distance-learning-desc')}</p>
               <ul className="features-list">
                 <li>
                   <span>
-                    <i className="flaticon-experience"></i>{" "}
-                    {t("expert-instruction")}
+                    <i className="flaticon-experience"></i> {t('expert-instruction')}
                   </span>
                 </li>
                 <li>
                   <span>
-                    <i className="flaticon-time-left"></i>{" "}
-                    {t("lifetime-access")}
+                    <i className="flaticon-time-left"></i> {t('lifetime-access')}
                   </span>
                 </li>
                 <li>
                   <span>
-                    <i className="flaticon-tutorials"></i>{" "}
-                    {t("remote-learning")}
+                    <i className="flaticon-tutorials"></i> {t('remote-learning')}
                   </span>
                 </li>
                 <li>
                   <span>
-                    <i className="flaticon-self-growth"></i>{" "}
-                    {t("self-development")}
+                    <i className="flaticon-self-growth"></i> {t('self-development')}
                   </span>
                 </li>
               </ul>
               <Link legacyBehavior href="/courses-1">
                 <a className="default-btn">
                   <i className="flaticon-user"></i>
-                  {t("view-all-courses")}
+                  {t('view-all-courses')}
                   <span></span>
                 </a>
               </Link>

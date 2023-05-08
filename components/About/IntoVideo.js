@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-const ModalVideo = dynamic(import("react-modal-video"));
+import React from 'react';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+const ModalVideo = dynamic(import('react-modal-video'));
 
 const IntoVideo = () => {
   const [display, setDisplay] = React.useState(false);
@@ -47,7 +47,7 @@ const IntoVideo = () => {
           onClose={() => setIsOpen(!isOpen)}
         />
       ) : (
-        ""
+        ''
       )}
     </React.Fragment>
   );

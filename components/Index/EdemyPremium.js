@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import useTranslation from "next-translate/useTranslation";
+import React from 'react';
+import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const EdemyPremium = () => {
-  const { t } = useTranslation("distance-learning");
+  const { t } = useTranslation('distance-learning');
   return (
     <div>
       <div className="view-all-courses-area-three bg-fff8f8">
@@ -16,13 +16,13 @@ const EdemyPremium = () => {
             </div>
             <div className="col-lg-6 col-md-12">
               <div className="view-all-courses-content-style-two">
-                <span className="sub-title">{t("distance-learning")}</span>
-                <h2>{t("go-ahead")}</h2>
-                <p>{t("go-ahead-desc")}</p>
+                <span className="sub-title">{t('distance-learning')}</span>
+                <h2>{t('go-ahead')}</h2>
+                <p>{t('go-ahead-desc')}</p>
                 <Link legacyBehavior href="/courses-1">
                   <a className="default-btn">
                     <i className="flaticon-agenda"></i>
-                    {t("view-courses")}
+                    {t('view-courses')}
                     <span></span>
                   </a>
                 </Link>
@@ -40,13 +40,13 @@ const EdemyPremium = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className="premium-access-content-style-two">
-                <span className="sub-title">{t("go-own-pace")}</span>
-                <h2>{t("unlimited-access")}</h2>
-                <p>{t("unlimited-access-desc")}</p>
+                <span className="sub-title">{t('go-own-pace')}</span>
+                <h2>{t('unlimited-access')}</h2>
+                <p>{t('unlimited-access-desc')}</p>
                 <Link legacyBehavior href="/membership-levels">
                   <a className="default-btn">
                     <i className="flaticon-user"></i>
-                    {t("get-started-now")}
+                    {t('get-started-now')}
                     <span></span>
                   </a>
                 </Link>

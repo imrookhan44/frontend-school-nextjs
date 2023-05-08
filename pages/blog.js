@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import Navbar from '../components/_App/Navbar';
-import PageBanner from "../components/Common/PageBanner";
-import Link from "next/link";
+import PageBanner from '../components/Common/PageBanner';
+import Link from 'next/link';
 // import Footer from '../components/_App/Footer';
-import BlogSidebar from "../components/Blog/BlogSidebar";
+import BlogSidebar from '../components/Blog/BlogSidebar';
 
 const Blog4 = () => {
   return (
@@ -37,19 +37,14 @@ const Blog4 = () => {
                       <h3>
                         <Link legacyBehavior href="/single-blog-1">
                           <a>
-                            The Beat Goes On: High School Choirs Improvise In
-                            The Age Of Coronavirus
+                            The Beat Goes On: High School Choirs Improvise In The Age Of Coronavirus
                           </a>
                         </Link>
                       </h3>
                       <ul className="post-content-footer d-flex justify-content-between align-items-center">
                         <li>
                           <div className="post-author d-flex align-items-center">
-                            <img
-                              src="/images/user1.jpg"
-                              className="rounded-circle"
-                              alt="image"
-                            />
+                            <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
                             <span>Alex Morgan</span>
                           </div>
                         </li>
@@ -77,19 +72,15 @@ const Blog4 = () => {
                       <h3>
                         <Link legacyBehavior href="/single-blog-1">
                           <a>
-                            How Online Book Read-Alouds Can Help Students'
-                            Literacy and Connection During Social Distancing
+                            How Online Book Read-Alouds Can Help Students' Literacy and Connection
+                            During Social Distancing
                           </a>
                         </Link>
                       </h3>
                       <ul className="post-content-footer d-flex justify-content-between align-items-center">
                         <li>
                           <div className="post-author d-flex align-items-center">
-                            <img
-                              src="/images/user2.jpg"
-                              className="rounded-circle"
-                              alt="image"
-                            />
+                            <img src="/images/user2.jpg" className="rounded-circle" alt="image" />
                             <span>Sarah Taylor</span>
                           </div>
                         </li>
@@ -116,20 +107,13 @@ const Blog4 = () => {
                       </Link>
                       <h3>
                         <Link legacyBehavior href="/single-blog-1">
-                          <a>
-                            How To Secure Remote Workers During The COVID-19
-                            Outbreak
-                          </a>
+                          <a>How To Secure Remote Workers During The COVID-19 Outbreak</a>
                         </Link>
                       </h3>
                       <ul className="post-content-footer d-flex justify-content-between align-items-center">
                         <li>
                           <div className="post-author d-flex align-items-center">
-                            <img
-                              src="/images/user3.jpg"
-                              className="rounded-circle"
-                              alt="image"
-                            />
+                            <img src="/images/user3.jpg" className="rounded-circle" alt="image" />
                             <span>David Warner</span>
                           </div>
                         </li>
@@ -156,20 +140,13 @@ const Blog4 = () => {
                       </Link>
                       <h3>
                         <Link legacyBehavior href="/single-blog-1">
-                          <a>
-                            What A Company Needs To Provide Employees For
-                            Effective Remote Work
-                          </a>
+                          <a>What A Company Needs To Provide Employees For Effective Remote Work</a>
                         </Link>
                       </h3>
                       <ul className="post-content-footer d-flex justify-content-between align-items-center">
                         <li>
                           <div className="post-author d-flex align-items-center">
-                            <img
-                              src="/images/user1.jpg"
-                              className="rounded-circle"
-                              alt="image"
-                            />
+                            <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
                             <span>Alex Morgan</span>
                           </div>
                         </li>

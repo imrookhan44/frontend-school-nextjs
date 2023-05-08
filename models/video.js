@@ -1,5 +1,5 @@
-"use strict";
-const { Model } = require("sequelize");
+'use strict';
+const { Model } = require('sequelize');
 module.exports = (sequelize, Sequelize) => {
   class Video extends Model {
     /**
@@ -16,51 +16,51 @@ module.exports = (sequelize, Sequelize) => {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true,
+        primaryKey: true
       },
       video_url: {
-        type: Sequelize.TEXT,
+        type: Sequelize.TEXT
       },
       order: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       courseId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Courses",
-          key: "id",
-          as: "courseId",
-        },
+          model: 'Courses',
+          key: 'id',
+          as: 'courseId'
+        }
       },
       sectionId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Sections",
-          key: "id",
-          as: "sectionId",
-        },
+          model: 'Sections',
+          key: 'id',
+          as: 'sectionId'
+        }
       },
       userId: {
         type: Sequelize.UUID,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         references: {
-          model: "Users",
-          key: "id",
-          as: "userId",
-        },
-      },
+          model: 'Users',
+          key: 'id',
+          as: 'userId'
+        }
+      }
     },
     {
       sequelize,
-      modelName: "Video",
+      modelName: 'Video'
     }
   );
   return Video;

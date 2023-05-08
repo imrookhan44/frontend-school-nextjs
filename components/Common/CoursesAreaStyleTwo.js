@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Link from 'next/link';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const CoursesAreaStyleTwo = () => {
   return (
@@ -10,8 +10,8 @@ const CoursesAreaStyleTwo = () => {
           <span className="sub-title">Course Advisor</span>
           <h2>Meet Our World-class Instructors</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
 

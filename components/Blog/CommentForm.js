@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 const CommentArea = () => {
   return (
@@ -23,9 +23,8 @@ const CommentArea = () => {
 
             <div className="comment-content">
               <p>
-                Lorem Ipsum has been the industry’s standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen.
+                Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen.
               </p>
             </div>
 
@@ -41,11 +40,7 @@ const CommentArea = () => {
               <div className="comment-body">
                 <div className="comment-meta">
                   <div className="comment-author vcard">
-                    <img
-                      src="/images/user2.jpg"
-                      className="avatar"
-                      alt="image"
-                    />
+                    <img src="/images/user2.jpg" className="avatar" alt="image" />
                     <b className="fn">Steven Smith</b>
                     <span className="says">says:</span>
                   </div>
@@ -57,9 +52,9 @@ const CommentArea = () => {
 
                 <div className="comment-content">
                   <p>
-                    Lorem Ipsum has been the industry’s standard dummy text ever
-                    since the 1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen.
+                    Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen.
                   </p>
                 </div>
 
@@ -75,11 +70,7 @@ const CommentArea = () => {
                   <div className="comment-body">
                     <div className="comment-meta">
                       <div className="comment-author vcard">
-                        <img
-                          src="/images/user3.jpg"
-                          className="avatar"
-                          alt="image"
-                        />
+                        <img src="/images/user3.jpg" className="avatar" alt="image" />
                         <b className="fn">Sarah Taylor</b>
                         <span className="says">says:</span>
                       </div>
@@ -91,9 +82,9 @@ const CommentArea = () => {
 
                     <div className="comment-content">
                       <p>
-                        Lorem Ipsum has been the industry’s standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled it to make a type specimen.
+                        Lorem Ipsum has been the industry’s standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled it to
+                        make a type specimen.
                       </p>
                     </div>
 
@@ -125,9 +116,8 @@ const CommentArea = () => {
 
             <div className="comment-content">
               <p>
-                Lorem Ipsum has been the industry’s standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen.
+                Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen.
               </p>
             </div>
 
@@ -143,11 +133,7 @@ const CommentArea = () => {
               <div className="comment-body">
                 <div className="comment-meta">
                   <div className="comment-author vcard">
-                    <img
-                      src="/images/user1.jpg"
-                      className="avatar"
-                      alt="image"
-                    />
+                    <img src="/images/user1.jpg" className="avatar" alt="image" />
                     <b className="fn">James Anderson</b>
                     <span className="says">says:</span>
                   </div>
@@ -159,9 +145,9 @@ const CommentArea = () => {
 
                 <div className="comment-content">
                   <p>
-                    Lorem Ipsum has been the industry’s standard dummy text ever
-                    since the 1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen.
+                    Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen.
                   </p>
                 </div>
 
@@ -181,9 +167,7 @@ const CommentArea = () => {
 
         <form className="comment-form">
           <p className="comment-notes">
-            <span id="email-notes">
-              Your email address will not be published.
-            </span>
+            <span id="email-notes">Your email address will not be published.</span>
             Required fields are marked
             <span className="required">*</span>
           </p>
@@ -235,8 +219,7 @@ const CommentArea = () => {
               id="wp-comment-cookies-consent"
             />
             <label>
-              Save my name, email, and website in this browser for the next time
-              I comment.
+              Save my name, email, and website in this browser for the next time I comment.
             </label>
           </p>
           <p className="form-submit">

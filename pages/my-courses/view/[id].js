@@ -1,32 +1,30 @@
-import React from "react";
-import PageBanner from "@/components/Common/PageBanner";
-import Link from "next/link";
-import { parseCookies } from "nookies";
-import axios from "axios";
-import baseUrl from "@/utils/baseUrl";
+import React from 'react';
+import PageBanner from '@/components/Common/PageBanner';
+import Link from 'next/link';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import baseUrl from '@/utils/baseUrl';
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
+  AccordionItemPanel
+} from 'react-accessible-accordion';
 
 const SingleCourses = ({ sections }) => {
   const [videoId, setVideoId] = React.useState(
-    sections[0].videos.length ? sections[0].videos[0].video_url : ""
+    sections[0].videos.length ? sections[0].videos[0].video_url : ''
   );
 
   console.log(sections);
   return (
     <React.Fragment>
       <PageBanner
-        pageTitle={sections.length ? sections[0].course.title : "No Videos"}
+        pageTitle={sections.length ? sections[0].course.title : 'No Videos'}
         homePageUrl="/my-courses"
         homePageText="My Courses"
-        activePageText={
-          sections.length ? sections[0].course.title : "No Videos"
-        }
+        activePageText={sections.length ? sections[0].course.title : 'No Videos'}
       />
 
       <div className="ptb-100">
@@ -39,9 +37,7 @@ const SingleCourses = ({ sections }) => {
                     <Accordion key={section.id}>
                       <AccordionItem>
                         <AccordionItemHeading>
-                          <AccordionItemButton>
-                            {section.name}
-                          </AccordionItemButton>
+                          <AccordionItemButton>{section.name}</AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                           {section.videos.length ? (
@@ -71,7 +67,7 @@ const SingleCourses = ({ sections }) => {
                           ) : (
                             <h3>No Videos</h3>
                           )}
-                          <div style={{ marginTop: "100px" }}></div>
+                          <div style={{ marginTop: '100px' }}></div>
                           {section.quizzes.length &&
                             section.quizzes.map((quiz) => (
                               <div key={quiz.id}>
@@ -87,7 +83,7 @@ const SingleCourses = ({ sections }) => {
                                 </Link>
                               </div>
                             ))}
-                          <div style={{ marginTop: "100px" }}></div>
+                          <div style={{ marginTop: '100px' }}></div>
                           {section.excercises.length &&
                             section.excercises.map((exercise) => (
                               <div key={exercise.id}>
@@ -97,9 +93,7 @@ const SingleCourses = ({ sections }) => {
                                   href="/my-courses/view/[excercises]/[id]"
                                   as={`/my-courses/view/exercise/${exercise.id}`}
                                 >
-                                  <a
-                                    href={`/my-courses/view/exercise/${exercise.id}`}
-                                  >
+                                  <a href={`/my-courses/view/exercise/${exercise.id}`}>
                                     <h4>{exercise.name} EXERCISE</h4>
                                   </a>
                                 </Link>
@@ -139,7 +133,7 @@ SingleCourses.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
 
   const payload = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${id}`;
