@@ -33,6 +33,7 @@ export default async (req, res) => {
 
   try {
     const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+    console.log(userId);
     await Exercise.create({
       order,
       name,

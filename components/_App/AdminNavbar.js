@@ -49,8 +49,7 @@ const AdminNavbar = ({ user }) => {
                 type="button"
                 data-toggle="collapse"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+                aria-label="Toggle navigation">
                 <span className="icon-bar top-bar"></span>
                 <span className="icon-bar middle-bar"></span>
                 <span className="icon-bar bottom-bar"></span>
@@ -215,8 +214,7 @@ const AdminNavbar = ({ user }) => {
                             <Link
                               legacyBehavior
                               href="/user/edit-password"
-                              activeClassName="active"
-                            >
+                              activeClassName="active">
                               <a onClick={toggleNavbar} className="nav-link">
                                 Edit Password
                               </a>
@@ -230,8 +228,7 @@ const AdminNavbar = ({ user }) => {
                                 onClick={(e) => {
                                   e.preventDefault();
                                   handleLogout();
-                                }}
-                              >
+                                }}>
                                 Logout
                               </a>
                             </Link>

@@ -46,8 +46,7 @@ const courseEdit = ({ courses }) => {
                             <Link
                               legacyBehavior
                               href="/teacher/course/[id]"
-                              as={`/teacher/course/${course.id}`}
-                            >
+                              as={`/teacher/course/${course.id}`}>
                               <a className="btn btn-success">
                                 <i className="bx bxs-edit"></i> Edit
                               </a>

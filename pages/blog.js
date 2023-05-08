@@ -72,7 +72,7 @@ const Blog4 = () => {
                       <h3>
                         <Link legacyBehavior href="/single-blog-1">
                           <a>
-                            How Online Book Read-Alouds Can Help Students' Literacy and Connection
+                            How Online Book Read-Alouds Can Help Students Literacy and Connection
                             During Social Distancing
                           </a>
                         </Link>

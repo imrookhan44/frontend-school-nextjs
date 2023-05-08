@@ -57,7 +57,7 @@ const CoursesDetailsSidebar = ({
     setDisplay(true);
   }, []);
   // console.log(loggedInUser)
-  const { enroled_courses } = loggedInUser ? loggedInUser : '';
+  // const { enroled_courses } = loggedInUser ? loggedInUser : '';
   const router = useRouter();
   // Popup Video
   const [enrolled, setEnrolled] = React.useState(0);
@@ -75,14 +75,6 @@ const CoursesDetailsSidebar = ({
     // setEnrolled(response.data.enrolled)
     countEnrolled();
   }, []);
-
-  const checkBoughtAlready = () => {
-    return (
-      enroled_courses.filter(function (val) {
-        return val.courseId === id;
-      }).length > 0
-    );
-  };
 
   return (
     <>
@@ -107,8 +99,7 @@ const CoursesDetailsSidebar = ({
               e.preventDefault();
               openModal();
             }}
-            className="link-btn popup-youtube"
-          ></div>
+            className="link-btn popup-youtube"></div>
 
           <div className="content">
             <i className="flaticon-play"></i>
@@ -182,8 +173,7 @@ const CoursesDetailsSidebar = ({
               ) : (
                 <button
                   className="default-btn"
-                  onClick={() => addToCart(id, title, price, lessons, duration, profilePhoto)}
-                >
+                  onClick={() => addToCart(id, title, price, lessons, duration, profilePhoto)}>
                   <i className="flaticon-tag"></i> Add to cart <span></span>
                 </button>
               )}

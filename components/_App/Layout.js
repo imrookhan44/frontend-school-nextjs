@@ -43,8 +43,7 @@ const Layout = ({ children, user }) => {
         <meta
           name="og:title"
           property="og:title"
-          content="eDemy - React Next.js Education LMS Template"
-        ></meta>
+          content="eDemy - React Next.js Education LMS Template"></meta>
         <meta name="twitter:card" content="eDemy - React Next.js Education LMS Template"></meta>
         <link rel="canonical" href="https://edemy-react.envytheme.com/"></link>
       </Head>

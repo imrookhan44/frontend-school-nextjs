@@ -105,7 +105,7 @@ const RegisterForm = () => {
 
         <p className="description">
           The password should be at least eight characters long. To make it stronger, use upper and
-          lower case letters, numbers, and symbols like ! " ? $ % ^ & )
+          lower case letters, numbers, and symbols like ? $ % ^ & )
         </p>
 
         <button type="submit" disabled={disabled}>

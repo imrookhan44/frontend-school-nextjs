@@ -22,7 +22,7 @@ const ContactForm = () => {
     console.log(contact);
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async () => {
     // e.preventDefault();
     try {
       const url = `${baseUrl}/api/contact`;

@@ -47,14 +47,12 @@ const SingleCourses = ({ sections }) => {
                                   legacyBehavior
                                   key={video.id}
                                   href="/my-courses/[videos]/[id]"
-                                  as={`/my-courses/${section.course.id}/${video.id}`}
-                                >
+                                  as={`/my-courses/${section.course.id}/${video.id}`}>
                                   <a
                                     onClick={(e) => {
                                       e.preventDefault();
                                       setVideoId(video.video_url);
-                                    }}
-                                  >
+                                    }}>
                                     <img
                                       src={section.course.profilePhoto}
                                       alt={section.course.title}
@@ -75,8 +73,7 @@ const SingleCourses = ({ sections }) => {
                                   legacyBehavior
                                   key={quiz.id}
                                   href="/my-courses/view/[quizzes]/[id]"
-                                  as={`/my-courses/view/quiz/${quiz.id}`}
-                                >
+                                  as={`/my-courses/view/quiz/${quiz.id}`}>
                                   <a href={`/my-courses/view/quiz/${quiz.id}`}>
                                     <h4>QUIZ:{quiz.name}</h4>
                                   </a>
@@ -91,8 +88,7 @@ const SingleCourses = ({ sections }) => {
                                   legacyBehavior
                                   key={exercise.id}
                                   href="/my-courses/view/[excercises]/[id]"
-                                  as={`/my-courses/view/exercise/${exercise.id}`}
-                                >
+                                  as={`/my-courses/view/exercise/${exercise.id}`}>
                                   <a href={`/my-courses/view/exercise/${exercise.id}`}>
                                     <h4>{exercise.name} EXERCISE</h4>
                                   </a>

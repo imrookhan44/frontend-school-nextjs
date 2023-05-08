@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 const APP_NAME = 'edemy';
 class MyDocument extends Document {
@@ -11,14 +12,9 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
           <meta name="apple-mobile-web-app-title" content={APP_NAME} />
           <meta name="theme-color" content="#FFFFFF" />
-          <link
-            legacyBehavior
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/icons/apple-touch-icon.png"
-          />
-          <link legacyBehavior rel="manifest" href="/manifest.json" />
-          <link legacyBehavior rel="shortcut icon" href="/images/favicon.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="shortcut icon" href="/images/favicon.png" />
         </Head>
         <body>
           <Main />

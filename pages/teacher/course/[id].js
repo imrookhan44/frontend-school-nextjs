@@ -8,8 +8,10 @@ import toast from 'react-hot-toast';
 import catchErrors from '@/utils/catchErrors';
 import PageBanner from '@/components/Common/PageBanner';
 import SideBar from '../SideBar';
+import { useToasts } from 'react-toast-notifications';
 
 const Edit = ({ existingData }) => {
+  const { addToast } = useToasts();
   const { token } = parseCookies();
   // console.log(existingData)
 
@@ -377,8 +379,7 @@ const Edit = ({ existingData }) => {
                   <button
                     className="default-btn"
                     disabled={imageUploading || disabled || loading}
-                    type="submit"
-                  >
+                    type="submit">
                     <i className="flaticon-right-chevron"></i>
                     Update
                     {imageUploading || loading ? <Spinner color="success" /> : ''}

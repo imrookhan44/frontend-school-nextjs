@@ -4,7 +4,6 @@ import axios from 'axios';
 import baseUrl from '@/utils/baseUrl';
 import CourseCard from '@/components/Courses/CourseCard';
 import PageBanner from '@/components/Common/PageBanner';
-import Link from '@/utils/ActiveLink';
 import SideBar from '../SideBar';
 
 const index = ({ courses }) => {

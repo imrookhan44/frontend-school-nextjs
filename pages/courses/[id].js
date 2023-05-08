@@ -80,7 +80,7 @@ const Details = ({ course, user }) => {
                                     href={course.user.fb_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                  >
+                                    rel="noreferrer">
                                     <i className="bx bxl-facebook"></i>
                                   </a>
                                 </li>
@@ -89,7 +89,7 @@ const Details = ({ course, user }) => {
                                     href={course.user.tw_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                  >
+                                    rel="noreferrer">
                                     <i className="bx bxl-twitter"></i>
                                   </a>
                                 </li>
@@ -98,7 +98,7 @@ const Details = ({ course, user }) => {
                                     href={course.user.insta_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                  >
+                                    rel="noreferrer">
                                     <i className="bx bxl-instagram"></i>
                                   </a>
                                 </li>
@@ -107,7 +107,7 @@ const Details = ({ course, user }) => {
                                     href={course.user.in_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                  >
+                                    rel="noreferrer">
                                     <i className="bx bxl-linkedin"></i>
                                   </a>
                                 </li>
@@ -210,8 +210,8 @@ const Details = ({ course, user }) => {
 
                         <span className="d-block sub-comment">Excellent</span>
                         <p>
-                          Very well built theme, couldn't be happier with it. Can't wait for future
-                          updates to see what else they add in.
+                          Very well built theme, couldn&apos;t be happier with it. Can&apos;t wait
+                          for future updates to see what else they add in.
                         </p>
                       </div>
 

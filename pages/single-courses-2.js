@@ -24,7 +24,7 @@ const SingleCourses = () => {
                 <div className="courses-title">
                   <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard dummy.
+                    Ipsum has been the industry&apos;s standard dummy.
                   </p>
                 </div>
                 <div className="courses-meta">
@@ -232,7 +232,7 @@ const SingleCourses = () => {
                   </ul>
                 </div>
 
-                <h3>What you'll learn</h3>
+                <h3>What you&apos;ll learn</h3>
                 <div className="why-you-learn">
                   <ul>
                     <li>
@@ -344,7 +344,8 @@ const SingleCourses = () => {
                     </p>
                     <p>
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                      Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
+                      1500s.
                     </p>
                   </div>
                 </div>
@@ -442,8 +443,8 @@ const SingleCourses = () => {
 
                     <span className="d-block sub-comment">Excellent</span>
                     <p>
-                      Very well built theme, couldn't be happier with it. Can't wait for future
-                      updates to see what else they add in.
+                      Very well built theme, couldn&apos;t be happier with it. Can&apos;t wait for
+                      future updates to see what else they add in.
                     </p>
                   </div>
 

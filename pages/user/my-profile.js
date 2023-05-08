@@ -1,9 +1,6 @@
 import React from 'react';
-// import Navbar from '../components/_App/Navbar';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from 'next/link';
 
-// import Footer from '../components/_App/Footer';
+import PageBanner from '@/components/Common/PageBanner';
 
 const MyProfile = () => {
   return (

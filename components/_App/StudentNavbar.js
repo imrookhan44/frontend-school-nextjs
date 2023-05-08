@@ -22,8 +22,8 @@ const StudentNavbar = ({ user }) => {
     });
   });
 
-  const isAdmin = user && user.role === 'admin';
-  const isTeacher = user && user.role === 'teacher';
+  // const isAdmin = user && user.role === 'admin';
+  // const isTeacher = user && user.role === 'teacher';
 
   const classOne = menu ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
   const classTwo = menu
@@ -48,8 +48,7 @@ const StudentNavbar = ({ user }) => {
                 type="button"
                 data-toggle="collapse"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+                aria-label="Toggle navigation">
                 <span className="icon-bar top-bar"></span>
                 <span className="icon-bar middle-bar"></span>
                 <span className="icon-bar bottom-bar"></span>
@@ -205,8 +204,7 @@ const StudentNavbar = ({ user }) => {
                             <Link
                               legacyBehavior
                               href="/user/edit-password"
-                              activeClassName="active"
-                            >
+                              activeClassName="active">
                               <a onClick={toggleNavbar} className="nav-link">
                                 Edit Password
                               </a>
@@ -220,8 +218,7 @@ const StudentNavbar = ({ user }) => {
                                 onClick={(e) => {
                                   e.preventDefault();
                                   handleLogout();
-                                }}
-                              >
+                                }}>
                                 Logout
                               </a>
                             </Link>

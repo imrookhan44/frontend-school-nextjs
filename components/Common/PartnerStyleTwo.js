@@ -22,8 +22,7 @@ const PartnerStyleTwo = () => {
               slidesPerView: 5
             }
           }}
-          className="partner-slides"
-        >
+          className="partner-slides">
           <SwiperSlide>
             <div className="single-partner-item">
               <img src="/images/partner/partner1.png" alt="image" />

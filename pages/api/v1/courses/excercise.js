@@ -1,6 +1,5 @@
 import Cors from 'cors';
 import initMiddleware from '@/lib/init-middleware';
-import jwt from 'jsonwebtoken';
 import { excercises as Excercise } from '@/models/index';
 
 // Initialize the cors middleware

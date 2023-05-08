@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 /* eslint-disable default-param-last */
 import { combineReducers } from 'redux';
 import * as types from './types';

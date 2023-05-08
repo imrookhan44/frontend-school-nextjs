@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@/utils/ActiveLink';
-import { useSelector } from 'react-redux';
 import { handleLogout } from '@/utils/auth';
-import SearchForm from './SearchForm';
 
 const Navbar = ({ user }) => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
   const [menu, setMenu] = useState(true);
 
   const toggleNavbar = () => {
@@ -49,8 +46,7 @@ const Navbar = ({ user }) => {
                 type="button"
                 data-toggle="collapse"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+                aria-label="Toggle navigation">
                 <span className="icon-bar top-bar"></span>
                 <span className="icon-bar middle-bar"></span>
                 <span className="icon-bar bottom-bar"></span>
@@ -145,8 +141,7 @@ const Navbar = ({ user }) => {
                             <Link
                               legacyBehavior
                               href="/user/edit-password"
-                              activeClassName="active"
-                            >
+                              activeClassName="active">
                               <a onClick={toggleNavbar} className="nav-link">
                                 Edit Password
                               </a>
@@ -160,8 +155,7 @@ const Navbar = ({ user }) => {
                                 onClick={(e) => {
                                   e.preventDefault();
                                   handleLogout();
-                                }}
-                              >
+                                }}>
                                 Logout
                               </a>
                             </Link>

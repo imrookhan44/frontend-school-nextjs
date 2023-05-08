@@ -54,9 +54,9 @@ const UploadCourseVideo = ({ courses }) => {
     // console.log(d.value)
     const { name, value, files } = e.target;
     if (name == 'courseId') {
-      if (!token) {
-        return redirectUser(ctx, '/login');
-      }
+      // if (!token) {
+      //   return redirectUser(ctx, '/login');
+      // }
 
       const payload = {
         headers: { Authorization: token }
@@ -69,9 +69,9 @@ const UploadCourseVideo = ({ courses }) => {
     if (name === 'video_url') {
       const videoSize = files[0].size / 1024 / 1024;
       if (videoSize > 20) {
-        addToast('The video size greater than 20 MB. Make sure less than 20 MB.', {
-          appearance: 'error'
-        });
+        // addToast('The video size greater than 20 MB. Make sure less than 20 MB.', {
+        //   appearance: 'error'
+        // });
         e.target.value = null;
         return;
       }

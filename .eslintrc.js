@@ -21,8 +21,10 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', 'import', 'react-hooks'],
-  ignorePatterns: ['node_modules/'],
-  rules: {},
+  ignorePatterns: ['node_modules/', 'public/', 'seeders/', 'migrations/', 'pub'],
+  rules: {
+    'react/prop-types': 'off'
+  },
   settings: {
     react: {
       version: 'detect'

@@ -37,8 +37,7 @@ const StaticCoursesDetailsSidebar = () => {
               e.preventDefault();
               openModal();
             }}
-            className="link-btn popup-youtube"
-          ></div>
+            className="link-btn popup-youtube"></div>
 
           <div className="content">
             <i className="flaticon-play"></i>

@@ -9,7 +9,7 @@ const LatestNews = () => {
           <span className="sub-title">News and Blogs</span>
           <h2>Our Latest Publications</h2>
           <p>
-            We always give extra care to our student's skills improvements and feel excited to share
+            We always give extra care to our students skills improvements and feel excited to share
             our latest research and learnings!
           </p>
         </div>
@@ -117,7 +117,7 @@ const LatestNews = () => {
           <div className="col-lg-12 col-md-12">
             <div className="blog-post-info">
               <p>
-                Get into details now?​{' '}
+                Get into details now?
                 <Link legacyBehavior href="/blog-1">
                   <a>View all posts</a>
                 </Link>

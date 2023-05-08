@@ -54,9 +54,6 @@ module.exports = (sequelize, Sequelize) => {
       duration: {
         type: Sequelize.STRING
       },
-      duration: {
-        type: Sequelize.STRING
-      },
       lessons: {
         type: Sequelize.STRING
       },

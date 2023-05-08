@@ -9,7 +9,7 @@ const Features = () => {
       <div className="container">
         <div className="section-title">
           <span className="sub-title">{t('education-for-everyone')}</span>
-          <h2>{t('features-heading')}​</h2>
+          <h2>{t('features-heading')}</h2>
           <p>{t('features-description')}</p>
         </div>
         <div className="row justify-content-center">

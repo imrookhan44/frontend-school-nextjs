@@ -60,8 +60,7 @@ const MyCourses = ({ enrolled }) => {
                         <Link
                           legacyBehavior
                           href="/my-courses/view/[id]"
-                          as={`/my-courses/view/${enrolledCourse.course.id}`}
-                        >
+                          as={`/my-courses/view/${enrolledCourse.course.id}`}>
                           <a>{enrolledCourse.course.title}</a>
                         </Link>
                       </h3>

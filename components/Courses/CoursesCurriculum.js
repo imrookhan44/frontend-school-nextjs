@@ -12,8 +12,7 @@ const CoursesCurriculum = ({ videos }) => {
               <Link legacyBehavior href="/courses">
                 <a
                   className="d-flex justify-content-between align-items-center"
-                  onClick={(e) => e.preventDefault()}
-                >
+                  onClick={(e) => e.preventDefault()}>
                   <span className="courses-name">{video.name}</span>
                   <div className="courses-meta">
                     <span className="status locked">

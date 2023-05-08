@@ -112,7 +112,7 @@ const Blog = () => {
           <div className="col-lg-12 col-md-12">
             <div className="blog-post-info">
               <p>
-                Get into details now?​ {` `}
+                Get into details now?{` `}
                 <Link legacyBehavior href="/blog-1">
                   <a>View all posts</a>
                 </Link>

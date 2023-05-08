@@ -37,8 +37,7 @@ const CheckoutBtn = ({ user, price, cartItems, onClearCart }) => {
         currency="USD"
         stripeKey={process.env.STRIPE_PUBLISHABLE_KEY}
         token={handleCheckout}
-        triggerEvent="onClick"
-      >
+        triggerEvent="onClick">
         <div className="payment-box">
           <button className="default-btn">
             <i className="flaticon-shopping-cart"></i> Make Payment <span></span>

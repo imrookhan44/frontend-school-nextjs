@@ -84,7 +84,7 @@ const FeedbackSliderWithFunFacts = () => {
 
               <div className="feedback-info">
                 <p>
-                  Not a member yet?​{' '}
+                  Not a member yet
                   <Link legacyBehavior href="/profile-authentication">
                     <a>Register Now</a>
                   </Link>

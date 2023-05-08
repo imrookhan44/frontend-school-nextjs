@@ -323,8 +323,8 @@ const SingleCourses = () => {
 
                         <span className="d-block sub-comment">Excellent</span>
                         <p>
-                          Very well built theme, couldn't be happier with it. Can't wait for future
-                          updates to see what else they add in.
+                          Very well built theme, couldn&apos;t be happier with it. Can&apos;t wait
+                          for future updates to see what else they add in.
                         </p>
                       </div>
 

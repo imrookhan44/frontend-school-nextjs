@@ -29,8 +29,7 @@ const Ad = () => {
                   e.preventDefault();
                   openModal();
                 }}
-                className="video-btn popup-youtube"
-              >
+                className="video-btn popup-youtube">
                 <i className="flaticon-play"></i>
               </a>
             </Link>

@@ -3,11 +3,7 @@ import initMiddleware from '@/lib/init-middleware';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import isLength from 'validator/lib/isLength';
-import {
-  users as User,
-  enroled_courses as Enroled_courses,
-  courses as Course
-} from '@/models/index';
+import { users as User, enroled_courses as Enroled_courses } from '@/models/index';
 
 // Initialize the cors middleware
 const cors = initMiddleware(

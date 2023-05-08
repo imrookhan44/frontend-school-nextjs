@@ -63,7 +63,7 @@ const addSection = ({ courses }) => {
       toast.success(response.data);
       setSection(INITSECTION);
     } catch (err) {
-      catchErrors(err, setError);
+      catchErrors(err, toast.error);
       toast.error(err);
       console.log(err);
     } finally {

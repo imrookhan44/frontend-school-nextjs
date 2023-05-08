@@ -8,6 +8,7 @@ import baseUrl from '@/utils/baseUrl';
 import catchErrors from '@/utils/catchErrors';
 import PageBanner from '@/components/Common/PageBanner';
 import SideBar from '../SideBar';
+import { useToasts } from 'react-toast-notifications';
 
 const INIT_COURSE = {
   title: '',
@@ -42,7 +43,7 @@ const Create = () => {
   }, [course]);
 
   const handleChange = (e) => {
-    // console.log(d.value)
+    const { addToast } = useToasts();
     const { name, value, files } = e.target;
 
     if (name === 'profilePhoto') {
@@ -379,8 +380,7 @@ const Create = () => {
                   <button
                     className="default-btn"
                     disabled={imageUploading || disabled || loading}
-                    type="submit"
-                  >
+                    type="submit">
                     <i className="flaticon-right-chevron"></i>
                     Create
                     {imageUploading || loading ? <Spinner color="success" /> : ''}

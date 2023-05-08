@@ -144,7 +144,7 @@ const Footer = () => {
               <p>
                 <i className="bx bx-copyright"></i>
                 {currentYear} eDemy is Proudly Powered by{' '}
-                <a target="_blank" href="https://envytheme.com/">
+                <a target="_blank" href="https://envytheme.com/" rel="noreferrer">
                   EnvyTheme
                 </a>
               </p>

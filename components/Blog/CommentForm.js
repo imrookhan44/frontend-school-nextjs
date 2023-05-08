@@ -208,8 +208,7 @@ const CommentArea = () => {
               placeholder="Your Comment..."
               rows="5"
               maxLength="65525"
-              required="required"
-            ></textarea>
+              required="required"></textarea>
           </p>
           <p className="comment-form-cookies-consent">
             <input

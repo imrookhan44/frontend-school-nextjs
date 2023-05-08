@@ -23,7 +23,7 @@ const INITEXERCISE = {
   sectionId: ''
 };
 
-const addQuiz = ({ courses, sections }) => {
+const addQuiz = ({ courses }) => {
   const { token } = parseCookies();
 
   const [excercise, setExercise] = React.useState(INITEXERCISE);
@@ -62,9 +62,9 @@ const addQuiz = ({ courses, sections }) => {
   const handleChange = async (e) => {
     const { name, value } = e.target;
     if (name == 'courseId') {
-      if (!token) {
-        return redirectUser(ctx, '/login');
-      }
+      // if (!token) {
+      //   return redirectUser(ctx, '/login');
+      // }
 
       const payload = {
         headers: { Authorization: token }
@@ -116,7 +116,7 @@ const addQuiz = ({ courses, sections }) => {
       setExercise(INITEXERCISE);
     } catch (err) {
       console.log(err);
-      catchErrors(err, setError);
+      catchErrors(err, toast.error);
       toast.error(err);
       console.log(err);
     } finally {
