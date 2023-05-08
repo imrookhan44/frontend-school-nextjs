@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 const Features = () => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div className="features-area pt-100 pb-70 bg-fff8f8">
       <div className="container">
@@ -61,7 +61,7 @@ const Features = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features

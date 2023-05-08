@@ -1,12 +1,12 @@
-import React from 'react';
-import PageBanner from '@/components/SingleCourses/PageBanner';
-import CoursesDetailsSidebar from '@/components/SingleCourses/CoursesDetailsSidebar';
-import YouMightLikeTheCourses from '@/components/Courses/YouMightLikeTheCourses';
-import { resetIdCounter, Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-resetIdCounter();
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
-import CoursesCurriculum from '@/components/Courses/CoursesCurriculum';
+import React from 'react'
+import PageBanner from '@/components/SingleCourses/PageBanner'
+import CoursesDetailsSidebar from '@/components/SingleCourses/CoursesDetailsSidebar'
+import YouMightLikeTheCourses from '@/components/Courses/YouMightLikeTheCourses'
+import { resetIdCounter, Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+resetIdCounter()
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
+import CoursesCurriculum from '@/components/Courses/CoursesCurriculum'
 
 const Details = ({ course, user }) => {
   // console.log(course)
@@ -80,7 +80,8 @@ const Details = ({ course, user }) => {
                                     href={course.user.fb_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                    rel="noreferrer">
+                                    rel="noreferrer"
+                                  >
                                     <i className="bx bxl-facebook"></i>
                                   </a>
                                 </li>
@@ -89,7 +90,8 @@ const Details = ({ course, user }) => {
                                     href={course.user.tw_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                    rel="noreferrer">
+                                    rel="noreferrer"
+                                  >
                                     <i className="bx bxl-twitter"></i>
                                   </a>
                                 </li>
@@ -98,7 +100,8 @@ const Details = ({ course, user }) => {
                                     href={course.user.insta_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                    rel="noreferrer">
+                                    rel="noreferrer"
+                                  >
                                     <i className="bx bxl-instagram"></i>
                                   </a>
                                 </li>
@@ -107,7 +110,8 @@ const Details = ({ course, user }) => {
                                     href={course.user.in_url || '#'}
                                     className="d-block"
                                     target="_blank"
-                                    rel="noreferrer">
+                                    rel="noreferrer"
+                                  >
                                     <i className="bx bxl-linkedin"></i>
                                   </a>
                                 </li>
@@ -210,8 +214,9 @@ const Details = ({ course, user }) => {
 
                         <span className="d-block sub-comment">Excellent</span>
                         <p>
-                          Very well built theme, couldn&apos;t be happier with it. Can&apos;t wait
-                          for future updates to see what else they add in.
+                          Very well built theme, couldn&apos;t be happier with
+                          it. Can&apos;t wait for future updates to see what
+                          else they add in.
                         </p>
                       </div>
 
@@ -230,10 +235,12 @@ const Details = ({ course, user }) => {
                           <span className="d-inline-block">Sarah Taylor</span>
                         </div>
 
-                        <span className="d-block sub-comment">Video Quality!</span>
+                        <span className="d-block sub-comment">
+                          Video Quality!
+                        </span>
                         <p>
-                          Was really easy to implement and they quickly answer my additional
-                          questions!
+                          Was really easy to implement and they quickly answer
+                          my additional questions!
                         </p>
                       </div>
 
@@ -252,10 +259,12 @@ const Details = ({ course, user }) => {
                           <span className="d-inline-block">David Warner</span>
                         </div>
 
-                        <span className="d-block sub-comment">Perfect Coding!</span>
+                        <span className="d-block sub-comment">
+                          Perfect Coding!
+                        </span>
                         <p>
-                          Stunning design, very dedicated crew who welcome new ideas suggested by
-                          customers, nice support.
+                          Stunning design, very dedicated crew who welcome new
+                          ideas suggested by customers, nice support.
                         </p>
                       </div>
 
@@ -274,10 +283,12 @@ const Details = ({ course, user }) => {
                           <span className="d-inline-block">King Kong</span>
                         </div>
 
-                        <span className="d-block sub-comment">Perfect Video!</span>
+                        <span className="d-block sub-comment">
+                          Perfect Video!
+                        </span>
                         <p>
-                          Stunning design, very dedicated crew who welcome new ideas suggested by
-                          customers, nice support.
+                          Stunning design, very dedicated crew who welcome new
+                          ideas suggested by customers, nice support.
                         </p>
                       </div>
                     </div>
@@ -295,15 +306,15 @@ const Details = ({ course, user }) => {
 
       <YouMightLikeTheCourses />
     </React.Fragment>
-  );
-};
+  )
+}
 
 Details.getInitialProps = async (ctx) => {
-  const { id } = ctx.query;
-  const url = `${baseUrl}/api/v1/courses/course/${id}`;
-  const response = await axios.get(url);
+  const { id } = ctx.query
+  const url = `${baseUrl}/api/v1/courses/course/${id}`
+  const response = await axios.get(url)
   // console.log(response)
-  return response.data;
-};
+  return response.data
+}
 
-export default Details;
+export default Details

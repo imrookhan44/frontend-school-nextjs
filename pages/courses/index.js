@@ -1,8 +1,8 @@
-import React from 'react';
-import PageBanner from '@/components/Common/PageBanner';
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
-import CourseCard from '@/components/Courses/CourseCard';
+import React from 'react'
+import PageBanner from '@/components/Common/PageBanner'
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
+import CourseCard from '@/components/Courses/CourseCard'
 
 const Index = ({ courses }) => {
   // console.log(courses)
@@ -20,7 +20,8 @@ const Index = ({ courses }) => {
           <div className="edemy-grid-sorting row align-items-center">
             <div className="col-lg-8 col-md-6 result-count">
               <p>
-                We found <span className="count">12</span> courses available for you
+                We found <span className="count">12</span> courses available for
+                you
               </p>
             </div>
 
@@ -39,7 +40,9 @@ const Index = ({ courses }) => {
 
           <div className="row">
             {courses.length ? (
-              courses.map((course) => <CourseCard {...course} key={course.id} />)
+              courses.map((course) => (
+                <CourseCard {...course} key={course.id} />
+              ))
             ) : (
               <h1>Not Found</h1>
             )}
@@ -47,14 +50,14 @@ const Index = ({ courses }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 Index.getInitialProps = async () => {
-  const url = `${baseUrl}/api/v1/courses`;
-  const response = await axios.get(url);
+  const url = `${baseUrl}/api/v1/courses`
+  const response = await axios.get(url)
   // console.log(response)
-  return response.data;
-};
+  return response.data
+}
 
-export default Index;
+export default Index

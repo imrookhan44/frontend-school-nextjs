@@ -1,12 +1,12 @@
-import React from 'react';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from 'next/link';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
+import React from 'react'
+import PageBanner from '@/components/Common/PageBanner'
+import Link from 'next/link'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
 
 const MyCourses = ({ enrolled }) => {
-  console.log(enrolled);
+  console.log(enrolled)
   return (
     <React.Fragment>
       <PageBanner
@@ -39,7 +39,9 @@ const MyCourses = ({ enrolled }) => {
                         </a>
                       </Link>
 
-                      <div className="price shadow">${enrolledCourse.course.price}</div>
+                      <div className="price shadow">
+                        ${enrolledCourse.course.price}
+                      </div>
                     </div>
 
                     <div className="courses-content">
@@ -60,7 +62,8 @@ const MyCourses = ({ enrolled }) => {
                         <Link
                           legacyBehavior
                           href="/my-courses/view/[id]"
-                          as={`/my-courses/view/${enrolledCourse.course.id}`}>
+                          as={`/my-courses/view/${enrolledCourse.course.id}`}
+                        >
                           <a>{enrolledCourse.course.title}</a>
                         </Link>
                       </h3>
@@ -73,7 +76,8 @@ const MyCourses = ({ enrolled }) => {
                           {parseInt(enrolledCourse.course.lessons)} Lessons
                         </li>
                         <li>
-                          <i className="flaticon-people"></i> {enrolledCourse.course.duration}
+                          <i className="flaticon-people"></i>{' '}
+                          {enrolledCourse.course.duration}
                         </li>
                       </ul>
                     </div>
@@ -89,23 +93,23 @@ const MyCourses = ({ enrolled }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 MyCourses.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
   if (!token) {
-    return { enrolled: [] };
+    return { enrolled: [] }
   }
 
   const payload = {
-    headers: { Authorization: token }
-  };
+    headers: { Authorization: token },
+  }
 
-  const url = `${baseUrl}/api/v1/courses/enrolled`;
-  const response = await axios.get(url, payload);
+  const url = `${baseUrl}/api/v1/courses/enrolled`
+  const response = await axios.get(url, payload)
   // console.log(response.data)
-  return response.data;
-};
+  return response.data
+}
 
-export default MyCourses;
+export default MyCourses

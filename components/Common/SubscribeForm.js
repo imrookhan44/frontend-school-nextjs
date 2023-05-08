@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const SubscribeForm = () => {
   return (
@@ -8,8 +8,8 @@ const SubscribeForm = () => {
           <span className="sub-title">Go At Your Own Pace</span>
           <h2>Subscribe To Our Newsletter</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
           <form className="newsletter-form">
@@ -41,7 +41,7 @@ const SubscribeForm = () => {
         <img src="/images/shape14.png" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SubscribeForm;
+export default SubscribeForm

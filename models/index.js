@@ -1,177 +1,182 @@
-'use strict';
+'use strict'
 // main model file
-const Sequelize = require('sequelize');
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
-import User from './user';
-import Course from './course';
-import Video from './video';
-import Section from './section';
-import Enroled_courses from './enroled_courses';
-import Quiz from './quiz';
-import Excercise from './excercise';
-import TestCase from './test_case';
+const Sequelize = require('sequelize')
+const env = process.env.NODE_ENV || 'development'
+const config = require(__dirname + '/../config/config.json')[env]
+const db = {}
+import User from './user'
+import Course from './course'
+import Video from './video'
+import Section from './section'
+import Enroled_courses from './enroled_courses'
+import Quiz from './quiz'
+import Excercise from './excercise'
+import TestCase from './test_case'
 
-let sequelize;
+let sequelize
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  sequelize = new Sequelize(process.env[config.use_env_variable], config)
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config,
+  )
 }
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+db.sequelize = sequelize
+db.Sequelize = Sequelize
 
-db.users = User(sequelize, Sequelize);
-db.quizzes = Quiz(sequelize, Sequelize);
-db.excercises = Excercise(sequelize, Sequelize);
-db.courses = Course(sequelize, Sequelize);
-db.videos = Video(sequelize, Sequelize);
-db.sections = Section(sequelize, Sequelize);
-db.enroled_courses = Enroled_courses(sequelize, Sequelize);
-db.test_cases = TestCase(sequelize, Sequelize);
+db.users = User(sequelize, Sequelize)
+db.quizzes = Quiz(sequelize, Sequelize)
+db.excercises = Excercise(sequelize, Sequelize)
+db.courses = Course(sequelize, Sequelize)
+db.videos = Video(sequelize, Sequelize)
+db.sections = Section(sequelize, Sequelize)
+db.enroled_courses = Enroled_courses(sequelize, Sequelize)
+db.test_cases = TestCase(sequelize, Sequelize)
 
 // hasMany relationshipt with user and course
 db.users.hasMany(db.courses, {
   as: 'courses',
-  foreignKey: 'userId'
-});
+  foreignKey: 'userId',
+})
 db.courses.belongsTo(db.users, {
   foreignKey: 'userId',
-  as: 'user'
-});
+  as: 'user',
+})
 
 // hasMany relationshipt with course and videos
 db.courses.hasMany(db.videos, {
   as: 'videos',
-  foreignKey: 'courseId'
-});
+  foreignKey: 'courseId',
+})
 db.videos.belongsTo(db.courses, {
   foreignKey: 'courseId',
-  as: 'course'
-});
+  as: 'course',
+})
 
 // hasMany relationshipt with course and section
 db.courses.hasMany(db.sections, {
   as: 'sections',
-  foreignKey: 'courseId'
-});
+  foreignKey: 'courseId',
+})
 db.sections.belongsTo(db.courses, {
   foreignKey: 'courseId',
-  as: 'course'
-});
+  as: 'course',
+})
 
 // hasMany relationshipt with user and section
 db.users.hasMany(db.sections, {
   as: 'sections',
-  foreignKey: 'userId'
-});
+  foreignKey: 'userId',
+})
 db.sections.belongsTo(db.courses, {
   foreignKey: 'userId',
-  as: 'user'
-});
+  as: 'user',
+})
 
 // hasMany relationshipt with course and quiz
 db.courses.hasMany(db.quizzes, {
   as: 'quizzes',
-  foreignKey: 'courseId'
-});
+  foreignKey: 'courseId',
+})
 db.quizzes.belongsTo(db.courses, {
   foreignKey: 'courseId',
-  as: 'course'
-});
+  as: 'course',
+})
 
 // hasMany relationshipt with section and quiz
 db.sections.hasMany(db.quizzes, {
   as: 'quizzes',
-  foreignKey: 'sectionId'
-});
+  foreignKey: 'sectionId',
+})
 db.quizzes.belongsTo(db.sections, {
   foreignKey: 'sectionId',
-  as: 'section'
-});
+  as: 'section',
+})
 
 // hasMany relationshipt with course and quiz
 db.courses.hasMany(db.excercises, {
   as: 'excercises',
-  foreignKey: 'courseId'
-});
+  foreignKey: 'courseId',
+})
 db.excercises.belongsTo(db.courses, {
   foreignKey: 'courseId',
-  as: 'course'
-});
+  as: 'course',
+})
 
 // hasMany relationshipt with excercise and test_case
 db.excercises.hasMany(db.test_cases, {
   as: 'test_cases',
-  foreignKey: 'excerciseId'
-});
+  foreignKey: 'excerciseId',
+})
 db.test_cases.belongsTo(db.excercises, {
   foreignKey: 'excerciseId',
-  as: 'excercise'
-});
+  as: 'excercise',
+})
 
 // hasMany relationshipt with section and quiz
 db.sections.hasMany(db.excercises, {
   as: 'excercises',
-  foreignKey: 'sectionId'
-});
+  foreignKey: 'sectionId',
+})
 db.excercises.belongsTo(db.sections, {
   foreignKey: 'sectionId',
-  as: 'section'
-});
+  as: 'section',
+})
 
 // hasMany relationshipt with section and video
 db.sections.hasMany(db.videos, {
   as: 'videos',
-  foreignKey: 'sectionId'
-});
+  foreignKey: 'sectionId',
+})
 db.videos.belongsTo(db.sections, {
   foreignKey: 'sectionId',
-  as: 'section'
-});
+  as: 'section',
+})
 
 // hasMany relationshipt with user and quiz
 db.users.hasMany(db.quizzes, {
   as: 'quizzes',
-  foreignKey: 'userId'
-});
+  foreignKey: 'userId',
+})
 db.quizzes.belongsTo(db.courses, {
   foreignKey: 'userId',
-  as: 'user'
-});
+  as: 'user',
+})
 
 // hasMany relationshipt with user and videos
 db.users.hasMany(db.videos, {
   as: 'videos',
-  foreignKey: 'userId'
-});
+  foreignKey: 'userId',
+})
 db.videos.belongsTo(db.courses, {
   foreignKey: 'userId',
-  as: 'user'
-});
+  as: 'user',
+})
 
 // hasMany relationshipt with course and enroled
 db.courses.hasMany(db.enroled_courses, {
   as: 'enroled_courses',
-  foreignKey: 'courseId'
-});
+  foreignKey: 'courseId',
+})
 db.enroled_courses.belongsTo(db.courses, {
   foreignKey: 'courseId',
-  as: 'course'
-});
+  as: 'course',
+})
 
 // hasMany relationshipt with user and enroled
 db.users.hasMany(db.enroled_courses, {
   as: 'enroled_courses',
-  foreignKey: 'userId'
-});
+  foreignKey: 'userId',
+})
 db.enroled_courses.belongsTo(db.users, {
   foreignKey: 'userId',
-  as: 'user'
-});
+  as: 'user',
+})
 
 // console.log('######', db)
 
-module.exports = db;
+module.exports = db

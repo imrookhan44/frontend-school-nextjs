@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import PageBanner from '@/components/Common/PageBanner';
+import PageBanner from '@/components/Common/PageBanner'
 
 const MyProfile = () => {
   return (
@@ -76,7 +76,7 @@ const MyProfile = () => {
 
       {/* <Footer /> */}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default MyProfile;
+export default MyProfile

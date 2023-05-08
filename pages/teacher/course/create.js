@@ -1,14 +1,14 @@
-import React from 'react';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import { Spinner } from 'reactstrap';
-import toast from 'react-hot-toast';
-import { useRouter } from 'next/router';
-import baseUrl from '@/utils/baseUrl';
-import catchErrors from '@/utils/catchErrors';
-import PageBanner from '@/components/Common/PageBanner';
-import SideBar from '../SideBar';
-import { useToasts } from 'react-toast-notifications';
+import React from 'react'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import { Spinner } from 'reactstrap'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/router'
+import baseUrl from '@/utils/baseUrl'
+import catchErrors from '@/utils/catchErrors'
+import PageBanner from '@/components/Common/PageBanner'
+import SideBar from '../SideBar'
+import { useToasts } from 'react-toast-notifications'
 
 const INIT_COURSE = {
   title: '',
@@ -21,142 +21,155 @@ const INIT_COURSE = {
   course_preview_video: '',
   duration: '',
   lessons: '',
-  category: ''
-};
+  category: '',
+}
 
 const Create = () => {
-  const { token } = parseCookies();
-  const router = useRouter();
+  const { token } = parseCookies()
+  const router = useRouter()
 
-  const [course, setCourse] = React.useState(INIT_COURSE);
-  const [profilePreview, setProfilePreview] = React.useState('');
-  const [coverPhotoPreview, setCoverPhotoPreview] = React.useState('');
-  const [coursePreviewImg, setCoursePreviewImg] = React.useState('');
-  const [imageUploading, setImageUploading] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
-  const [disabled, setDisabled] = React.useState(true);
-  const [error, setError] = React.useState();
+  const [course, setCourse] = React.useState(INIT_COURSE)
+  const [profilePreview, setProfilePreview] = React.useState('')
+  const [coverPhotoPreview, setCoverPhotoPreview] = React.useState('')
+  const [coursePreviewImg, setCoursePreviewImg] = React.useState('')
+  const [imageUploading, setImageUploading] = React.useState(false)
+  const [loading, setLoading] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
+  const [error, setError] = React.useState()
 
   React.useEffect(() => {
-    const isCourse = Object.values(course).every((el) => Boolean(el));
-    isCourse ? setDisabled(false) : setDisabled(true);
-  }, [course]);
+    const isCourse = Object.values(course).every((el) => Boolean(el))
+    isCourse ? setDisabled(false) : setDisabled(true)
+  }, [course])
 
   const handleChange = (e) => {
-    const { addToast } = useToasts();
-    const { name, value, files } = e.target;
+    const { addToast } = useToasts()
+    const { name, value, files } = e.target
 
     if (name === 'profilePhoto') {
-      const profilePhotoSize = files[0].size / 1024 / 1024;
+      const profilePhotoSize = files[0].size / 1024 / 1024
       if (profilePhotoSize > 2) {
-        addToast('The profile photo size greater than 2 MB. Make sure less than 2 MB.', {
-          appearance: 'error'
-        });
-        e.target.value = null;
-        return;
+        addToast(
+          'The profile photo size greater than 2 MB. Make sure less than 2 MB.',
+          {
+            appearance: 'error',
+          },
+        )
+        e.target.value = null
+        return
       }
-      setCourse((prevState) => ({ ...prevState, profilePhoto: files[0] }));
-      setProfilePreview(window.URL.createObjectURL(files[0]));
+      setCourse((prevState) => ({ ...prevState, profilePhoto: files[0] }))
+      setProfilePreview(window.URL.createObjectURL(files[0]))
     } else if (name === 'coverPhoto') {
-      const coverPhotoSize = files[0].size / 1024 / 1024;
+      const coverPhotoSize = files[0].size / 1024 / 1024
       if (coverPhotoSize > 2) {
-        addToast('The cover photo size greater than 2 MB. Make sure less than 2 MB.', {
-          appearance: 'error'
-        });
-        e.target.value = null;
-        return;
+        addToast(
+          'The cover photo size greater than 2 MB. Make sure less than 2 MB.',
+          {
+            appearance: 'error',
+          },
+        )
+        e.target.value = null
+        return
       }
-      setCourse((prevState) => ({ ...prevState, coverPhoto: files[0] }));
-      setCoverPhotoPreview(window.URL.createObjectURL(files[0]));
+      setCourse((prevState) => ({ ...prevState, coverPhoto: files[0] }))
+      setCoverPhotoPreview(window.URL.createObjectURL(files[0]))
     } else if (name === 'course_preview_img') {
-      const course_preview_img = files[0].size / 1024 / 1024;
+      const course_preview_img = files[0].size / 1024 / 1024
       if (course_preview_img > 2) {
-        addToast('The course preview omage size greater than 2 MB. Make sure less than 2 MB.', {
-          appearance: 'error'
-        });
-        e.target.value = null;
-        return;
+        addToast(
+          'The course preview omage size greater than 2 MB. Make sure less than 2 MB.',
+          {
+            appearance: 'error',
+          },
+        )
+        e.target.value = null
+        return
       }
       setCourse((prevState) => ({
         ...prevState,
-        course_preview_img: files[0]
-      }));
-      setCoursePreviewImg(window.URL.createObjectURL(files[0]));
+        course_preview_img: files[0],
+      }))
+      setCoursePreviewImg(window.URL.createObjectURL(files[0]))
     } else {
-      setCourse((prevState) => ({ ...prevState, [name]: value }));
+      setCourse((prevState) => ({ ...prevState, [name]: value }))
     }
     // console.log(course);
-  };
+  }
 
   const handleProfilePhotoUpload = async () => {
-    setImageUploading(true);
+    setImageUploading(true)
     // console.log(post.file_url)
-    const data = new FormData();
-    data.append('file', course.profilePhoto);
-    data.append('upload_preset', 'dq1lv3uk');
-    data.append('cloud_name', 'dxe8e6gy3');
-    let response;
+    const data = new FormData()
+    data.append('file', course.profilePhoto)
+    data.append('upload_preset', 'dq1lv3uk')
+    data.append('cloud_name', 'dxe8e6gy3')
+    let response
     if (course.profilePhoto) {
-      response = await axios.post(process.env.CLOUDINARY_URL, data);
+      response = await axios.post(process.env.CLOUDINARY_URL, data)
     }
-    const profilePhotoUrl = response.data.url;
+    const profilePhotoUrl = response.data.url
 
-    return profilePhotoUrl;
-  };
+    return profilePhotoUrl
+  }
 
   const handlecoverPhotoUpload = async () => {
-    setImageUploading(true);
+    setImageUploading(true)
     // console.log(post.file_url)
-    const data = new FormData();
-    data.append('file', course.coverPhoto);
-    data.append('upload_preset', 'dq1lv3uk');
-    data.append('cloud_name', 'dxe8e6gy3');
-    let response;
+    const data = new FormData()
+    data.append('file', course.coverPhoto)
+    data.append('upload_preset', 'dq1lv3uk')
+    data.append('cloud_name', 'dxe8e6gy3')
+    let response
     if (course.coverPhoto) {
-      response = await axios.post(process.env.CLOUDINARY_URL, data);
+      response = await axios.post(process.env.CLOUDINARY_URL, data)
     }
 
-    const cover_photo_url = response.data.url;
+    const cover_photo_url = response.data.url
 
-    return cover_photo_url;
-  };
+    return cover_photo_url
+  }
 
   const handlePreviewPhotoUpload = async () => {
-    setImageUploading(true);
+    setImageUploading(true)
     // console.log(post.file_url)
-    const data = new FormData();
-    data.append('file', course.course_preview_img);
-    data.append('upload_preset', 'dq1lv3uk');
-    data.append('cloud_name', 'dxe8e6gy3');
-    let response;
+    const data = new FormData()
+    data.append('file', course.course_preview_img)
+    data.append('upload_preset', 'dq1lv3uk')
+    data.append('cloud_name', 'dxe8e6gy3')
+    let response
 
     if (course.course_preview_img) {
-      response = await axios.post(process.env.CLOUDINARY_URL, data);
+      response = await axios.post(process.env.CLOUDINARY_URL, data)
     }
 
-    const preview_photo_response_url = response.data.url;
-    setImageUploading(false);
-    setLoading(true);
-    return preview_photo_response_url;
-  };
+    const preview_photo_response_url = response.data.url
+    setImageUploading(false)
+    setLoading(true)
+    return preview_photo_response_url
+  }
 
   const handleCourseSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      let profile = '';
-      let cover = '';
-      let preview = '';
-      if (course.profilePhoto && course.coverPhoto && course.course_preview_img) {
-        profile = await handleProfilePhotoUpload();
-        cover = await handlecoverPhotoUpload();
-        preview = await handlePreviewPhotoUpload();
+      let profile = ''
+      let cover = ''
+      let preview = ''
+      if (
+        course.profilePhoto &&
+        course.coverPhoto &&
+        course.course_preview_img
+      ) {
+        profile = await handleProfilePhotoUpload()
+        cover = await handlecoverPhotoUpload()
+        preview = await handlePreviewPhotoUpload()
 
-        profile = profile.replace(/^http:\/\//i, 'https://');
-        cover = cover.replace(/^http:\/\//i, 'https://');
-        preview = preview.replace(/^http:\/\//i, 'https://');
+        profile = profile.replace(/^http:\/\//i, 'https://')
+        cover = cover.replace(/^http:\/\//i, 'https://')
+        preview = preview.replace(/^http:\/\//i, 'https://')
       }
 
-      const url = `${baseUrl}/api/v1/courses/course/new`;
+      const url = `${baseUrl}/api/v1/courses/course/new`
       const {
         title,
         overview,
@@ -165,8 +178,8 @@ const Create = () => {
         duration,
         lessons,
         category,
-        course_preview_video
-      } = course;
+        course_preview_video,
+      } = course
 
       const payload = {
         title,
@@ -179,28 +192,28 @@ const Create = () => {
         profile,
         cover,
         preview,
-        course_preview_video
-      };
+        course_preview_video,
+      }
 
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token }
-      });
+        headers: { Authorization: token },
+      })
 
       // console.log(response.data)
-      setLoading(false);
-      setCourse(INIT_COURSE);
-      setProfilePreview('');
-      setCoverPhotoPreview('');
-      setCoursePreviewImg('');
-      toast.success(response.data);
-      router.replace('/teacher/course/upload-course-video');
+      setLoading(false)
+      setCourse(INIT_COURSE)
+      setProfilePreview('')
+      setCoverPhotoPreview('')
+      setCoursePreviewImg('')
+      toast.success(response.data)
+      router.replace('/teacher/course/upload-course-video')
     } catch (err) {
-      catchErrors(err, setError);
-      toast.error(error);
+      catchErrors(err, setError)
+      toast.error(error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <React.Fragment>
@@ -290,7 +303,9 @@ const Create = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>Course Duration (Whole numbers of hours & minutes)</label>
+                    <label>
+                      Course Duration (Whole numbers of hours & minutes)
+                    </label>
                     <input
                       type="text"
                       placeholder="10 hours 30 minutes"
@@ -315,7 +330,8 @@ const Create = () => {
 
                   <div className="form-group">
                     <label>
-                      Course Profile (<i>Image less than 2 MB & size 750x500</i>)
+                      Course Profile (<i>Image less than 2 MB & size 750x500</i>
+                      )
                     </label>
 
                     <br />
@@ -334,12 +350,18 @@ const Create = () => {
 
                   <div className="form-group">
                     <label>
-                      Course Cover Photo (<i>Image less than 2 MB & size 1920x500</i>)
+                      Course Cover Photo (
+                      <i>Image less than 2 MB & size 1920x500</i>)
                     </label>
 
                     <br />
 
-                    <input type="file" name="coverPhoto" accept="image/*" onChange={handleChange} />
+                    <input
+                      type="file"
+                      name="coverPhoto"
+                      accept="image/*"
+                      onChange={handleChange}
+                    />
 
                     <br />
 
@@ -360,7 +382,8 @@ const Create = () => {
 
                   <div className="form-group">
                     <label>
-                      Course Preview Image (<i>Image less than 2 MB & size 750x500</i>)
+                      Course Preview Image (
+                      <i>Image less than 2 MB & size 750x500</i>)
                     </label>
 
                     <br />
@@ -380,10 +403,15 @@ const Create = () => {
                   <button
                     className="default-btn"
                     disabled={imageUploading || disabled || loading}
-                    type="submit">
+                    type="submit"
+                  >
                     <i className="flaticon-right-chevron"></i>
                     Create
-                    {imageUploading || loading ? <Spinner color="success" /> : ''}
+                    {imageUploading || loading ? (
+                      <Spinner color="success" />
+                    ) : (
+                      ''
+                    )}
                     <span></span>
                   </button>
                 </form>
@@ -393,7 +421,7 @@ const Create = () => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Create;
+export default Create

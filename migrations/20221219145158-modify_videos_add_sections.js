@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -13,14 +13,14 @@ module.exports = {
           references: {
             model: 'Sections',
             key: 'id',
-            as: 'sectionId'
-          }
-        }
-      )
-    ]);
+            as: 'sectionId',
+          },
+        },
+      ),
+    ])
   },
 
   async down(queryInterface, Sequelize) {
-    return Promise.all([queryInterface.removeColumn('Videos', 'sectionId')]);
-  }
-};
+    return Promise.all([queryInterface.removeColumn('Videos', 'sectionId')])
+  },
+}

@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <footer className="footer-area">
@@ -17,9 +17,10 @@ const Footer = () => {
               </Link>
 
               <p>
-                Working to bring significant changes in online-based learning by doing extensive
-                research for course curriculum preparation, student engagements, and looking forward
-                to the flexible education!
+                Working to bring significant changes in online-based learning by
+                doing extensive research for course curriculum preparation,
+                student engagements, and looking forward to the flexible
+                education!
               </p>
 
               <ul className="social-link">
@@ -144,7 +145,11 @@ const Footer = () => {
               <p>
                 <i className="bx bx-copyright"></i>
                 {currentYear} eDemy is Proudly Powered by{' '}
-                <a target="_blank" href="https://envytheme.com/" rel="noreferrer">
+                <a
+                  target="_blank"
+                  href="https://envytheme.com/"
+                  rel="noreferrer"
+                >
                   EnvyTheme
                 </a>
               </p>
@@ -174,7 +179,7 @@ const Footer = () => {
         <div className="line"></div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

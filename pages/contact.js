@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 // import Navbar from '../components/_App/Navbar';
-import PageBanner from '../components/Common/PageBanner';
-import ContactForm from '../components/Contact/ContactForm';
+import PageBanner from '../components/Common/PageBanner'
+import ContactForm from '../components/Contact/ContactForm'
 // import Footer from '../components/_App/Footer';
-import GoogleMap from '../components/Contact/GoogleMap';
+import GoogleMap from '../components/Contact/GoogleMap'
 
 const Contact = () => {
   return (
@@ -24,9 +24,10 @@ const Contact = () => {
                 <span className="sub-title">Contact Details</span>
                 <h2>Get in Touch</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                  gravida. Risus commodo viverra.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo
+                  viverra.
                 </p>
 
                 <ul>
@@ -43,7 +44,8 @@ const Contact = () => {
                     </div>
                     <h3>Contact</h3>
                     <p>
-                      Mobile: <a href="tel:+44457895789">(+44) - 45789 - 5789</a>
+                      Mobile:{' '}
+                      <a href="tel:+44457895789">(+44) - 45789 - 5789</a>
                     </p>
                     <p>
                       Mail: <a href="mailto:hello@edemy.com">hello@edemy.com</a>
@@ -72,7 +74,7 @@ const Contact = () => {
 
       {/* <Footer /> */}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

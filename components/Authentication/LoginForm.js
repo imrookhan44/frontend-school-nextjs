@@ -1,48 +1,48 @@
-import React from 'react';
-import { Alert } from 'reactstrap';
-import Link from 'next/link';
-import axios from 'axios';
-import catchErrors from '../../utils/catchErrors';
-import baseUrl from '../../utils/baseUrl';
-import { handleLogin } from '../../utils/auth';
-import LoadingSpinner from '@/utils/LoadingSpinner';
+import React from 'react'
+import { Alert } from 'reactstrap'
+import Link from 'next/link'
+import axios from 'axios'
+import catchErrors from '../../utils/catchErrors'
+import baseUrl from '../../utils/baseUrl'
+import { handleLogin } from '../../utils/auth'
+import LoadingSpinner from '@/utils/LoadingSpinner'
 
 const INITIAL_USER = {
   email: '',
-  password: ''
-};
+  password: '',
+}
 
 const LoginForm = () => {
-  const [user, setUser] = React.useState(INITIAL_USER);
-  const [disabled, setDisabled] = React.useState(true);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState('');
+  const [user, setUser] = React.useState(INITIAL_USER)
+  const [disabled, setDisabled] = React.useState(true)
+  const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState('')
 
   React.useEffect(() => {
-    const isUser = Object.values(user).every((el) => Boolean(el));
-    isUser ? setDisabled(false) : setDisabled(true);
-  }, [user]);
+    const isUser = Object.values(user).every((el) => Boolean(el))
+    isUser ? setDisabled(false) : setDisabled(true)
+  }, [user])
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevState) => ({ ...prevState, [name]: value }));
-  };
+    const { name, value } = e.target
+    setUser((prevState) => ({ ...prevState, [name]: value }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      setLoading(true);
-      setError('');
-      const url = `${baseUrl}/api/v1/auth/signin`;
-      const payload = { ...user };
-      const response = await axios.post(url, payload);
-      handleLogin(response.data);
+      setLoading(true)
+      setError('')
+      const url = `${baseUrl}/api/v1/auth/signin`
+      const payload = { ...user }
+      const response = await axios.post(url, payload)
+      handleLogin(response.data)
     } catch (error) {
-      catchErrors(error, setError);
+      catchErrors(error, setError)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
   return (
     <div className="login-form">
       <h2>Login</h2>
@@ -97,7 +97,7 @@ const LoginForm = () => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

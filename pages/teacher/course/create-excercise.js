@@ -1,14 +1,14 @@
-import React from 'react';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import { Alert } from 'reactstrap';
-import baseUrl from '@/utils/baseUrl';
-import { Spinner } from 'reactstrap';
-import toast from 'react-hot-toast';
-import catchErrors from '@/utils/catchErrors';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from '@/utils/ActiveLink';
-import SideBar from '../SideBar';
+import React from 'react'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import { Alert } from 'reactstrap'
+import baseUrl from '@/utils/baseUrl'
+import { Spinner } from 'reactstrap'
+import toast from 'react-hot-toast'
+import catchErrors from '@/utils/catchErrors'
+import PageBanner from '@/components/Common/PageBanner'
+import Link from '@/utils/ActiveLink'
+import SideBar from '../SideBar'
 
 const INITEXERCISE = {
   order: '',
@@ -20,16 +20,16 @@ const INITEXERCISE = {
   testCases: '',
   testCaseResults: '',
   courseId: '',
-  sectionId: ''
-};
+  sectionId: '',
+}
 
 const addQuiz = ({ courses }) => {
-  const { token } = parseCookies();
+  const { token } = parseCookies()
 
-  const [excercise, setExercise] = React.useState(INITEXERCISE);
-  const [sectionOptions, setSectionOptions] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
-  const [disabled, setDisabled] = React.useState(true);
+  const [excercise, setExercise] = React.useState(INITEXERCISE)
+  const [sectionOptions, setSectionOptions] = React.useState([])
+  const [loading, setLoading] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
 
   React.useEffect(() => {
     const {
@@ -42,8 +42,8 @@ const addQuiz = ({ courses }) => {
       testCases,
       testCaseResults,
       courseId,
-      sectionId
-    } = excercise;
+      sectionId,
+    } = excercise
     const isExercise = Object.values({
       order,
       name,
@@ -54,34 +54,34 @@ const addQuiz = ({ courses }) => {
       testCases,
       testCaseResults,
       courseId,
-      sectionId
-    }).every((el) => Boolean(el));
-    isExercise ? setDisabled(false) : setDisabled(true);
-  }, [excercise]);
+      sectionId,
+    }).every((el) => Boolean(el))
+    isExercise ? setDisabled(false) : setDisabled(true)
+  }, [excercise])
 
   const handleChange = async (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     if (name == 'courseId') {
       // if (!token) {
       //   return redirectUser(ctx, '/login');
       // }
 
       const payload = {
-        headers: { Authorization: token }
-      };
+        headers: { Authorization: token },
+      }
 
-      const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`;
-      const response = await axios.get(url, payload);
-      setSectionOptions(response.data.sections);
+      const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`
+      const response = await axios.get(url, payload)
+      setSectionOptions(response.data.sections)
     }
-    setExercise((prevState) => ({ ...prevState, [name]: value }));
-  };
+    setExercise((prevState) => ({ ...prevState, [name]: value }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
     try {
-      const url = `${baseUrl}/api/v1/courses/course/new-exercise`;
+      const url = `${baseUrl}/api/v1/courses/course/new-exercise`
       const {
         order,
         name,
@@ -92,8 +92,8 @@ const addQuiz = ({ courses }) => {
         testCases,
         testCaseResults,
         courseId,
-        sectionId
-      } = excercise;
+        sectionId,
+      } = excercise
       const payload = {
         order,
         name,
@@ -104,25 +104,25 @@ const addQuiz = ({ courses }) => {
         testCases,
         testCaseResults,
         courseId,
-        sectionId
-      };
+        sectionId,
+      }
 
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token }
-      });
+        headers: { Authorization: token },
+      })
 
-      setLoading(false);
-      toast.success(response.data);
-      setExercise(INITEXERCISE);
+      setLoading(false)
+      toast.success(response.data)
+      setExercise(INITEXERCISE)
     } catch (err) {
-      console.log(err);
-      catchErrors(err, toast.error);
-      toast.error(err);
-      console.log(err);
+      console.log(err)
+      catchErrors(err, toast.error)
+      toast.error(err)
+      console.log(err)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <React.Fragment>
@@ -164,7 +164,11 @@ const addQuiz = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Course</label>
-                    <select onChange={handleChange} name="courseId" className="form-control">
+                    <select
+                      onChange={handleChange}
+                      name="courseId"
+                      className="form-control"
+                    >
                       <option>Select Course</option>
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
@@ -176,7 +180,11 @@ const addQuiz = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Section</label>
-                    <select onChange={handleChange} name="sectionId" className="form-control">
+                    <select
+                      onChange={handleChange}
+                      name="sectionId"
+                      className="form-control"
+                    >
                       <option>Select section</option>
                       {sectionOptions.map((section) => (
                         <option value={section.id} key={section.id}>
@@ -284,7 +292,10 @@ const addQuiz = ({ courses }) => {
                     />
                   </div>
 
-                  <button className="default-btn" disabled={disabled || loading}>
+                  <button
+                    className="default-btn"
+                    disabled={disabled || loading}
+                  >
                     <i className="flaticon-right-chevron"></i>
                     Add
                   </button>
@@ -295,23 +306,23 @@ const addQuiz = ({ courses }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 addQuiz.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
   if (!token) {
-    return { courses: [] };
+    return { courses: [] }
   }
 
   const payload = {
-    headers: { Authorization: token }
-  };
+    headers: { Authorization: token },
+  }
 
-  const url = `${baseUrl}/api/v1/courses/my-courses`;
-  const response = await axios.get(url, payload);
+  const url = `${baseUrl}/api/v1/courses/my-courses`
+  const response = await axios.get(url, payload)
   // console.log(response.data)
-  return response.data;
-};
+  return response.data
+}
 
-export default addQuiz;
+export default addQuiz

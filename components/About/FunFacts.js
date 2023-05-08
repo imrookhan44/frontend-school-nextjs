@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const FunFacts = () => {
   return (
@@ -33,7 +33,7 @@ const FunFacts = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FunFacts;
+export default FunFacts

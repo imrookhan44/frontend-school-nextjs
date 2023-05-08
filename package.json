@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start -p 3040",
     "lint": "eslint .",
+    "prepare": "husky install",
+    "prettier-check": "prettier \"**/*.js{,x}\" --check",
     "lint:fix": "eslint --fix",
+    "pre-commit": "npm run lint && npm run prettier-check",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "author": "EnvyTheme.com",
@@ -64,6 +67,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.8",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "husky": "^8.0.3"
   }
 }

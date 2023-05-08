@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, Sequelize) => {
   class Enroled_courses extends Model {
     /**
@@ -13,13 +13,13 @@ module.exports = (sequelize, Sequelize) => {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       payment_email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       cost: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       courseId: {
         type: Sequelize.UUID,
@@ -27,8 +27,8 @@ module.exports = (sequelize, Sequelize) => {
         references: {
           model: 'Courses',
           key: 'id',
-          as: 'courseId'
-        }
+          as: 'courseId',
+        },
       },
       userId: {
         type: Sequelize.UUID,
@@ -36,14 +36,14 @@ module.exports = (sequelize, Sequelize) => {
         references: {
           model: 'Users',
           key: 'id',
-          as: 'userId'
-        }
-      }
+          as: 'userId',
+        },
+      },
     },
     {
       sequelize,
-      modelName: 'Enroled_courses'
-    }
-  );
-  return Enroled_courses;
-};
+      modelName: 'Enroled_courses',
+    },
+  )
+  return Enroled_courses
+}

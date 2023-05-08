@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import React from 'react';
+import React from 'react'
 
 const Preloader = () => {
   return (
@@ -125,7 +125,7 @@ const Preloader = () => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default Preloader;
+export default Preloader

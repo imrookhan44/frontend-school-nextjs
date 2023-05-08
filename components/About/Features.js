@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const Features = () => {
   return (
@@ -9,8 +9,9 @@ const Features = () => {
           <span className="sub-title">Education for everyone</span>
           <h2>Our Features</h2>
           <p>
-            Finding your own space and utilize better learning options can result in faster than the
-            traditional ways. Enjoy the beauty of eLearning!
+            Finding your own space and utilize better learning options can
+            result in faster than the traditional ways. Enjoy the beauty of
+            eLearning!
           </p>
         </div>
 
@@ -21,7 +22,10 @@ const Features = () => {
                 <i className="flaticon-brain-process"></i>
               </div>
               <h3>Learn the Latest Top Skills</h3>
-              <p>Learning top skills can bring an extra-ordinary outcome in a career.</p>
+              <p>
+                Learning top skills can bring an extra-ordinary outcome in a
+                career.
+              </p>
 
               <Link legacyBehavior href="/profile-authentication">
                 <a className="link-btn">Start Now!</a>
@@ -36,7 +40,8 @@ const Features = () => {
               </div>
               <h3>Learn in Your Own Pace</h3>
               <p>
-                Everyone prefers to enjoy learning at their own pace & that gives a great result.
+                Everyone prefers to enjoy learning at their own pace & that
+                gives a great result.
               </p>
 
               <Link legacyBehavior href="/profile-authentication">
@@ -51,7 +56,10 @@ const Features = () => {
                 <i className="flaticon-shield-1"></i>
               </div>
               <h3>Learn From Industry Experts</h3>
-              <p>Experienced teachers can assist in learning faster with their best approaches!</p>
+              <p>
+                Experienced teachers can assist in learning faster with their
+                best approaches!
+              </p>
 
               <Link legacyBehavior href="/profile-authentication">
                 <a className="link-btn">Start Now!</a>
@@ -66,7 +74,8 @@ const Features = () => {
               </div>
               <h3>Enjoy Learning From Anywhere</h3>
               <p>
-                We are delighted to give you options to enjoy learning from anywhere in the world.
+                We are delighted to give you options to enjoy learning from
+                anywhere in the world.
               </p>
 
               <Link legacyBehavior href="/profile-authentication">
@@ -77,7 +86,7 @@ const Features = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features

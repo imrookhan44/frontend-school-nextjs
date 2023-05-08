@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const Features = () => {
   return (
@@ -9,8 +9,8 @@ const Features = () => {
           <span className="sub-title">Education for everyone</span>
           <h2>Online Coaching Lessons For Remote Learning</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
 
@@ -22,8 +22,8 @@ const Features = () => {
               </div>
               <h3>Learn the Latest Skills</h3>
               <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority
-                have suffered alteration.
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration.
               </p>
 
               <Link legacyBehavior href="/profile-authentication">
@@ -39,8 +39,8 @@ const Features = () => {
               </div>
               <h3>Go at Your Own Pace</h3>
               <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority
-                have suffered alteration.
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration.
               </p>
 
               <Link legacyBehavior href="/profile-authentication">
@@ -56,8 +56,8 @@ const Features = () => {
               </div>
               <h3>Learn from Industry Experts</h3>
               <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority
-                have suffered alteration.
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration.
               </p>
 
               <Link legacyBehavior href="/profile-authentication">
@@ -68,7 +68,7 @@ const Features = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features

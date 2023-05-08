@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const PageBanner = ({
   pageTitle,
@@ -7,7 +7,7 @@ const PageBanner = ({
   homePageText,
   innerPageUrl,
   innerPageText,
-  activePageText
+  activePageText,
 }) => {
   return (
     <div className="page-title-area">
@@ -46,7 +46,7 @@ const PageBanner = ({
         <img src="/images/shape8.svg" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PageBanner;
+export default PageBanner

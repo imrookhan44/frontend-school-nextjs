@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, Sequelize) => {
   class Quiz extends Model {
     /**
@@ -16,16 +16,16 @@ module.exports = (sequelize, Sequelize) => {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       order: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       json: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       courseId: {
         type: Sequelize.UUID,
@@ -33,8 +33,8 @@ module.exports = (sequelize, Sequelize) => {
         references: {
           model: 'Courses',
           key: 'id',
-          as: 'courseId'
-        }
+          as: 'courseId',
+        },
       },
       sectionId: {
         type: Sequelize.UUID,
@@ -42,8 +42,8 @@ module.exports = (sequelize, Sequelize) => {
         references: {
           model: 'Sections',
           key: 'id',
-          as: 'sectionId'
-        }
+          as: 'sectionId',
+        },
       },
       userId: {
         type: Sequelize.UUID,
@@ -51,14 +51,14 @@ module.exports = (sequelize, Sequelize) => {
         references: {
           model: 'Users',
           key: 'id',
-          as: 'userId'
-        }
-      }
+          as: 'userId',
+        },
+      },
     },
     {
       sequelize,
-      modelName: 'Quiz'
-    }
-  );
-  return Quiz;
-};
+      modelName: 'Quiz',
+    },
+  )
+  return Quiz
+}

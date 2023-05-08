@@ -1,23 +1,23 @@
-'use strict';
+'use strict'
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Videos', {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       video_url: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       order: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       courseId: {
         type: Sequelize.UUID,
@@ -25,8 +25,8 @@ module.exports = {
         references: {
           model: 'Courses',
           key: 'id',
-          as: 'courseId'
-        }
+          as: 'courseId',
+        },
       },
       userId: {
         type: Sequelize.UUID,
@@ -34,20 +34,20 @@ module.exports = {
         references: {
           model: 'Users',
           key: 'id',
-          as: 'userId'
-        }
+          as: 'userId',
+        },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
+        type: Sequelize.DATE,
+      },
+    })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Videos');
-  }
-};
+    await queryInterface.dropTable('Videos')
+  },
+}

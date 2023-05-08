@@ -1,75 +1,75 @@
-import React from 'react';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import { Alert } from 'reactstrap';
-import baseUrl from '@/utils/baseUrl';
-import { Spinner } from 'reactstrap';
-import toast from 'react-hot-toast';
-import catchErrors from '@/utils/catchErrors';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from '@/utils/ActiveLink';
-import SideBar from '../SideBar';
+import React from 'react'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import { Alert } from 'reactstrap'
+import baseUrl from '@/utils/baseUrl'
+import { Spinner } from 'reactstrap'
+import toast from 'react-hot-toast'
+import catchErrors from '@/utils/catchErrors'
+import PageBanner from '@/components/Common/PageBanner'
+import Link from '@/utils/ActiveLink'
+import SideBar from '../SideBar'
 
 const INITSECTION = {
   order: 0,
   name: '',
   description: '',
-  courseId: ''
-};
+  courseId: '',
+}
 
 const addSection = ({ courses }) => {
   // console.log(courses)
-  const { token } = parseCookies();
+  const { token } = parseCookies()
 
-  const [section, setSection] = React.useState(INITSECTION);
-  const [loading, setLoading] = React.useState(false);
-  const [disabled, setDisabled] = React.useState(true);
+  const [section, setSection] = React.useState(INITSECTION)
+  const [loading, setLoading] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
 
   React.useEffect(() => {
-    const { order, name, description } = section;
+    const { order, name, description } = section
     const isSection = Object.values({
       name,
       order,
-      description
-    }).every((el) => Boolean(el));
-    isSection ? setDisabled(false) : setDisabled(true);
-  }, [section]);
+      description,
+    }).every((el) => Boolean(el))
+    isSection ? setDisabled(false) : setDisabled(true)
+  }, [section])
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setSection((prevState) => ({ ...prevState, [name]: value }));
-  };
+    const { name, value } = e.target
+    setSection((prevState) => ({ ...prevState, [name]: value }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
     try {
-      const url = `${baseUrl}/api/v1/courses/course/new-section`;
-      const { order, name, description, courseId } = section;
+      const url = `${baseUrl}/api/v1/courses/course/new-section`
+      const { order, name, description, courseId } = section
       const payload = {
         order,
         name,
         description,
-        courseId
-      };
+        courseId,
+      }
 
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token }
-      });
+        headers: { Authorization: token },
+      })
 
-      console.log(response.data);
+      console.log(response.data)
 
-      setLoading(false);
-      toast.success(response.data);
-      setSection(INITSECTION);
+      setLoading(false)
+      toast.success(response.data)
+      setSection(INITSECTION)
     } catch (err) {
-      catchErrors(err, toast.error);
-      toast.error(err);
-      console.log(err);
+      catchErrors(err, toast.error)
+      toast.error(err)
+      console.log(err)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <React.Fragment>
@@ -111,7 +111,11 @@ const addSection = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Course</label>
-                    <select onChange={handleChange} name="courseId" className="form-control">
+                    <select
+                      onChange={handleChange}
+                      name="courseId"
+                      className="form-control"
+                    >
                       <option>Select Course</option>
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
@@ -157,7 +161,10 @@ const addSection = ({ courses }) => {
                     />
                   </div>
 
-                  <button className="default-btn" disabled={disabled || loading}>
+                  <button
+                    className="default-btn"
+                    disabled={disabled || loading}
+                  >
                     <i className="flaticon-right-chevron"></i>
                     Add
                   </button>
@@ -168,23 +175,23 @@ const addSection = ({ courses }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 addSection.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
   if (!token) {
-    return { courses: [] };
+    return { courses: [] }
   }
 
   const payload = {
-    headers: { Authorization: token }
-  };
+    headers: { Authorization: token },
+  }
 
-  const url = `${baseUrl}/api/v1/courses/my-courses`;
-  const response = await axios.get(url, payload);
+  const url = `${baseUrl}/api/v1/courses/my-courses`
+  const response = await axios.get(url, payload)
   // console.log(response.data)
-  return response.data;
-};
+  return response.data
+}
 
-export default addSection;
+export default addSection

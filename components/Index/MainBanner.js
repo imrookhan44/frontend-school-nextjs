@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 const MainBanner = () => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div className="main-banner-area">
       <div className="container-fluid">
@@ -41,7 +41,7 @@ const MainBanner = () => {
         <img src="/images/bulb.png" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainBanner;
+export default MainBanner

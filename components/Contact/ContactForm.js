@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import baseUrl from '../../utils/baseUrl';
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
+import baseUrl from '../../utils/baseUrl'
 
 // Form initial state
 const INITIAL_STATE = {
@@ -9,37 +9,39 @@ const INITIAL_STATE = {
   email: '',
   number: '',
   subject: '',
-  text: ''
-};
+  text: '',
+}
 
 const ContactForm = () => {
-  const [contact, setContact] = useState(INITIAL_STATE);
-  const { register, handleSubmit, errors } = useForm();
+  const [contact, setContact] = useState(INITIAL_STATE)
+  const { register, handleSubmit, errors } = useForm()
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContact((prevState) => ({ ...prevState, [name]: value }));
-    console.log(contact);
-  };
+    const { name, value } = e.target
+    setContact((prevState) => ({ ...prevState, [name]: value }))
+    console.log(contact)
+  }
 
   const onSubmit = async () => {
     // e.preventDefault();
     try {
-      const url = `${baseUrl}/api/contact`;
-      const { name, email, number, subject, text } = contact;
-      const payload = { name, email, number, subject, text };
-      await axios.post(url, payload);
-      console.log(url);
-      setContact(INITIAL_STATE);
+      const url = `${baseUrl}/api/contact`
+      const { name, email, number, subject, text } = contact
+      const payload = { name, email, number, subject, text }
+      await axios.post(url, payload)
+      console.log(url)
+      setContact(INITIAL_STATE)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
   return (
     <div className="contact-form">
       <h2>Ready to Get Started?</h2>
-      <p>Your email address will not be published. Required fields are marked *</p>
+      <p>
+        Your email address will not be published. Required fields are marked *
+      </p>
 
       <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
@@ -69,7 +71,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 ref={register({
                   required: true,
-                  pattern: /^\S+@\S+$/i
+                  pattern: /^\S+@\S+$/i,
                 })}
               />
               <div className="invalid-feedback" style={{ display: 'block' }}>
@@ -135,7 +137,7 @@ const ContactForm = () => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

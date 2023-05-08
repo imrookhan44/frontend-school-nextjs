@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from '@/utils/ActiveLink';
+import React from 'react'
+import Link from '@/utils/ActiveLink'
 
 const SideBar = () => {
   return (
@@ -11,43 +11,71 @@ const SideBar = () => {
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/course/create" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/course/create"
+            activeClassName="active"
+          >
             <a>Create A Course</a>
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/courses/course-edit" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/courses/course-edit"
+            activeClassName="active"
+          >
             <a>Edit My Course</a>
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/course/add-quiz" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/course/add-quiz"
+            activeClassName="active"
+          >
             <a>Add Quiz</a>
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/course/add-section" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/course/add-section"
+            activeClassName="active"
+          >
             <a>Add Section</a>
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/course/upload-course-video" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/course/upload-course-video"
+            activeClassName="active"
+          >
             <a>Upload Course Video</a>
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/course/create-excercise" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/course/create-excercise"
+            activeClassName="active"
+          >
             <a>Create Excercise</a>
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/teacher/course/add-test-cases" activeClassName="active">
+          <Link
+            legacyBehavior
+            href="/teacher/course/add-test-cases"
+            activeClassName="active"
+          >
             <a>Add Test Cases</a>
           </Link>
         </li>
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default SideBar

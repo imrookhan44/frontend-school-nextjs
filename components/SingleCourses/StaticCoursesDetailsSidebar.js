@@ -1,19 +1,19 @@
-import React from 'react';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-const ModalVideo = dynamic(import('react-modal-video'));
+import React from 'react'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
+const ModalVideo = dynamic(import('react-modal-video'))
 
 const StaticCoursesDetailsSidebar = () => {
-  const [display, setDisplay] = React.useState(false);
+  const [display, setDisplay] = React.useState(false)
 
   React.useEffect(() => {
-    setDisplay(true);
-  }, []);
+    setDisplay(true)
+  }, [])
   // Popup Video
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(true)
   const openModal = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
   return (
     <React.Fragment>
       {/* If you want to change the video need to update videoID */}
@@ -34,10 +34,11 @@ const StaticCoursesDetailsSidebar = () => {
 
           <div
             onClick={(e) => {
-              e.preventDefault();
-              openModal();
+              e.preventDefault()
+              openModal()
             }}
-            className="link-btn popup-youtube"></div>
+            className="link-btn popup-youtube"
+          ></div>
 
           <div className="content">
             <i className="flaticon-play"></i>
@@ -99,7 +100,8 @@ const StaticCoursesDetailsSidebar = () => {
         <div className="btn-box">
           <Link legacyBehavior href="#">
             <a className="default-btn">
-              <i className="flaticon-shopping-cart"></i> Add to Cart <span></span>
+              <i className="flaticon-shopping-cart"></i> Add to Cart{' '}
+              <span></span>
             </a>
           </Link>
           <Link legacyBehavior href="#">
@@ -141,7 +143,7 @@ const StaticCoursesDetailsSidebar = () => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default StaticCoursesDetailsSidebar;
+export default StaticCoursesDetailsSidebar

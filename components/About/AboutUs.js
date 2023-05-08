@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const AboutUs = () => {
   return (
@@ -39,18 +39,19 @@ const AboutUs = () => {
             <div className="about-content">
               <span className="sub-title">DISTANCE LEARNING</span>
               <h2>
-                89% of people learning for professional development report career benefits like
-                getting a promotion, starting a new career
+                89% of people learning for professional development report
+                career benefits like getting a promotion, starting a new career
               </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
 
               <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo.
               </p>
 
               <ul className="features-list">
@@ -93,7 +94,7 @@ const AboutUs = () => {
         <img src="/images/shape4.png" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutUs;
+export default AboutUs

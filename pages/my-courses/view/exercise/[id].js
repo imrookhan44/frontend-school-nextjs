@@ -1,7 +1,7 @@
-import React from 'react';
-import PageBanner from '@/components/Common/PageBanner';
+import React from 'react'
+import PageBanner from '@/components/Common/PageBanner'
 
-import { parseCookies } from 'nookies';
+import { parseCookies } from 'nookies'
 
 const SingleExercise = ({ excercise, token }) => {
   return (
@@ -18,15 +18,15 @@ const SingleExercise = ({ excercise, token }) => {
         src={`http://localhost:3001?excerciseId=${excercise}&token=${token}`}
       />
     </React.Fragment>
-  );
-};
+  )
+}
 
 SingleExercise.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
 
-  const { id } = ctx.query;
+  const { id } = ctx.query
 
-  return { excercise: id, token: token };
-};
+  return { excercise: id, token: token }
+}
 
-export default SingleExercise;
+export default SingleExercise

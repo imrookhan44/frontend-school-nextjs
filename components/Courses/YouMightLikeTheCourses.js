@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const YouMightLikeTheCourses = () => {
   return (
@@ -25,17 +25,24 @@ const YouMightLikeTheCourses = () => {
               </div>
               <div className="courses-content">
                 <div className="course-author d-flex align-items-center">
-                  <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
+                  <img
+                    src="/images/user1.jpg"
+                    className="rounded-circle"
+                    alt="image"
+                  />
                   <span>Alex Morgan</span>
                 </div>
                 <h3>
                   <Link legacyBehavior href="/single-courses-1">
-                    <a>The Data Science Course 2020: Complete Data Science Bootcamp</a>
+                    <a>
+                      The Data Science Course 2020: Complete Data Science
+                      Bootcamp
+                    </a>
                   </Link>
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore.
                 </p>
                 <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                   <li>
@@ -64,17 +71,23 @@ const YouMightLikeTheCourses = () => {
               </div>
               <div className="courses-content">
                 <div className="course-author d-flex align-items-center">
-                  <img src="/images/user2.jpg" className="rounded-circle" alt="image" />
+                  <img
+                    src="/images/user2.jpg"
+                    className="rounded-circle"
+                    alt="image"
+                  />
                   <span>Sarah Taylor</span>
                 </div>
                 <h3>
                   <Link legacyBehavior href="/single-courses-1">
-                    <a>Java Programming MasterclassName for Software Developers</a>
+                    <a>
+                      Java Programming MasterclassName for Software Developers
+                    </a>
                   </Link>
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore.
                 </p>
                 <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                   <li>
@@ -103,17 +116,23 @@ const YouMightLikeTheCourses = () => {
               </div>
               <div className="courses-content">
                 <div className="course-author d-flex align-items-center">
-                  <img src="/images/user3.jpg" className="rounded-circle" alt="image" />
+                  <img
+                    src="/images/user3.jpg"
+                    className="rounded-circle"
+                    alt="image"
+                  />
                   <span>David Warner</span>
                 </div>
                 <h3>
                   <Link legacyBehavior href="/single-courses-1">
-                    <a>Deep Learning A-Z™: Hands-On Artificial Neural Networks</a>
+                    <a>
+                      Deep Learning A-Z™: Hands-On Artificial Neural Networks
+                    </a>
                   </Link>
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore.
                 </p>
                 <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                   <li>
@@ -129,7 +148,7 @@ const YouMightLikeTheCourses = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default YouMightLikeTheCourses;
+export default YouMightLikeTheCourses

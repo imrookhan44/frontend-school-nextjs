@@ -1,24 +1,24 @@
-import React from 'react';
-import useTranslation from 'next-translate/useTranslation';
-import MainBanner from '@/components/Index/MainBanner';
-import Features from '@/components/Index/Features';
-import TopCourses from '@/components/Index/TopCourses';
-import About from '@/components/Index/About';
-import Testimonials from '@/components/Index/Testimonials';
-import Instance from '@/components/Index/Instance';
-import Partner from '@/components/Index/Partner';
-import Ad from '@/components/Index/Ad';
-import Funfacts from '@/components/Index/Funfacts';
-import Blog from '@/components/Index/Blog';
-import EdemyPremium from '@/components/Index/EdemyPremium';
-import HowToApply from '@/components/Index/HowToApply';
-import SignUpForm from '@/components/Index/SignUpForm';
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
-import SEO from '@/components/SEO';
+import React from 'react'
+import useTranslation from 'next-translate/useTranslation'
+import MainBanner from '@/components/Index/MainBanner'
+import Features from '@/components/Index/Features'
+import TopCourses from '@/components/Index/TopCourses'
+import About from '@/components/Index/About'
+import Testimonials from '@/components/Index/Testimonials'
+import Instance from '@/components/Index/Instance'
+import Partner from '@/components/Index/Partner'
+import Ad from '@/components/Index/Ad'
+import Funfacts from '@/components/Index/Funfacts'
+import Blog from '@/components/Index/Blog'
+import EdemyPremium from '@/components/Index/EdemyPremium'
+import HowToApply from '@/components/Index/HowToApply'
+import SignUpForm from '@/components/Index/SignUpForm'
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
+import SEO from '@/components/SEO'
 
 const Index = ({ courses }) => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <>
       <SEO title={t('pagetitle')} description={t('bannersubtitle')} />
@@ -36,14 +36,14 @@ const Index = ({ courses }) => {
       <Blog />
       <EdemyPremium />
     </>
-  );
-};
+  )
+}
 
 Index.getInitialProps = async () => {
-  const url = `${baseUrl}/api/v1/courses/homepage-courses`;
-  const response = await axios.get(url);
+  const url = `${baseUrl}/api/v1/courses/homepage-courses`
+  const response = await axios.get(url)
   // console.log(response)
-  return response.data;
-};
+  return response.data
+}
 
-export default Index;
+export default Index

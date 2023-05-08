@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const LatestNews = () => {
   return (
@@ -9,8 +9,8 @@ const LatestNews = () => {
           <span className="sub-title">News and Blogs</span>
           <h2>Our Latest Publications</h2>
           <p>
-            We always give extra care to our students skills improvements and feel excited to share
-            our latest research and learnings!
+            We always give extra care to our students skills improvements and
+            feel excited to share our latest research and learnings!
           </p>
         </div>
 
@@ -36,7 +36,11 @@ const LatestNews = () => {
                 <ul className="post-content-footer d-flex justify-content-between align-items-center">
                   <li>
                     <div className="post-author d-flex align-items-center">
-                      <img src="/images/user1.jpg" className="rounded-circle" alt="image" />
+                      <img
+                        src="/images/user1.jpg"
+                        className="rounded-circle"
+                        alt="image"
+                      />
                       <span>Alex Morgan</span>
                     </div>
                   </li>
@@ -63,13 +67,19 @@ const LatestNews = () => {
                 </Link>
                 <h3>
                   <Link legacyBehavior href="/single-blog-1">
-                    <a>Online Learning Can Prepare Students For A Fast-Changing</a>
+                    <a>
+                      Online Learning Can Prepare Students For A Fast-Changing
+                    </a>
                   </Link>
                 </h3>
                 <ul className="post-content-footer d-flex justify-content-between align-items-center">
                   <li>
                     <div className="post-author d-flex align-items-center">
-                      <img src="/images/user2.jpg" className="rounded-circle" alt="image" />
+                      <img
+                        src="/images/user2.jpg"
+                        className="rounded-circle"
+                        alt="image"
+                      />
                       <span>Sarah Taylor</span>
                     </div>
                   </li>
@@ -102,7 +112,11 @@ const LatestNews = () => {
                 <ul className="post-content-footer d-flex justify-content-between align-items-center">
                   <li>
                     <div className="post-author d-flex align-items-center">
-                      <img src="/images/user3.jpg" className="rounded-circle" alt="image" />
+                      <img
+                        src="/images/user3.jpg"
+                        className="rounded-circle"
+                        alt="image"
+                      />
                       <span>David Warner</span>
                     </div>
                   </li>
@@ -127,7 +141,7 @@ const LatestNews = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LatestNews;
+export default LatestNews

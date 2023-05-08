@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const SignUpForm = () => {
   return (
@@ -18,19 +18,35 @@ const SignUpForm = () => {
 
               <form>
                 <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Your Name *" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Name *"
+                  />
                 </div>
 
                 <div className="form-group">
-                  <input type="email" className="form-control" placeholder="Your Email *" />
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Your Email *"
+                  />
                 </div>
 
                 <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Your Phone *" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Phone *"
+                  />
                 </div>
 
                 <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Your Subject *" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Subject *"
+                  />
                 </div>
 
                 <button type="submit">Register Now</button>
@@ -40,7 +56,7 @@ const SignUpForm = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUpForm;
+export default SignUpForm

@@ -1,23 +1,23 @@
-import React from 'react';
-import Router from 'next/router';
+import React from 'react'
+import Router from 'next/router'
 
 const SearchForm = () => {
-  const [search, setSearch] = React.useState({ search: '' });
+  const [search, setSearch] = React.useState({ search: '' })
 
   const handleOnChange = (e) => {
-    const { name, value } = e.target;
-    setSearch((prevState) => ({ ...prevState, [name]: value }));
+    const { name, value } = e.target
+    setSearch((prevState) => ({ ...prevState, [name]: value }))
 
     // console.log("dsddsd")
-  };
+  }
 
   const handleSearch = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     Router.push({
       pathname: '/courses/search',
-      query: { q: search.search }
-    });
-  };
+      query: { q: search.search },
+    })
+  }
 
   return (
     <form className="search-box" onSubmit={handleSearch}>
@@ -33,7 +33,7 @@ const SearchForm = () => {
         <i className="flaticon-search"></i>
       </button>
     </form>
-  );
-};
+  )
+}
 
-export default SearchForm;
+export default SearchForm

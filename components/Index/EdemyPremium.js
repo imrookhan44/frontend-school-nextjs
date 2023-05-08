@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 const EdemyPremium = () => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div>
       <div className="view-all-courses-area-three bg-fff8f8">
@@ -61,7 +61,7 @@ const EdemyPremium = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EdemyPremium;
+export default EdemyPremium

@@ -1,14 +1,14 @@
-import React from 'react';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import { Alert } from 'reactstrap';
-import baseUrl from '@/utils/baseUrl';
-import { Spinner } from 'reactstrap';
-import toast from 'react-hot-toast';
-import catchErrors from '@/utils/catchErrors';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from '@/utils/ActiveLink';
-import SideBar from '../SideBar';
+import React from 'react'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import { Alert } from 'reactstrap'
+import baseUrl from '@/utils/baseUrl'
+import { Spinner } from 'reactstrap'
+import toast from 'react-hot-toast'
+import catchErrors from '@/utils/catchErrors'
+import PageBanner from '@/components/Common/PageBanner'
+import Link from '@/utils/ActiveLink'
+import SideBar from '../SideBar'
 
 const INIT_VIDEO = {
   video_url: '',
@@ -16,114 +16,114 @@ const INIT_VIDEO = {
   name: '',
   description: '',
   courseId: '',
-  sectionId: ''
-};
+  sectionId: '',
+}
 
 const UploadCourseVideo = ({ courses }) => {
   // console.log(courses)
-  const { token } = parseCookies();
+  const { token } = parseCookies()
 
-  const [video, setVideo] = React.useState(INIT_VIDEO);
-  const [loading, setLoading] = React.useState(false);
-  const [disabled, setDisabled] = React.useState(true);
-  const [sectionOptions, setSectionOptions] = React.useState([]);
-  const [error, setError] = React.useState();
+  const [video, setVideo] = React.useState(INIT_VIDEO)
+  const [loading, setLoading] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
+  const [sectionOptions, setSectionOptions] = React.useState([])
+  const [error, setError] = React.useState()
 
   React.useEffect(() => {
-    const { order, video_url, name } = video;
+    const { order, video_url, name } = video
     const isVideo = Object.values({
       video_url,
       name,
-      order
-    }).every((el) => Boolean(el));
-    isVideo ? setDisabled(false) : setDisabled(true);
-  }, [video]);
+      order,
+    }).every((el) => Boolean(el))
+    isVideo ? setDisabled(false) : setDisabled(true)
+  }, [video])
 
   const handleVideoUpload = async () => {
     // console.log(post.file_url)
-    const data = new FormData();
-    data.append('file', video.video_url);
-    data.append('upload_preset', 'dq1lv3uk');
-    data.append('cloud_name', 'dxe8e6gy3');
-    const response = await axios.post(process.env.CLOUDINARY_VIDEO_URL, data);
-    const mediaUrl = response.data.url;
-    return mediaUrl;
-  };
+    const data = new FormData()
+    data.append('file', video.video_url)
+    data.append('upload_preset', 'dq1lv3uk')
+    data.append('cloud_name', 'dxe8e6gy3')
+    const response = await axios.post(process.env.CLOUDINARY_VIDEO_URL, data)
+    const mediaUrl = response.data.url
+    return mediaUrl
+  }
 
   const handleChange = async (e) => {
     // console.log(d.value)
-    const { name, value, files } = e.target;
+    const { name, value, files } = e.target
     if (name == 'courseId') {
       // if (!token) {
       //   return redirectUser(ctx, '/login');
       // }
 
       const payload = {
-        headers: { Authorization: token }
-      };
+        headers: { Authorization: token },
+      }
 
-      const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`;
-      const response = await axios.get(url, payload);
-      setSectionOptions(response.data.sections);
+      const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${value}`
+      const response = await axios.get(url, payload)
+      setSectionOptions(response.data.sections)
     }
     if (name === 'video_url') {
-      const videoSize = files[0].size / 1024 / 1024;
+      const videoSize = files[0].size / 1024 / 1024
       if (videoSize > 20) {
         // addToast('The video size greater than 20 MB. Make sure less than 20 MB.', {
         //   appearance: 'error'
         // });
-        e.target.value = null;
-        return;
+        e.target.value = null
+        return
       }
-      setVideo((prevState) => ({ ...prevState, video_url: files[0] }));
+      setVideo((prevState) => ({ ...prevState, video_url: files[0] }))
     } else {
-      setVideo((prevState) => ({ ...prevState, [name]: value }));
+      setVideo((prevState) => ({ ...prevState, [name]: value }))
     }
     // console.log(video);
-  };
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
     try {
-      let videoUrl = '';
+      let videoUrl = ''
       if (video.video_url) {
-        const videoUpload = await handleVideoUpload();
-        videoUrl = videoUpload.replace(/^http:\/\//i, 'https://');
+        const videoUpload = await handleVideoUpload()
+        videoUrl = videoUpload.replace(/^http:\/\//i, 'https://')
       }
 
-      console.log(videoUrl);
+      console.log(videoUrl)
 
-      const url = `${baseUrl}/api/v1/courses/course/video-upload`;
+      const url = `${baseUrl}/api/v1/courses/course/video-upload`
 
-      const { order, name, description, courseId, sectionId } = video;
+      const { order, name, description, courseId, sectionId } = video
       const payload = {
         order,
         name,
         description,
         courseId,
         videoUrl,
-        sectionId
-      };
+        sectionId,
+      }
 
-      console.log(payload);
+      console.log(payload)
       const response = await axios.post(url, payload, {
-        headers: { Authorization: token }
-      });
+        headers: { Authorization: token },
+      })
 
-      console.log(response.data);
+      console.log(response.data)
 
-      setLoading(false);
-      toast.success(response.data);
-      setVideo(INIT_VIDEO);
+      setLoading(false)
+      toast.success(response.data)
+      setVideo(INIT_VIDEO)
     } catch (err) {
-      catchErrors(err, setError);
-      toast.error(error);
-      console.log(err);
+      catchErrors(err, setError)
+      toast.error(error)
+      console.log(err)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <React.Fragment>
@@ -165,7 +165,11 @@ const UploadCourseVideo = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Course</label>
-                    <select onChange={handleChange} name="courseId" className="form-control">
+                    <select
+                      onChange={handleChange}
+                      name="courseId"
+                      className="form-control"
+                    >
                       <option>Select Course</option>
                       {courses.map((course) => (
                         <option value={course.id} key={course.id}>
@@ -177,7 +181,11 @@ const UploadCourseVideo = ({ courses }) => {
 
                   <div className="form-group">
                     <label>Select Section</label>
-                    <select onChange={handleChange} name="sectionId" className="form-control">
+                    <select
+                      onChange={handleChange}
+                      name="sectionId"
+                      className="form-control"
+                    >
                       <option>Select section</option>
                       {sectionOptions.map((section) => (
                         <option value={section.id} key={section.id}>
@@ -228,12 +236,20 @@ const UploadCourseVideo = ({ courses }) => {
 
                     <br />
 
-                    <input type="file" name="video_url" accept="video/*" onChange={handleChange} />
+                    <input
+                      type="file"
+                      name="video_url"
+                      accept="video/*"
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <br />
 
-                  <button className="default-btn" disabled={disabled || loading}>
+                  <button
+                    className="default-btn"
+                    disabled={disabled || loading}
+                  >
                     <i className="flaticon-right-chevron"></i>
                     Upload
                   </button>
@@ -244,23 +260,23 @@ const UploadCourseVideo = ({ courses }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 UploadCourseVideo.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
   if (!token) {
-    return { courses: [] };
+    return { courses: [] }
   }
 
   const payload = {
-    headers: { Authorization: token }
-  };
+    headers: { Authorization: token },
+  }
 
-  const url = `${baseUrl}/api/v1/courses/my-courses`;
-  const response = await axios.get(url, payload);
+  const url = `${baseUrl}/api/v1/courses/my-courses`
+  const response = await axios.get(url, payload)
   // console.log(response.data)
-  return response.data;
-};
+  return response.data
+}
 
-export default UploadCourseVideo;
+export default UploadCourseVideo

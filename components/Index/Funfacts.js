@@ -1,8 +1,8 @@
-import React from 'react';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import useTranslation from 'next-translate/useTranslation'
 
 const Funfacts = () => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div className="funfacts-area-three bg-fff8f8 pt-100 pb-70">
       <div className="container">
@@ -50,7 +50,7 @@ const Funfacts = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Funfacts;
+export default Funfacts

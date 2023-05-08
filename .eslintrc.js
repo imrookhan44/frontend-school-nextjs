@@ -4,30 +4,40 @@ module.exports = {
     node: true,
     browser: true,
     es6: true,
-    jest: true
+    jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
   globals: {},
   parser: '@babel/eslint-parser',
   parserOptions: {
     babelOptions: {
-      presets: ['@babel/preset-react']
+      presets: ['@babel/preset-react'],
     },
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
     requireConfigFile: false,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', 'import', 'react-hooks'],
-  ignorePatterns: ['node_modules/', 'public/', 'seeders/', 'migrations/', 'pub'],
+  ignorePatterns: [
+    'node_modules/',
+    'public/',
+    'seeders/',
+    'migrations/',
+    'pub',
+  ],
   rules: {
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
-};
+      version: 'detect',
+    },
+  },
+}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const CourseAdvisor = () => {
   return (
@@ -9,8 +9,8 @@ const CourseAdvisor = () => {
           <span className="sub-title">Instructor</span>
           <h2>Course Advisor</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
 
@@ -31,8 +31,8 @@ const CourseAdvisor = () => {
                     </h3>
                     <span className="sub-title">Project Management Expert</span>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dol aliqua.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dol aliqua.
                     </p>
 
                     <ul className="social-link">
@@ -78,8 +78,8 @@ const CourseAdvisor = () => {
                     </h3>
                     <span className="sub-title">Agile Project Expert</span>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dol aliqua.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dol aliqua.
                     </p>
                     <ul className="social-link">
                       <li>
@@ -124,8 +124,8 @@ const CourseAdvisor = () => {
                     </h3>
                     <span className="sub-title">QA Project Expert</span>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dol aliqua.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dol aliqua.
                     </p>
                     <ul className="social-link">
                       <li>
@@ -157,7 +157,7 @@ const CourseAdvisor = () => {
         </Swiper>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CourseAdvisor;
+export default CourseAdvisor

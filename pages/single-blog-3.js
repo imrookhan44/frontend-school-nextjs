@@ -1,11 +1,11 @@
-import React from 'react';
-import Navbar from '../components/_App/Navbar';
-import PageBanner from '../components/Common/PageBanner';
-import Link from 'next/link';
-import Footer from '../components/_App/Footer';
-import BlogSidebar from '../components/Blog/BlogSidebar';
-import CommentArea from '../components/Blog/CommentForm';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react'
+import Navbar from '../components/_App/Navbar'
+import PageBanner from '../components/Common/PageBanner'
+import Link from 'next/link'
+import Footer from '../components/_App/Footer'
+import BlogSidebar from '../components/Blog/BlogSidebar'
+import CommentArea from '../components/Blog/CommentForm'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const BlogDetails = () => {
   return (
@@ -74,32 +74,37 @@ const BlogDetails = () => {
                   <h3>It’s Time To Think Differently About Homeschooling</h3>
 
                   <p>
-                    Quuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam dolor sit
-                    amet, consectetur adipisicing.
+                    Quuntur magni dolores eos qui ratione voluptatem sequi
+                    nesciunt. Neque porro quia non numquam eius modi tempora
+                    incidunt ut labore et dolore magnam dolor sit amet,
+                    consectetur adipisicing.
                   </p>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in sed quia non
+                    numquam eius modi tempora incidunt ut labore et dolore
+                    magnam aliquam quaerat voluptatem.
                   </p>
 
                   <blockquote className="wp-block-quote">
                     <p>
-                      It is a long established fact that a reader will be distracted by the readable
-                      content of a page when looking at its layout.
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout.
                     </p>
 
                     <cite>Tom Cruise</cite>
                   </blockquote>
 
                   <p>
-                    Quuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam dolor sit
-                    amet, consectetur adipisicing.
+                    Quuntur magni dolores eos qui ratione voluptatem sequi
+                    nesciunt. Neque porro quia non numquam eius modi tempora
+                    incidunt ut labore et dolore magnam dolor sit amet,
+                    consectetur adipisicing.
                   </p>
 
                   <ul className="wp-block-gallery columns-3">
@@ -124,34 +129,39 @@ const BlogDetails = () => {
 
                   <ul className="features-list">
                     <li>
-                      <i className="bx bx-badge-check"></i> Scientific skills for getting a better
-                      result
+                      <i className="bx bx-badge-check"></i> Scientific skills
+                      for getting a better result
                     </li>
                     <li>
-                      <i className="bx bx-badge-check"></i> Communication skills to getting in touch
+                      <i className="bx bx-badge-check"></i> Communication skills
+                      to getting in touch
                     </li>
                     <li>
-                      <i className="bx bx-badge-check"></i> A career overview opportunity available
+                      <i className="bx bx-badge-check"></i> A career overview
+                      opportunity available
                     </li>
                     <li>
-                      <i className="bx bx-badge-check"></i> A good work environment for work
+                      <i className="bx bx-badge-check"></i> A good work
+                      environment for work
                     </li>
                   </ul>
 
                   <h3>Setting the mood with incense</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in sed quia non
+                    numquam eius modi tempora incidunt ut labore et dolore
+                    magnam aliquam quaerat voluptatem.
                   </p>
 
                   <h3>The rise of marketing and why you need it</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud.
                   </p>
                 </div>
 
@@ -199,18 +209,24 @@ const BlogDetails = () => {
                   <div className="author-profile-header"></div>
                   <div className="author-profile">
                     <div className="author-profile-title">
-                      <img src="/images/user1.jpg" className="shadow-sm" alt="image" />
+                      <img
+                        src="/images/user1.jpg"
+                        className="shadow-sm"
+                        alt="image"
+                      />
 
                       <div className="author-profile-title-details">
                         <div className="author-profile-details">
                           <h4>Chris Orwig</h4>
-                          <span className="d-block">Photographer, Author, Writer</span>
+                          <span className="d-block">
+                            Photographer, Author, Writer
+                          </span>
                         </div>
                       </div>
                     </div>
                     <p>
-                      Chris Orwig is a celebrated photographer, author, and writer who brings
-                      passion to everything he does.
+                      Chris Orwig is a celebrated photographer, author, and
+                      writer who brings passion to everything he does.
                     </p>
                   </div>
                 </div>
@@ -270,7 +286,7 @@ const BlogDetails = () => {
 
       <Footer />
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default BlogDetails;
+export default BlogDetails

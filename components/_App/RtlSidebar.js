@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const RtlSidebar = () => {
   return (
@@ -28,7 +28,7 @@ const RtlSidebar = () => {
         </ul>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default RtlSidebar;
+export default RtlSidebar

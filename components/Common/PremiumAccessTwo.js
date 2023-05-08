@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const PremiumAccessTwo = () => {
   return (
@@ -9,13 +9,14 @@ const PremiumAccessTwo = () => {
           <span className="sub-title">Go at your own pace</span>
           <h2>Give their limitless potential unlimited access</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
           <Link legacyBehavior href="/membership-levels">
             <a className="default-btn">
-              <i className="flaticon-user"></i> Give Premium Access <span></span>
+              <i className="flaticon-user"></i> Give Premium Access{' '}
+              <span></span>
             </a>
           </Link>
         </div>
@@ -31,7 +32,7 @@ const PremiumAccessTwo = () => {
         <img src="/images/shape7.png" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PremiumAccessTwo;
+export default PremiumAccessTwo

@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 const TopCourses = ({ courses }) => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div className="courses-area ptb-100">
       <div className="container">
@@ -19,7 +19,11 @@ const TopCourses = ({ courses }) => {
               <div className="col-lg-4 col-md-6" key={course.id}>
                 <div className="single-courses-box">
                   <div className="courses-image">
-                    <Link legacyBehavior href="/courses/[id]" as={`/courses/${course.id}`}>
+                    <Link
+                      legacyBehavior
+                      href="/courses/[id]"
+                      as={`/courses/${course.id}`}
+                    >
                       <a className="d-block image">
                         <img src={course.profilePhoto} alt={course.title} />
                       </a>
@@ -38,7 +42,9 @@ const TopCourses = ({ courses }) => {
                     <div className="course-author d-flex align-items-center">
                       <img
                         src={`${
-                          course.user.profilePhoto ? course.user.profilePhoto : '/images/user1.jpg'
+                          course.user.profilePhoto
+                            ? course.user.profilePhoto
+                            : '/images/user1.jpg'
                         }`}
                         className="rounded-circle"
                         alt={course.user.name}
@@ -47,7 +53,11 @@ const TopCourses = ({ courses }) => {
                     </div>
 
                     <h3 title={course.title}>
-                      <Link legacyBehavior href="/courses/[id]" as={`/courses/${course.id}`}>
+                      <Link
+                        legacyBehavior
+                        href="/courses/[id]"
+                        as={`/courses/${course.id}`}
+                      >
                         <a>
                           {course.title.slice(0, 20)}
                           ...
@@ -59,10 +69,12 @@ const TopCourses = ({ courses }) => {
 
                     <ul className="courses-box-footer d-flex justify-content-between align-items-center">
                       <li>
-                        <i className="flaticon-agenda"></i> {parseInt(course.lessons)} Lessons
+                        <i className="flaticon-agenda"></i>{' '}
+                        {parseInt(course.lessons)} Lessons
                       </li>
                       <li>
-                        <i className="flaticon-people"></i> {course.enroled_courses.length} Students
+                        <i className="flaticon-people"></i>{' '}
+                        {course.enroled_courses.length} Students
                       </li>
                     </ul>
                   </div>
@@ -87,7 +99,7 @@ const TopCourses = ({ courses }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TopCourses;
+export default TopCourses

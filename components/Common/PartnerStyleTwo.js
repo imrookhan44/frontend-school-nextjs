@@ -1,5 +1,5 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const PartnerStyleTwo = () => {
   return (
@@ -10,19 +10,20 @@ const PartnerStyleTwo = () => {
           spaceBetween={10}
           breakpoints={{
             0: {
-              slidesPerView: 1
+              slidesPerView: 1,
             },
             567: {
-              slidesPerView: 2
+              slidesPerView: 2,
             },
             768: {
-              slidesPerView: 3
+              slidesPerView: 3,
             },
             992: {
-              slidesPerView: 5
-            }
+              slidesPerView: 5,
+            },
           }}
-          className="partner-slides">
+          className="partner-slides"
+        >
           <SwiperSlide>
             <div className="single-partner-item">
               <img src="/images/partner/partner1.png" alt="image" />
@@ -61,7 +62,7 @@ const PartnerStyleTwo = () => {
         </Swiper>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PartnerStyleTwo;
+export default PartnerStyleTwo

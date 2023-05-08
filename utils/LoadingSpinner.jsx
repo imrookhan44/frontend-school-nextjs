@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const LoadingSpinner = () => {
   return (
@@ -19,7 +19,7 @@ const LoadingSpinner = () => {
         <span className="visually-hidden">Loading...</span>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LoadingSpinner;
+export default LoadingSpinner

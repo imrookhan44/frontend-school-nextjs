@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const BlogSidebar = () => {
   return (
@@ -9,7 +9,11 @@ const BlogSidebar = () => {
 
         <form className="search-form">
           <label>
-            <input type="search" className="search-field" placeholder="Search..." />
+            <input
+              type="search"
+              className="search-field"
+              placeholder="Search..."
+            />
           </label>
           <button type="submit">
             <i className="bx bx-search-alt"></i>
@@ -171,7 +175,7 @@ const BlogSidebar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogSidebar;
+export default BlogSidebar

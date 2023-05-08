@@ -1,11 +1,11 @@
-import React from 'react';
-import PageBanner from '@/components/Common/PageBanner';
+import React from 'react'
+import PageBanner from '@/components/Common/PageBanner'
 
-import { parseCookies } from 'nookies';
+import { parseCookies } from 'nookies'
 
 const SingleQuiz = ({ quiz, token }) => {
   if (typeof window !== 'undefined') {
-    window.parent.postMessage({ message: 'quizData', value: quiz }, '*');
+    window.parent.postMessage({ message: 'quizData', value: quiz }, '*')
   }
 
   return (
@@ -22,15 +22,15 @@ const SingleQuiz = ({ quiz, token }) => {
         src={`http://localhost:3001/quiz?quizId=${quiz}&token=${token}`}
       />
     </React.Fragment>
-  );
-};
+  )
+}
 
 SingleQuiz.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
 
-  const { id } = ctx.query;
+  const { id } = ctx.query
 
-  return { quiz: id, token: token };
-};
+  return { quiz: id, token: token }
+}
 
-export default SingleQuiz;
+export default SingleQuiz

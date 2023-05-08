@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const CoursesCurriculum = ({ videos }) => {
   return (
@@ -12,7 +12,8 @@ const CoursesCurriculum = ({ videos }) => {
               <Link legacyBehavior href="/courses">
                 <a
                   className="d-flex justify-content-between align-items-center"
-                  onClick={(e) => e.preventDefault()}>
+                  onClick={(e) => e.preventDefault()}
+                >
                   <span className="courses-name">{video.name}</span>
                   <div className="courses-meta">
                     <span className="status locked">
@@ -28,7 +29,7 @@ const CoursesCurriculum = ({ videos }) => {
         <h3>No Videos</h3>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default CoursesCurriculum;
+export default CoursesCurriculum

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -7,16 +7,16 @@ module.exports = {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       order: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       courseId: {
         type: Sequelize.UUID,
@@ -24,8 +24,8 @@ module.exports = {
         references: {
           model: 'Courses',
           key: 'id',
-          as: 'courseId'
-        }
+          as: 'courseId',
+        },
       },
       userId: {
         type: Sequelize.UUID,
@@ -33,20 +33,20 @@ module.exports = {
         references: {
           model: 'Users',
           key: 'id',
-          as: 'userId'
-        }
+          as: 'userId',
+        },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
+        type: Sequelize.DATE,
+      },
+    })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Sections');
-  }
-};
+    await queryInterface.dropTable('Sections')
+  },
+}

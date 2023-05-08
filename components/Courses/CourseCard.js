@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const CourseCard = ({
   id,
@@ -9,9 +9,9 @@ const CourseCard = ({
   profilePhoto,
   lessons,
   user,
-  enroled_courses
+  enroled_courses,
 }) => {
-  const enrolled = enroled_courses ? enroled_courses : [];
+  const enrolled = enroled_courses ? enroled_courses : []
   return (
     <div className="col-lg-6 col-md-12">
       <div className="single-courses-box">
@@ -29,7 +29,9 @@ const CourseCard = ({
         <div className="courses-content">
           <div className="course-author d-flex align-items-center">
             <img
-              src={`${user.profilePhoto ? user.profilePhoto : '/images/user1.jpg'}`}
+              src={`${
+                user.profilePhoto ? user.profilePhoto : '/images/user1.jpg'
+              }`}
               className="rounded-circle"
               alt={user.name}
             />
@@ -54,7 +56,7 @@ const CourseCard = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CourseCard;
+export default CourseCard

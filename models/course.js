@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, Sequelize) => {
   class Course extends Model {
     /**
@@ -21,47 +21,47 @@ module.exports = (sequelize, Sequelize) => {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       overview: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       price: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       free: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       published: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
+        defaultValue: false,
       },
       profilePhoto: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       coverPhoto: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       courese_preview_img: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       course_preview_video: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       duration: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       lessons: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       access: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       category: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       userId: {
         type: Sequelize.UUID,
@@ -69,14 +69,14 @@ module.exports = (sequelize, Sequelize) => {
         references: {
           model: 'Users',
           key: 'id',
-          as: 'userId'
-        }
-      }
+          as: 'userId',
+        },
+      },
     },
     {
       sequelize,
-      modelName: 'Course'
-    }
-  );
-  return Course;
-};
+      modelName: 'Course',
+    },
+  )
+  return Course
+}

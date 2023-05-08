@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 // import Navbar from '../components/_App/Navbar';
-import PageBanner from '../components/Common/PageBanner';
+import PageBanner from '../components/Common/PageBanner'
 // import Footer from '../components/_App/Footer';
-import ProfileCourses from '../components/Profile/ProfileCourses';
-import Quizzes from '../components/Profile/Quizzes';
+import ProfileCourses from '../components/Profile/ProfileCourses'
+import Quizzes from '../components/Profile/Quizzes'
 
 const Profile = () => {
   return (
@@ -31,20 +31,24 @@ const Profile = () => {
                   <h3>Sarah Taylor</h3>
                   <span className="sub-title">Agile Project Expert</span>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                    gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis. Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </p>
 
                   <ul className="info">
                     <li>
-                      <span>Phone Number:</span> <a href="tel:+44254588689">(+44) -2545 - 88689</a>
+                      <span>Phone Number:</span>{' '}
+                      <a href="tel:+44254588689">(+44) -2545 - 88689</a>
                     </li>
                     <li>
                       <span>Email:</span>{' '}
-                      <a href="mailto:hello@sarahtaylor.com">hello@sarahtaylor.com</a>
+                      <a href="mailto:hello@sarahtaylor.com">
+                        hello@sarahtaylor.com
+                      </a>
                     </li>
                   </ul>
 
@@ -83,7 +87,7 @@ const Profile = () => {
 
       {/* <Footer /> */}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile

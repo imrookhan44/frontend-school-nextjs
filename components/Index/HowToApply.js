@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const HowToApply = () => {
   return (
@@ -17,8 +17,8 @@ const HowToApply = () => {
                   </div>
                   <h3>Select Suitable Course</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore.
                   </p>
                 </li>
 
@@ -28,8 +28,8 @@ const HowToApply = () => {
                   </div>
                   <h3>Student Information</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore.
                   </p>
                 </li>
 
@@ -39,8 +39,8 @@ const HowToApply = () => {
                   </div>
                   <h3>Payment Information</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore.
                   </p>
                 </li>
 
@@ -50,8 +50,8 @@ const HowToApply = () => {
                   </div>
                   <h3>Register Now</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore.
                   </p>
                 </li>
               </ul>
@@ -66,7 +66,7 @@ const HowToApply = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HowToApply;
+export default HowToApply

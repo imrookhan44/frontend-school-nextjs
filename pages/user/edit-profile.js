@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 // import Navbar from '../components/_App/Navbar';
-import PageBanner from '@/components/Common/PageBanner';
+import PageBanner from '@/components/Common/PageBanner'
 
 // import Footer from '../components/_App/Footer';
 
@@ -40,7 +40,7 @@ const EditProfile = () => {
 
       {/* <Footer /> */}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default EditProfile;
+export default EditProfile

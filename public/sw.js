@@ -15,73 +15,73 @@
 if (!self.define) {
   const singleRequire = (name) => {
     if (name !== 'require') {
-      name = name + '.js';
+      name = name + '.js'
     }
-    let promise = Promise.resolve();
+    let promise = Promise.resolve()
     if (!registry[name]) {
       promise = new Promise(async (resolve) => {
         if ('document' in self) {
-          const script = document.createElement('script');
-          script.src = name;
-          document.head.appendChild(script);
-          script.onload = resolve;
+          const script = document.createElement('script')
+          script.src = name
+          document.head.appendChild(script)
+          script.onload = resolve
         } else {
-          importScripts(name);
-          resolve();
+          importScripts(name)
+          resolve()
         }
-      });
+      })
     }
     return promise.then(() => {
       if (!registry[name]) {
-        throw new Error(`Module ${name} didn’t register its module`);
+        throw new Error(`Module ${name} didn’t register its module`)
       }
-      return registry[name];
-    });
-  };
+      return registry[name]
+    })
+  }
 
   const require = (names, resolve) => {
     Promise.all(names.map(singleRequire)).then((modules) =>
-      resolve(modules.length === 1 ? modules[0] : modules)
-    );
-  };
+      resolve(modules.length === 1 ? modules[0] : modules),
+    )
+  }
 
   const registry = {
-    require: Promise.resolve(require)
-  };
+    require: Promise.resolve(require),
+  }
 
   self.define = (moduleName, depsNames, factory) => {
     if (registry[moduleName]) {
       // Module is already loading or loaded.
-      return;
+      return
     }
     registry[moduleName] = Promise.resolve().then(() => {
-      let exports = {};
+      let exports = {}
       const module = {
-        uri: location.origin + moduleName.slice(1)
-      };
+        uri: location.origin + moduleName.slice(1),
+      }
       return Promise.all(
         depsNames.map((depName) => {
           switch (depName) {
             case 'exports':
-              return exports;
+              return exports
             case 'module':
-              return module;
+              return module
             default:
-              return singleRequire(depName);
+              return singleRequire(depName)
           }
-        })
+        }),
       ).then((deps) => {
-        const facValue = factory(...deps);
+        const facValue = factory(...deps)
         if (!exports.default) {
-          exports.default = facValue;
+          exports.default = facValue
         }
-        return exports;
-      });
-    });
-  };
+        return exports
+      })
+    })
+  }
 }
 define('./sw.js', ['./workbox-f88dbe3b'], function (workbox) {
-  'use strict';
+  'use strict'
 
   /**
    * Welcome to your Workbox-powered service worker!
@@ -95,16 +95,16 @@ define('./sw.js', ['./workbox-f88dbe3b'], function (workbox) {
    * See https://goo.gl/2aRDsh
    */
 
-  importScripts();
-  workbox.skipWaiting();
-  workbox.clientsClaim();
+  importScripts()
+  workbox.skipWaiting()
+  workbox.clientsClaim()
   workbox.registerRoute(
     /.*/i,
     new workbox.NetworkOnly({
       cacheName: 'dev',
-      plugins: []
+      plugins: [],
     }),
-    'GET'
-  );
-});
+    'GET',
+  )
+})
 //# sourceMappingURL=sw.js.map

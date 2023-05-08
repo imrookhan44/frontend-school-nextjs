@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 const About = () => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div className="about-area ptb-100 bg-f9fbff">
       <div className="container">
@@ -21,22 +21,26 @@ const About = () => {
               <ul className="features-list">
                 <li>
                   <span>
-                    <i className="flaticon-experience"></i> {t('expert-instruction')}
+                    <i className="flaticon-experience"></i>{' '}
+                    {t('expert-instruction')}
                   </span>
                 </li>
                 <li>
                   <span>
-                    <i className="flaticon-time-left"></i> {t('lifetime-access')}
+                    <i className="flaticon-time-left"></i>{' '}
+                    {t('lifetime-access')}
                   </span>
                 </li>
                 <li>
                   <span>
-                    <i className="flaticon-tutorials"></i> {t('remote-learning')}
+                    <i className="flaticon-tutorials"></i>{' '}
+                    {t('remote-learning')}
                   </span>
                 </li>
                 <li>
                   <span>
-                    <i className="flaticon-self-growth"></i> {t('self-development')}
+                    <i className="flaticon-self-growth"></i>{' '}
+                    {t('self-development')}
                   </span>
                 </li>
               </ul>
@@ -55,7 +59,7 @@ const About = () => {
         <img src="/images/bulb.png" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

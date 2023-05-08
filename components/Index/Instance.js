@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
+import React from 'react'
+import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 const Instance = () => {
-  const { t } = useTranslation('distance-learning');
+  const { t } = useTranslation('distance-learning')
   return (
     <div className="get-instant-courses-area-two bg-f9fbff">
       <div className="container">
@@ -33,7 +33,7 @@ const Instance = () => {
         <img src="/images/bulb2.png" alt="image" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Instance;
+export default Instance

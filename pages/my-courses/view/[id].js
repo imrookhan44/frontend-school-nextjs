@@ -1,30 +1,32 @@
-import React from 'react';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from 'next/link';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
+import React from 'react'
+import PageBanner from '@/components/Common/PageBanner'
+import Link from 'next/link'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
-  AccordionItemPanel
-} from 'react-accessible-accordion';
+  AccordionItemPanel,
+} from 'react-accessible-accordion'
 
 const SingleCourses = ({ sections }) => {
   const [videoId, setVideoId] = React.useState(
-    sections[0].videos.length ? sections[0].videos[0].video_url : ''
-  );
+    sections[0].videos.length ? sections[0].videos[0].video_url : '',
+  )
 
-  console.log(sections);
+  console.log(sections)
   return (
     <React.Fragment>
       <PageBanner
         pageTitle={sections.length ? sections[0].course.title : 'No Videos'}
         homePageUrl="/my-courses"
         homePageText="My Courses"
-        activePageText={sections.length ? sections[0].course.title : 'No Videos'}
+        activePageText={
+          sections.length ? sections[0].course.title : 'No Videos'
+        }
       />
 
       <div className="ptb-100">
@@ -37,7 +39,9 @@ const SingleCourses = ({ sections }) => {
                     <Accordion key={section.id}>
                       <AccordionItem>
                         <AccordionItemHeading>
-                          <AccordionItemButton>{section.name}</AccordionItemButton>
+                          <AccordionItemButton>
+                            {section.name}
+                          </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                           {section.videos.length ? (
@@ -47,12 +51,14 @@ const SingleCourses = ({ sections }) => {
                                   legacyBehavior
                                   key={video.id}
                                   href="/my-courses/[videos]/[id]"
-                                  as={`/my-courses/${section.course.id}/${video.id}`}>
+                                  as={`/my-courses/${section.course.id}/${video.id}`}
+                                >
                                   <a
                                     onClick={(e) => {
-                                      e.preventDefault();
-                                      setVideoId(video.video_url);
-                                    }}>
+                                      e.preventDefault()
+                                      setVideoId(video.video_url)
+                                    }}
+                                  >
                                     <img
                                       src={section.course.profilePhoto}
                                       alt={section.course.title}
@@ -73,7 +79,8 @@ const SingleCourses = ({ sections }) => {
                                   legacyBehavior
                                   key={quiz.id}
                                   href="/my-courses/view/[quizzes]/[id]"
-                                  as={`/my-courses/view/quiz/${quiz.id}`}>
+                                  as={`/my-courses/view/quiz/${quiz.id}`}
+                                >
                                   <a href={`/my-courses/view/quiz/${quiz.id}`}>
                                     <h4>QUIZ:{quiz.name}</h4>
                                   </a>
@@ -88,8 +95,11 @@ const SingleCourses = ({ sections }) => {
                                   legacyBehavior
                                   key={exercise.id}
                                   href="/my-courses/view/[excercises]/[id]"
-                                  as={`/my-courses/view/exercise/${exercise.id}`}>
-                                  <a href={`/my-courses/view/exercise/${exercise.id}`}>
+                                  as={`/my-courses/view/exercise/${exercise.id}`}
+                                >
+                                  <a
+                                    href={`/my-courses/view/exercise/${exercise.id}`}
+                                  >
                                     <h4>{exercise.name} EXERCISE</h4>
                                   </a>
                                 </Link>
@@ -117,25 +127,25 @@ const SingleCourses = ({ sections }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 SingleCourses.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
   if (!token) {
-    return { videos: [] };
+    return { videos: [] }
   }
 
-  const { id } = ctx.query;
+  const { id } = ctx.query
 
   const payload = {
-    headers: { Authorization: token }
-  };
+    headers: { Authorization: token },
+  }
 
-  const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${id}`;
-  const sections = await axios.get(url, payload);
+  const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${id}`
+  const sections = await axios.get(url, payload)
 
-  return { sections: sections.data.sections };
-};
+  return { sections: sections.data.sections }
+}
 
-export default SingleCourses;
+export default SingleCourses

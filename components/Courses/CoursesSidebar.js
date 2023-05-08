@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const CoursesSidebar = () => {
   return (
@@ -10,7 +10,11 @@ const CoursesSidebar = () => {
         <form className="search-form">
           <label>
             <span className="screen-reader-text">Search for:</span>
-            <input type="search" className="search-field" placeholder="Search..." />
+            <input
+              type="search"
+              className="search-field"
+              placeholder="Search..."
+            />
           </label>
           <button type="submit">
             <i className="bx bx-search-alt"></i>
@@ -31,7 +35,9 @@ const CoursesSidebar = () => {
             <span>$49.00</span>
             <h4 className="title usmall">
               <Link legacyBehavior href="#">
-                <a>The Data Science Course 2020: Complete Data Science Bootcamp</a>
+                <a>
+                  The Data Science Course 2020: Complete Data Science Bootcamp
+                </a>
               </Link>
             </h4>
           </div>
@@ -140,7 +146,7 @@ const CoursesSidebar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CoursesSidebar;
+export default CoursesSidebar

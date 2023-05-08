@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
-const ModalVideo = dynamic(import('react-modal-video'));
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
-import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+const ModalVideo = dynamic(import('react-modal-video'))
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
+import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from 'react-redux'
 
 const CoursesDetailsSidebar = ({
   id,
@@ -14,67 +14,67 @@ const CoursesDetailsSidebar = ({
   lessons,
   duration,
   title,
-  loggedInUser
+  loggedInUser,
 }) => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const [display, setDisplay] = useState(false);
-  const dispatch = useDispatch();
-  const [add, setAdd] = useState(false);
-  const [alreadyBuy, setAlreadyBuy] = useState(false);
+  const cartItems = useSelector((state) => state.cart.cartItems)
+  const [display, setDisplay] = useState(false)
+  const dispatch = useDispatch()
+  const [add, setAdd] = useState(false)
+  const [alreadyBuy, setAlreadyBuy] = useState(false)
 
   const addToCart = (courseId, title, price, lessons, duration, image) => {
-    let courseObj = {};
-    courseObj['id'] = courseId;
-    courseObj['title'] = title;
-    courseObj['price'] = price;
-    courseObj['lessons'] = lessons;
-    courseObj['duration'] = duration;
-    courseObj['image'] = image;
-    courseObj['quantity'] = 1;
+    let courseObj = {}
+    courseObj['id'] = courseId
+    courseObj['title'] = title
+    courseObj['price'] = price
+    courseObj['lessons'] = lessons
+    courseObj['duration'] = duration
+    courseObj['image'] = image
+    courseObj['quantity'] = 1
     dispatch({
       type: 'ADD_TO_CART',
-      data: courseObj
-    });
-  };
+      data: courseObj,
+    })
+  }
 
   useEffect(() => {
     const courseExist = cartItems.find((cart) => {
-      return id === cart.id;
-    });
-    courseExist && setAdd(true);
+      return id === cart.id
+    })
+    courseExist && setAdd(true)
     if (loggedInUser && id) {
       const payload = {
-        params: { userId: loggedInUser.id, courseId: id }
-      };
-      const url = `${baseUrl}/api/v1/courses/course/exist`;
+        params: { userId: loggedInUser.id, courseId: id },
+      }
+      const url = `${baseUrl}/api/v1/courses/course/exist`
       axios.get(url, payload).then((result) => {
-        setAlreadyBuy(result.data.enroll);
-      });
+        setAlreadyBuy(result.data.enroll)
+      })
     }
-  }, [cartItems, id]);
+  }, [cartItems, id])
 
   useEffect(() => {
-    setDisplay(true);
-  }, []);
+    setDisplay(true)
+  }, [])
   // console.log(loggedInUser)
   // const { enroled_courses } = loggedInUser ? loggedInUser : '';
-  const router = useRouter();
+  const router = useRouter()
   // Popup Video
-  const [enrolled, setEnrolled] = React.useState(0);
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [enrolled, setEnrolled] = React.useState(0)
+  const [isOpen, setIsOpen] = React.useState(true)
   const openModal = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   useEffect(() => {
     const countEnrolled = async () => {
-      const url = `${baseUrl}/api/v1/courses/enrolled/${id}`;
-      const response = await axios.get(url);
-      setEnrolled(response.data);
-    };
+      const url = `${baseUrl}/api/v1/courses/enrolled/${id}`
+      const response = await axios.get(url)
+      setEnrolled(response.data)
+    }
     // setEnrolled(response.data.enrolled)
-    countEnrolled();
-  }, []);
+    countEnrolled()
+  }, [])
 
   return (
     <>
@@ -96,10 +96,11 @@ const CoursesDetailsSidebar = ({
 
           <div
             onClick={(e) => {
-              e.preventDefault();
-              openModal();
+              e.preventDefault()
+              openModal()
             }}
-            className="link-btn popup-youtube"></div>
+            className="link-btn popup-youtube"
+          ></div>
 
           <div className="content">
             <i className="flaticon-play"></i>
@@ -160,20 +161,29 @@ const CoursesDetailsSidebar = ({
 
         <div className="btn-box">
           {alreadyBuy ? (
-            <button onClick={() => router.push('/my-courses')} className="default-btn">
+            <button
+              onClick={() => router.push('/my-courses')}
+              className="default-btn"
+            >
               <i className="flaticon-shopping-cart"></i> View My Courses
               <span></span>
             </button>
           ) : (
             <>
               {add ? (
-                <button className="default-btn" onClick={() => router.push('/cart')}>
+                <button
+                  className="default-btn"
+                  onClick={() => router.push('/cart')}
+                >
                   <i className="flaticon-tag"></i> View Cart <span></span>
                 </button>
               ) : (
                 <button
                   className="default-btn"
-                  onClick={() => addToCart(id, title, price, lessons, duration, profilePhoto)}>
+                  onClick={() =>
+                    addToCart(id, title, price, lessons, duration, profilePhoto)
+                  }
+                >
                   <i className="flaticon-tag"></i> Add to cart <span></span>
                 </button>
               )}
@@ -213,7 +223,7 @@ const CoursesDetailsSidebar = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CoursesDetailsSidebar;
+export default CoursesDetailsSidebar

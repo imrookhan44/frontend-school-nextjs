@@ -1,7 +1,7 @@
-import React from 'react';
-import PageBanner from '../components/Common/PageBanner';
-import LoginForm from '../components/Authentication/LoginForm';
-import RegisterForm from '../components/Authentication/RegisterForm';
+import React from 'react'
+import PageBanner from '../components/Common/PageBanner'
+import LoginForm from '../components/Authentication/LoginForm'
+import RegisterForm from '../components/Authentication/RegisterForm'
 
 const Authentication = () => {
   return (
@@ -27,7 +27,7 @@ const Authentication = () => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Authentication;
+export default Authentication

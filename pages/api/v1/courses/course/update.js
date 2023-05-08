@@ -1,20 +1,20 @@
-import Cors from 'cors';
-import initMiddleware from '@/lib/init-middleware';
-import { courses as Course } from '@/models/index';
+import Cors from 'cors'
+import initMiddleware from '@/lib/init-middleware'
+import { courses as Course } from '@/models/index'
 
 // Initialize the cors middleware
 const cors = initMiddleware(
   // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
   Cors({
     // Only allow requests with GET, POST and OPTIONS
-    methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT']
-  })
-);
+    methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT'],
+  }),
+)
 
 export default async (req, res) => {
-  await cors(req, res);
+  await cors(req, res)
   if (!('authorization' in req.headers)) {
-    return res.status(401).json({ message: 'No autorization token' });
+    return res.status(401).json({ message: 'No autorization token' })
   }
 
   const {
@@ -29,8 +29,8 @@ export default async (req, res) => {
     profile,
     cover,
     preview,
-    course_preview_video
-  } = req.body;
+    course_preview_video,
+  } = req.body
 
   try {
     await Course.update(
@@ -45,15 +45,15 @@ export default async (req, res) => {
         profilePhoto: profile,
         coverPhoto: cover,
         course_preview_img: preview,
-        course_preview_video
+        course_preview_video,
       },
       {
-        where: { id: id }
-      }
-    );
+        where: { id: id },
+      },
+    )
 
-    res.send('Congratulations! Successfully updated the course.');
+    res.send('Congratulations! Successfully updated the course.')
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
-};
+}

@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, Sequelize) => {
   class User extends Model {
     /**
@@ -19,108 +19,108 @@ module.exports = (sequelize, Sequelize) => {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       isEmailPublic: {
         type: Sequelize.BOOLEAN,
-        defaultValue: true
+        defaultValue: true,
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       designation: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       about: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       location: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       phone: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       company: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       companyUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       interests: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       passwordResetToken: {
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
       },
       passwordUpdatedAt: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       emailResetToken: {
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
       },
       profilePhoto: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       gender: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       fb_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       tw_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       insta_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       in_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       emailConfirmed: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
+        defaultValue: false,
       },
       emailConfirmedAt: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       as_teacher_apply: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
+        defaultValue: false,
       },
       as_teacher_confirmed: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       as_teacher_confirmed_at: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       as_teacher_req_desc: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       role: {
         type: Sequelize.ENUM,
         values: ['student', 'admin', 'teacher'],
-        defaultValue: 'student'
+        defaultValue: 'student',
       },
       active: {
         type: Sequelize.BOOLEAN,
-        defaultValue: true
+        defaultValue: true,
       },
       agreedTerms: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
-        defaultValue: false
-      }
+        defaultValue: false,
+      },
     },
     {
       sequelize,
-      modelName: 'User'
-    }
-  );
-  return User;
-};
+      modelName: 'User',
+    },
+  )
+  return User
+}

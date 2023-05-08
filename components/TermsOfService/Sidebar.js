@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 const Sidebar = () => {
   return (
@@ -47,7 +47,9 @@ const Sidebar = () => {
             <span>$49.00</span>
             <h4 className="title usmall">
               <Link legacyBehavior href="#">
-                <a>The Data Science Course 2020: Complete Data Science Bootcamp</a>
+                <a>
+                  The Data Science Course 2020: Complete Data Science Bootcamp
+                </a>
               </Link>
             </h4>
           </div>
@@ -143,7 +145,7 @@ const Sidebar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

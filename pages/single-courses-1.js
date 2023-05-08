@@ -1,9 +1,9 @@
-import React from 'react';
-import PageBanner from '@/components/SingleCourses/PageBanner';
-import StaticCoursesDetailsSidebar from '@/components/SingleCourses/StaticCoursesDetailsSidebar';
-import YouMightLikeTheCourses from '@/components/Courses/YouMightLikeTheCourses';
-import { resetIdCounter, Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-resetIdCounter();
+import React from 'react'
+import PageBanner from '@/components/SingleCourses/PageBanner'
+import StaticCoursesDetailsSidebar from '@/components/SingleCourses/StaticCoursesDetailsSidebar'
+import YouMightLikeTheCourses from '@/components/Courses/YouMightLikeTheCourses'
+import { resetIdCounter, Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+resetIdCounter()
 
 const SingleCourses = () => {
   return (
@@ -38,29 +38,33 @@ const SingleCourses = () => {
                     <div className="courses-overview">
                       <h3>Course Description</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                        ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Risus commodo viverra maecenas accumsan lacus vel
                         facilisis.
                       </p>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                        ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Risus commodo viverra maecenas accumsan lacus vel
                         facilisis.
                       </p>
                       <h3>Certification</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                        ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Risus commodo viverra maecenas accumsan lacus vel
                         facilisis.
                       </p>
                       <h3>Who this course is for</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                        ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Risus commodo viverra maecenas accumsan lacus vel
                         facilisis.
                       </p>
                     </div>
@@ -71,8 +75,13 @@ const SingleCourses = () => {
                       <h3>Python Introduction</h3>
                       <ul>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">Python Introduction</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              Python Introduction
+                            </span>
                             <div className="courses-meta">
                               <span className="questions">5 questions</span>
                               <span className="duration">01 Hour</span>
@@ -84,8 +93,13 @@ const SingleCourses = () => {
                       <h3>Stepping into the World of Python</h3>
                       <ul>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">NumPy Introduction</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              NumPy Introduction
+                            </span>
                             <div className="courses-meta">
                               <span className="duration">15 Min</span>
                               <span className="status locked">
@@ -95,8 +109,13 @@ const SingleCourses = () => {
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">NumPy Getting Started</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              NumPy Getting Started
+                            </span>
                             <div className="courses-meta">
                               <span className="duration">30 Min</span>
                               <span className="status locked">
@@ -106,8 +125,13 @@ const SingleCourses = () => {
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">NumPy Creating Arrays</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              NumPy Creating Arrays
+                            </span>
                             <div className="courses-meta">
                               <span className="duration">45 Min</span>
                               <span className="status locked">
@@ -117,8 +141,13 @@ const SingleCourses = () => {
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">NumPy Array Indexing</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              NumPy Array Indexing
+                            </span>
                             <div className="courses-meta">
                               <span className="questions">4 questions</span>
                               <span className="duration">1 Hour</span>
@@ -129,8 +158,13 @@ const SingleCourses = () => {
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">NumPy Array Slicing</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              NumPy Array Slicing
+                            </span>
                             <div className="courses-meta">
                               <span className="duration">1.5 Hour</span>
                               <span className="status locked">
@@ -143,7 +177,10 @@ const SingleCourses = () => {
                       <h3>Python MySQL</h3>
                       <ul>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
                             <span className="courses-name">Python MySQL</span>
                             <div className="courses-meta">
                               <span className="duration">01 Hour</span>
@@ -154,8 +191,13 @@ const SingleCourses = () => {
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">Python MySQL Create Database</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              Python MySQL Create Database
+                            </span>
                             <div className="courses-meta">
                               <span className="questions">3 questions</span>
                               <span className="duration">1.1 Hour</span>
@@ -166,8 +208,13 @@ const SingleCourses = () => {
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="d-flex justify-content-between align-items-center">
-                            <span className="courses-name">Python MySQL Create Table</span>
+                          <a
+                            href="#"
+                            className="d-flex justify-content-between align-items-center"
+                          >
+                            <span className="courses-name">
+                              Python MySQL Create Table
+                            </span>
                             <div className="courses-meta">
                               <span className="duration">1.5 Hour</span>
                               <span className="status locked">
@@ -186,41 +233,65 @@ const SingleCourses = () => {
                         <div className="row align-items-center">
                           <div className="col-lg-4 col-md-4">
                             <div className="advisor-image">
-                              <img src="/images/advisor/advisor2.jpg" alt="image" />
+                              <img
+                                src="/images/advisor/advisor2.jpg"
+                                alt="image"
+                              />
                             </div>
                           </div>
 
                           <div className="col-lg-8 col-md-8">
                             <div className="advisor-content">
                               <h3>Sarah Taylor</h3>
-                              <span className="sub-title">Agile Project Expert</span>
+                              <span className="sub-title">
+                                Agile Project Expert
+                              </span>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-                                accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                                Quis ipsum suspendisse ultrices gravida. Risus
+                                commodo viverra maecenas accumsan lacus vel
+                                facilisis. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna
+                                aliqua.
                               </p>
 
                               <ul className="social-link">
                                 <li>
-                                  <a href="#" className="d-block" target="_blank">
+                                  <a
+                                    href="#"
+                                    className="d-block"
+                                    target="_blank"
+                                  >
                                     <i className="bx bxl-facebook"></i>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" className="d-block" target="_blank">
+                                  <a
+                                    href="#"
+                                    className="d-block"
+                                    target="_blank"
+                                  >
                                     <i className="bx bxl-twitter"></i>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" className="d-block" target="_blank">
+                                  <a
+                                    href="#"
+                                    className="d-block"
+                                    target="_blank"
+                                  >
                                     <i className="bx bxl-instagram"></i>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" className="d-block" target="_blank">
+                                  <a
+                                    href="#"
+                                    className="d-block"
+                                    target="_blank"
+                                  >
                                     <i className="bx bxl-linkedin"></i>
                                   </a>
                                 </li>
@@ -323,8 +394,9 @@ const SingleCourses = () => {
 
                         <span className="d-block sub-comment">Excellent</span>
                         <p>
-                          Very well built theme, couldn&apos;t be happier with it. Can&apos;t wait
-                          for future updates to see what else they add in.
+                          Very well built theme, couldn&apos;t be happier with
+                          it. Can&apos;t wait for future updates to see what
+                          else they add in.
                         </p>
                       </div>
 
@@ -343,10 +415,12 @@ const SingleCourses = () => {
                           <span className="d-inline-block">Sarah Taylor</span>
                         </div>
 
-                        <span className="d-block sub-comment">Video Quality!</span>
+                        <span className="d-block sub-comment">
+                          Video Quality!
+                        </span>
                         <p>
-                          Was really easy to implement and they quickly answer my additional
-                          questions!
+                          Was really easy to implement and they quickly answer
+                          my additional questions!
                         </p>
                       </div>
 
@@ -365,10 +439,12 @@ const SingleCourses = () => {
                           <span className="d-inline-block">David Warner</span>
                         </div>
 
-                        <span className="d-block sub-comment">Perfect Coding!</span>
+                        <span className="d-block sub-comment">
+                          Perfect Coding!
+                        </span>
                         <p>
-                          Stunning design, very dedicated crew who welcome new ideas suggested by
-                          customers, nice support.
+                          Stunning design, very dedicated crew who welcome new
+                          ideas suggested by customers, nice support.
                         </p>
                       </div>
 
@@ -387,10 +463,12 @@ const SingleCourses = () => {
                           <span className="d-inline-block">King Kong</span>
                         </div>
 
-                        <span className="d-block sub-comment">Perfect Video!</span>
+                        <span className="d-block sub-comment">
+                          Perfect Video!
+                        </span>
                         <p>
-                          Stunning design, very dedicated crew who welcome new ideas suggested by
-                          customers, nice support.
+                          Stunning design, very dedicated crew who welcome new
+                          ideas suggested by customers, nice support.
                         </p>
                       </div>
                     </div>
@@ -408,7 +486,7 @@ const SingleCourses = () => {
 
       <YouMightLikeTheCourses />
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default SingleCourses;
+export default SingleCourses

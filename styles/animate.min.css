@@ -1589,27 +1589,32 @@
 @-webkit-keyframes flip {
   0% {
     -webkit-animation-timing-function: ease-out;
-    -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+    -webkit-transform: perspective(400px) scaleX(1) translateZ(0)
+      rotateY(-1turn);
     animation-timing-function: ease-out;
     transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
   }
   40% {
     -webkit-animation-timing-function: ease-out;
-    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
+    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px)
+      rotateY(-190deg);
     animation-timing-function: ease-out;
     transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
   }
   50% {
     -webkit-animation-timing-function: ease-in;
-    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
+    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px)
+      rotateY(-170deg);
     animation-timing-function: ease-in;
     transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
   }
   80% {
     -webkit-animation-timing-function: ease-in;
-    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0) rotateY(0deg);
+    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95)
+      translateZ(0) rotateY(0deg);
     animation-timing-function: ease-in;
-    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0) rotateY(0deg);
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+      rotateY(0deg);
   }
   to {
     -webkit-animation-timing-function: ease-in;
@@ -1621,27 +1626,32 @@
 @keyframes flip {
   0% {
     -webkit-animation-timing-function: ease-out;
-    -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+    -webkit-transform: perspective(400px) scaleX(1) translateZ(0)
+      rotateY(-1turn);
     animation-timing-function: ease-out;
     transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
   }
   40% {
     -webkit-animation-timing-function: ease-out;
-    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
+    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px)
+      rotateY(-190deg);
     animation-timing-function: ease-out;
     transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
   }
   50% {
     -webkit-animation-timing-function: ease-in;
-    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
+    -webkit-transform: perspective(400px) scaleX(1) translateZ(150px)
+      rotateY(-170deg);
     animation-timing-function: ease-in;
     transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
   }
   80% {
     -webkit-animation-timing-function: ease-in;
-    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0) rotateY(0deg);
+    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95)
+      translateZ(0) rotateY(0deg);
     animation-timing-function: ease-in;
-    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0) rotateY(0deg);
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+      rotateY(0deg);
   }
   to {
     -webkit-animation-timing-function: ease-in;

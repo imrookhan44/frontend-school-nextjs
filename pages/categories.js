@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 // import Navbar from '../components/_App/Navbar';
-import PageBanner from '../components/Common/PageBanner';
-import Link from 'next/link';
-import SubscribeForm from '../components/Common/SubscribeForm';
+import PageBanner from '../components/Common/PageBanner'
+import Link from 'next/link'
+import SubscribeForm from '../components/Common/SubscribeForm'
 // import Footer from '../components/_App/Footer';
 
 const Categories = () => {
@@ -169,7 +169,7 @@ const Categories = () => {
 
       {/* <Footer /> */}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories

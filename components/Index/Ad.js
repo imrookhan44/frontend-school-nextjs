@@ -1,19 +1,19 @@
-import React from 'react';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-const ModalVideo = dynamic(import('react-modal-video'));
+import React from 'react'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
+const ModalVideo = dynamic(import('react-modal-video'))
 
 const Ad = () => {
-  const [display, setDisplay] = React.useState(false);
+  const [display, setDisplay] = React.useState(false)
 
   React.useEffect(() => {
-    setDisplay(true);
-  }, []);
+    setDisplay(true)
+  }, [])
   // Popup Video
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(true)
   const openModal = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
@@ -21,15 +21,20 @@ const Ad = () => {
         <div className="container">
           <div className="video-box mt-0">
             <div className="image">
-              <img src="/images/video-img2.jpg" className="shadow" alt="image" />
+              <img
+                src="/images/video-img2.jpg"
+                className="shadow"
+                alt="image"
+              />
             </div>
             <Link legacyBehavior href="#">
               <a
                 onClick={(e) => {
-                  e.preventDefault();
-                  openModal();
+                  e.preventDefault()
+                  openModal()
                 }}
-                className="video-btn popup-youtube">
+                className="video-btn popup-youtube"
+              >
                 <i className="flaticon-play"></i>
               </a>
             </Link>
@@ -47,7 +52,7 @@ const Ad = () => {
         ''
       )}
     </>
-  );
-};
+  )
+}
 
-export default Ad;
+export default Ad

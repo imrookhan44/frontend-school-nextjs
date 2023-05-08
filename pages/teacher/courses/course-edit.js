@@ -1,10 +1,10 @@
-import React from 'react';
-import { parseCookies } from 'nookies';
-import axios from 'axios';
-import baseUrl from '@/utils/baseUrl';
-import PageBanner from '@/components/Common/PageBanner';
-import Link from '@/utils/ActiveLink';
-import SideBar from '../SideBar';
+import React from 'react'
+import { parseCookies } from 'nookies'
+import axios from 'axios'
+import baseUrl from '@/utils/baseUrl'
+import PageBanner from '@/components/Common/PageBanner'
+import Link from '@/utils/ActiveLink'
+import SideBar from '../SideBar'
 
 const courseEdit = ({ courses }) => {
   return (
@@ -46,7 +46,8 @@ const courseEdit = ({ courses }) => {
                             <Link
                               legacyBehavior
                               href="/teacher/course/[id]"
-                              as={`/teacher/course/${course.id}`}>
+                              as={`/teacher/course/${course.id}`}
+                            >
                               <a className="btn btn-success">
                                 <i className="bx bxs-edit"></i> Edit
                               </a>
@@ -67,23 +68,23 @@ const courseEdit = ({ courses }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 courseEdit.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
+  const { token } = parseCookies(ctx)
   if (!token) {
-    return { courses: [] };
+    return { courses: [] }
   }
 
   const payload = {
-    headers: { Authorization: token }
-  };
+    headers: { Authorization: token },
+  }
 
-  const url = `${baseUrl}/api/v1/courses/my-courses`;
-  const response = await axios.get(url, payload);
+  const url = `${baseUrl}/api/v1/courses/my-courses`
+  const response = await axios.get(url, payload)
   // console.log(response.data)
-  return response.data;
-};
+  return response.data
+}
 
-export default courseEdit;
+export default courseEdit

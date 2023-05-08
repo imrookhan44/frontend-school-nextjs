@@ -45,7 +45,14 @@
   left: 15px;
 }
 
-[lang='ar'] .edemy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+[lang='ar']
+  .edemy-nav
+  .navbar
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  li
+  .dropdown-menu {
   left: auto;
   right: -100%;
 }
@@ -145,7 +152,13 @@
   padding-right: 0;
 }
 
-[lang='ar'] .single-blog-post .post-content .post-content-footer li .post-author img {
+[lang='ar']
+  .single-blog-post
+  .post-content
+  .post-content-footer
+  li
+  .post-author
+  img {
   margin-right: 0;
   margin-left: 10px;
 }
@@ -265,17 +278,31 @@
   right: 7px;
 }
 
-[lang='ar'] .single-blog-post-item .post-content .post-content-footer li:first-child {
+[lang='ar']
+  .single-blog-post-item
+  .post-content
+  .post-content-footer
+  li:first-child {
   padding-right: 0;
   padding-left: 15px;
 }
 
-[lang='ar'] .single-blog-post-item .post-content .post-content-footer li:last-child {
+[lang='ar']
+  .single-blog-post-item
+  .post-content
+  .post-content-footer
+  li:last-child {
   margin-left: 0;
   padding-left: 0;
 }
 
-[lang='ar'] .single-blog-post-item .post-content .post-content-footer li .post-author img {
+[lang='ar']
+  .single-blog-post-item
+  .post-content
+  .post-content-footer
+  li
+  .post-author
+  img {
   margin-right: 0;
   margin-left: 10px;
 }
@@ -294,7 +321,13 @@
   border-left: 1px solid #f4f3f5;
 }
 
-[lang='ar'] .single-blog-post-box .post-content .post-content-footer li .post-author img {
+[lang='ar']
+  .single-blog-post-box
+  .post-content
+  .post-content-footer
+  li
+  .post-author
+  img {
   margin-right: 0;
   margin-left: 10px;
 }
@@ -411,7 +444,11 @@
   left: 20px;
 }
 
-[lang='ar'] .single-kindergarten-courses-box .courses-content .course-author img {
+[lang='ar']
+  .single-kindergarten-courses-box
+  .courses-content
+  .course-author
+  img {
   margin-right: 0;
   margin-left: 10px;
 }
@@ -549,7 +586,11 @@
   padding-right: 20px;
 }
 
-[lang='ar'] .comments-area .comment-respond .comment-form-cookies-consent input {
+[lang='ar']
+  .comments-area
+  .comment-respond
+  .comment-form-cookies-consent
+  input {
   left: auto;
   right: 0;
 }
@@ -583,13 +624,31 @@
   right: 0;
 }
 
-[lang='ar'] .order-details .payment-box .payment-method p [type='radio']:checked + label,
-[lang='ar'] .order-details .payment-box .payment-method p [type='radio']:not(:checked) + label {
+[lang='ar']
+  .order-details
+  .payment-box
+  .payment-method
+  p
+  [type='radio']:checked
+  + label,
+[lang='ar']
+  .order-details
+  .payment-box
+  .payment-method
+  p
+  [type='radio']:not(:checked)
+  + label {
   padding-left: 0;
   padding-right: 27px;
 }
 
-[lang='ar'] .order-details .payment-box .payment-method p [type='radio']:checked + label::before,
+[lang='ar']
+  .order-details
+  .payment-box
+  .payment-method
+  p
+  [type='radio']:checked
+  + label::before,
 [lang='ar']
   .order-details
   .payment-box
@@ -601,7 +660,13 @@
   right: 0;
 }
 
-[lang='ar'] .order-details .payment-box .payment-method p [type='radio']:checked + label::after,
+[lang='ar']
+  .order-details
+  .payment-box
+  .payment-method
+  p
+  [type='radio']:checked
+  + label::after,
 [lang='ar']
   .order-details
   .payment-box
@@ -638,7 +703,11 @@
   margin-left: 5px;
 }
 
-[lang='ar'] .products-details-tabs .react-tabs__tab-panel .products-review-comments .user-review {
+[lang='ar']
+  .products-details-tabs
+  .react-tabs__tab-panel
+  .products-review-comments
+  .user-review {
   padding: 20px 110px 20px 0;
 }
 
@@ -701,7 +770,10 @@
   margin-left: 50px;
 }
 
-[lang='ar'] .apply-instructor-content .react-tabs__tab-list .react-tabs__tab::before {
+[lang='ar']
+  .apply-instructor-content
+  .react-tabs__tab-list
+  .react-tabs__tab::before {
   left: auto;
   right: 0;
 }
@@ -730,7 +802,12 @@
   margin-left: 8px;
 }
 
-[lang='ar'] .events-details-info .events-share .share-info .social-link li:last-child {
+[lang='ar']
+  .events-details-info
+  .events-share
+  .share-info
+  .social-link
+  li:last-child {
   margin-left: 0;
 }
 
@@ -778,11 +855,20 @@
   margin-right: 6px;
 }
 
-[lang='ar'] .courses-details-desc .react-tabs__tab-panel .courses-review-comments .user-review {
+[lang='ar']
+  .courses-details-desc
+  .react-tabs__tab-panel
+  .courses-review-comments
+  .user-review {
   padding: 20px 110px 20px 0;
 }
 
-[lang='ar'] .courses-details-desc .react-tabs__tab-panel .courses-review-comments .user-review img {
+[lang='ar']
+  .courses-details-desc
+  .react-tabs__tab-panel
+  .courses-review-comments
+  .user-review
+  img {
   left: auto;
   right: 0;
 }
@@ -926,7 +1012,11 @@
     padding-left: 0;
     padding-right: 0;
   }
-  [lang='ar'] .courses-details-desc .react-tabs__tab-panel .courses-review-comments .user-review {
+  [lang='ar']
+    .courses-details-desc
+    .react-tabs__tab-panel
+    .courses-review-comments
+    .user-review {
     padding-right: 0;
   }
   [lang='ar'] .contact-info {
@@ -1013,7 +1103,14 @@
     margin-left: 10px !important;
     margin-right: 10px !important;
   }
-  [lang='ar'] .edemy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+  [lang='ar']
+    .edemy-nav
+    .navbar
+    .navbar-nav
+    .nav-item
+    .dropdown-menu
+    li
+    .dropdown-menu {
     left: 100%;
   }
 }
@@ -1030,7 +1127,14 @@
   [lang='ar'] .edemy-nav .navbar .navbar-nav .nav-item .dropdown-menu {
     border-right: 1px solid #eee;
   }
-  [lang='ar'] .edemy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+  [lang='ar']
+    .edemy-nav
+    .navbar
+    .navbar-nav
+    .nav-item
+    .dropdown-menu
+    li
+    .dropdown-menu {
     left: auto;
     right: 20px;
   }
