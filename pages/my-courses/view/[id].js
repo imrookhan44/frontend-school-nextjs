@@ -57,7 +57,7 @@ const SingleCourses = ({ sections }) => {
                           {section.name}
                         </AccordionItemButton>
                       </AccordionItemHeading>
-                      <AccordionItemPanel>
+                      <AccordionItemPanel style={{ padding: 0 }}>
                         <SectionContent section={section} />
                       </AccordionItemPanel>
                     </AccordionItem>
