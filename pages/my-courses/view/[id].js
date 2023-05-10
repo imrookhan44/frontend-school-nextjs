@@ -1,6 +1,6 @@
 import React from 'react'
 import PageBanner from '@/components/Common/PageBanner'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { parseCookies } from 'nookies'
 import axios from 'axios'
 import baseUrl from '@/utils/baseUrl'
@@ -11,13 +11,14 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion'
+import SectionContent from '@/components/my-courses/sectionContent'
 
 const SingleCourses = ({ sections }) => {
   const [videoId, setVideoId] = React.useState(
     sections[0].videos.length ? sections[0].videos[0].video_url : '',
   )
+  console.log(setVideoId)
 
-  console.log(sections)
   return (
     <React.Fragment>
       <PageBanner
@@ -30,98 +31,41 @@ const SingleCourses = ({ sections }) => {
       />
 
       <div className="ptb-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3">
-              <div className="course-video-list">
-                {sections.length ? (
-                  sections.map((section) => (
-                    <Accordion key={section.id}>
-                      <AccordionItem>
-                        <AccordionItemHeading>
-                          <AccordionItemButton>
-                            {section.name}
-                          </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                          {section.videos.length ? (
-                            section.videos.map((video) => (
-                              <div key={video.id}>
-                                <Link
-                                  legacyBehavior
-                                  key={video.id}
-                                  href="/my-courses/[videos]/[id]"
-                                  as={`/my-courses/${section.course.id}/${video.id}`}
-                                >
-                                  <a
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      setVideoId(video.video_url)
-                                    }}
-                                  >
-                                    <img
-                                      src={section.course.profilePhoto}
-                                      alt={section.course.title}
-                                    />
-                                    <h4>VIDEP: {video.name}</h4>
-                                  </a>
-                                </Link>
-                              </div>
-                            ))
-                          ) : (
-                            <h3>No Videos</h3>
-                          )}
-                          <div style={{ marginTop: '100px' }}></div>
-                          {section.quizzes.length &&
-                            section.quizzes.map((quiz) => (
-                              <div key={quiz.id}>
-                                <Link
-                                  legacyBehavior
-                                  key={quiz.id}
-                                  href="/my-courses/view/[quizzes]/[id]"
-                                  as={`/my-courses/view/quiz/${quiz.id}`}
-                                >
-                                  <a href={`/my-courses/view/quiz/${quiz.id}`}>
-                                    <h4>QUIZ:{quiz.name}</h4>
-                                  </a>
-                                </Link>
-                              </div>
-                            ))}
-                          <div style={{ marginTop: '100px' }}></div>
-                          {section.excercises.length &&
-                            section.excercises.map((exercise) => (
-                              <div key={exercise.id}>
-                                <Link
-                                  legacyBehavior
-                                  key={exercise.id}
-                                  href="/my-courses/view/[excercises]/[id]"
-                                  as={`/my-courses/view/exercise/${exercise.id}`}
-                                >
-                                  <a
-                                    href={`/my-courses/view/exercise/${exercise.id}`}
-                                  >
-                                    <h4>{exercise.name} EXERCISE</h4>
-                                  </a>
-                                </Link>
-                              </div>
-                            ))}
-                        </AccordionItemPanel>
-                      </AccordionItem>
-                    </Accordion>
-                  ))
-                ) : (
-                  <h3>No Sections</h3>
-                )}
-              </div>
+        <div className="row">
+          <div className="col-lg-9">
+            <div className="course-video-iframe">
+              <video key={videoId} controls>
+                <source src={videoId} type="video/mp4" />
+                <source src="/images/courses/courses5.jpg" type="video/ogg" />
+              </video>
             </div>
+          </div>
 
-            <div className="col-lg-9">
-              <div className="course-video-iframe">
-                <video key={videoId} controls>
-                  <source src={videoId} type="video/mp4" />
-                  <source src="/images/courses/courses5.jpg" type="video/ogg" />
-                </video>
-              </div>
+          <div className="col-lg-3">
+            <div className="course-video-list">
+              <h5>Course Content</h5>
+              {sections.length ? (
+                sections.map((section) => (
+                  <Accordion
+                    key={section.id}
+                    allowZeroExpanded
+                    allowMultipleExpanded
+                  >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                          {section.name}
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <SectionContent section={section} />
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Accordion>
+                ))
+              ) : (
+                <h3>No Sections</h3>
+              )}
             </div>
           </div>
         </div>
@@ -144,8 +88,11 @@ SingleCourses.getInitialProps = async (ctx) => {
 
   const url = `${baseUrl}/api/v1/courses/my-sections?courseid=${id}`
   const sections = await axios.get(url, payload)
+  const orderedSections = sections.data.sections.sort((a, b) =>
+    a.order > b.order ? 1 : -1,
+  )
 
-  return { sections: sections.data.sections }
+  return { sections: orderedSections }
 }
 
 export default SingleCourses
