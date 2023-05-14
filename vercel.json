@@ -1,10 +1,12 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
   "build": {
+   "env":{
     "username": "school_of_code_user",
     "password": "CnxwCWENsmddew12d!siw!",
     "database": "school_of_code_dev",
     "host": "school-of-code.c7xr67rqxjme.eu-west-1.rds.amazonaws.com",
     "dialect": "postgres"
+   }
   }
 }
